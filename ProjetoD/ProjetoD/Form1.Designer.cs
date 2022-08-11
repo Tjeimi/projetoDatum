@@ -34,7 +34,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(548, 151);
+            this.textBox1.Location = new System.Drawing.Point(324, 293);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
@@ -42,7 +42,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(548, 132);
+            this.label1.Location = new System.Drawing.Point(458, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
