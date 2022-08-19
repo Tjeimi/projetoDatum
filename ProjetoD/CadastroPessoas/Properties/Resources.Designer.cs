@@ -63,9 +63,29 @@ namespace CadastroPessoas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5254e7f0_1af9_4b25_8b98_904cfd551103__1_ {
+            get {
+                object obj = ResourceManager.GetObject("5254e7f0-1af9-4b25-8b98-904cfd551103 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_20px {
             get {
                 object obj = ResourceManager.GetObject("icons8_add_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pencil_drawing_20px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_pencil_drawing_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +113,9 @@ namespace CadastroPessoas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_welfare_20px {
+        internal static System.Drawing.Bitmap icons8_search_client_20px {
             get {
-                object obj = ResourceManager.GetObject("icons8_welfare_20px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_search_client_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +123,19 @@ namespace CadastroPessoas.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pexels_cottonbro_6591164 {
+        internal static System.Drawing.Bitmap icons8_unavailable_20px_1 {
             get {
-                object obj = ResourceManager.GetObject("pexels-cottonbro-6591164", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_unavailable_20px_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_welfare_20px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_welfare_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
