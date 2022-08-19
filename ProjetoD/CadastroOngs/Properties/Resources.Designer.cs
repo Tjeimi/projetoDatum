@@ -93,6 +93,16 @@ namespace CadastroOngs.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
+        internal static System.Drawing.Icon icons8_handle_with_care_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_handle_with_care_1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        /// </summary>
         internal static System.Drawing.Icon icons8_pencil_drawing {
             get {
                 object obj = ResourceManager.GetObject("icons8_pencil_drawing", resourceCulture);
