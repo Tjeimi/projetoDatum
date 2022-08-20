@@ -1,8 +1,8 @@
 namespace PesquisaObjetos
 {
-    public partial class FormObjetos : Form
+    public partial class FormPesquisaObjetos : Form
     {
-        public FormObjetos()
+        public FormPesquisaObjetos()
         {
             InitializeComponent();
         }

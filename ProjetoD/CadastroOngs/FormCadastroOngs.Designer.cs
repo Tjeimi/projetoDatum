@@ -664,7 +664,7 @@
             this.txtDadosOng.Location = new System.Drawing.Point(323, 41);
             this.txtDadosOng.Multiline = true;
             this.txtDadosOng.Name = "txtDadosOng";
-            this.txtDadosOng.Size = new System.Drawing.Size(240, 160);
+            this.txtDadosOng.Size = new System.Drawing.Size(240, 198);
             this.txtDadosOng.TabIndex = 25;
             // 
             // label5
@@ -684,7 +684,7 @@
             this.BtnEditarOng.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnEditarOng.Image = global::CadastroOngs.Properties.Resources.icons8_pencil_drawing_20px;
             this.BtnEditarOng.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditarOng.Location = new System.Drawing.Point(530, 207);
+            this.BtnEditarOng.Location = new System.Drawing.Point(530, 242);
             this.BtnEditarOng.Name = "BtnEditarOng";
             this.BtnEditarOng.Size = new System.Drawing.Size(33, 33);
             this.BtnEditarOng.TabIndex = 24;
@@ -704,7 +704,7 @@
             this.DgvParceiras.ReadOnly = true;
             this.DgvParceiras.RowHeadersVisible = false;
             this.DgvParceiras.RowTemplate.Height = 25;
-            this.DgvParceiras.Size = new System.Drawing.Size(219, 132);
+            this.DgvParceiras.Size = new System.Drawing.Size(219, 170);
             this.DgvParceiras.TabIndex = 26;
             // 
             // idPessoa
@@ -1247,7 +1247,7 @@
             this.BtnGravarParceira.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnGravarParceira.Image = global::CadastroOngs.Properties.Resources.icons8_save_all_20px;
             this.BtnGravarParceira.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGravarParceira.Location = new System.Drawing.Point(755, 206);
+            this.BtnGravarParceira.Location = new System.Drawing.Point(755, 242);
             this.BtnGravarParceira.Name = "BtnGravarParceira";
             this.BtnGravarParceira.Size = new System.Drawing.Size(33, 33);
             this.BtnGravarParceira.TabIndex = 24;
@@ -1259,7 +1259,7 @@
             this.BtnApagarParceira.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnApagarParceira.Image = global::CadastroOngs.Properties.Resources.icons8_delete_trash_20px;
             this.BtnApagarParceira.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnApagarParceira.Location = new System.Drawing.Point(716, 206);
+            this.BtnApagarParceira.Location = new System.Drawing.Point(716, 242);
             this.BtnApagarParceira.Name = "BtnApagarParceira";
             this.BtnApagarParceira.Size = new System.Drawing.Size(33, 33);
             this.BtnApagarParceira.TabIndex = 24;

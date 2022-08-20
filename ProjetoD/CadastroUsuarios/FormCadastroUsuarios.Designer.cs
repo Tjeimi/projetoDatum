@@ -93,7 +93,7 @@
             this.BtnGravarPessoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnGravarPessoa.Image = global::CadastroUsuarios.Properties.Resources.icons8_save_all_20px;
             this.BtnGravarPessoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGravarPessoa.Location = new System.Drawing.Point(27, 177);
+            this.BtnGravarPessoa.Location = new System.Drawing.Point(208, 177);
             this.BtnGravarPessoa.Name = "BtnGravarPessoa";
             this.BtnGravarPessoa.Size = new System.Drawing.Size(33, 33);
             this.BtnGravarPessoa.TabIndex = 20;
@@ -158,7 +158,7 @@
             this.BtnEditar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtnEditar.Image = global::CadastroUsuarios.Properties.Resources.icons8_pencil_drawing_20px;
             this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditar.Location = new System.Drawing.Point(66, 177);
+            this.BtnEditar.Location = new System.Drawing.Point(247, 177);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(33, 33);
             this.BtnEditar.TabIndex = 20;
@@ -169,7 +169,7 @@
             this.BtnInativar.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtnInativar.Image = global::CadastroUsuarios.Properties.Resources.icons8_unavailable_20px;
             this.BtnInativar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnInativar.Location = new System.Drawing.Point(105, 177);
+            this.BtnInativar.Location = new System.Drawing.Point(286, 177);
             this.BtnInativar.Name = "BtnInativar";
             this.BtnInativar.Size = new System.Drawing.Size(33, 33);
             this.BtnInativar.TabIndex = 20;

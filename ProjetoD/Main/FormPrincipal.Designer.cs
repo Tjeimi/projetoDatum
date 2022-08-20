@@ -1,6 +1,6 @@
-﻿namespace PesquisaObjetos
+﻿namespace Main
 {
-    partial class FormObjetos
+    partial class Form1
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormObjetos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.SuspendLayout();
             // 
-            // FormObjetos
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PesquisaObjetos.Properties.Resources._5254e7f0_1af9_4b25_8b98_904cfd551103__1_;
+            this.BackgroundImage = global::Main.Properties.Resources._2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormObjetos";
-            this.Text = "Objetos";
+            this.Name = "Form1";
+            this.Text = "Principal";
             this.ResumeLayout(false);
 
         }
