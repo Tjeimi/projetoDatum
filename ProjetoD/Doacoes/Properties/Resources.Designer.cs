@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CadastroUsuarios.Properties {
+namespace Doacoes.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace CadastroUsuarios.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CadastroUsuarios.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Doacoes.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,31 +61,21 @@ namespace CadastroUsuarios.Properties {
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
-        internal static System.Drawing.Bitmap _5254e7f0_1af9_4b25_8b98_904cfd551103__1_ {
+        internal static System.Drawing.Icon icons8_handle_with_care {
             get {
-                object obj = ResourceManager.GetObject("5254e7f0-1af9-4b25-8b98-904cfd551103 (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_denied_20px {
-            get {
-                object obj = ResourceManager.GetObject("icons8_denied_20px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("icons8_handle_with_care", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
-        internal static System.Drawing.Icon icons8_male_user {
+        internal static System.Drawing.Icon icons8_search_for_love {
             get {
-                object obj = ResourceManager.GetObject("icons8_male_user", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_search_for_love", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -93,9 +83,19 @@ namespace CadastroUsuarios.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_pencil_drawing_20px {
+        internal static System.Drawing.Bitmap icons8_search_for_love_20px {
             get {
-                object obj = ResourceManager.GetObject("icons8_pencil_drawing_20px", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_search_for_love_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_trust_20px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_trust_20px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,40 +103,10 @@ namespace CadastroUsuarios.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
         /// </summary>
-        internal static System.Drawing.Icon icons8_people {
+        internal static System.Drawing.Icon icons8_welfare_1 {
             get {
-                object obj = ResourceManager.GetObject("icons8_people", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8_welfare_1", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_save_all_20px {
-            get {
-                object obj = ResourceManager.GetObject("icons8_save_all_20px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_search_client_20px {
-            get {
-                object obj = ResourceManager.GetObject("icons8_search_client_20px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_unavailable_20px {
-            get {
-                object obj = ResourceManager.GetObject("icons8_unavailable_20px", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

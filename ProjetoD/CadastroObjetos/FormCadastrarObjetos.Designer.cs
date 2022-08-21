@@ -38,6 +38,10 @@
             this.BtnGravarObjeto = new System.Windows.Forms.Button();
             this.BtnImagens = new System.Windows.Forms.Button();
             this.BtnApagarImagem = new System.Windows.Forms.Button();
+            this.tbObjeto = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chbNecessidade = new System.Windows.Forms.CheckBox();
+            this.chbDoação = new System.Windows.Forms.CheckBox();
             this.idPessoa = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -82,7 +86,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(26, 70);
+            this.label1.Location = new System.Drawing.Point(26, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 17);
             this.label1.TabIndex = 19;
@@ -110,11 +114,11 @@
             // 
             // tbDescricao
             // 
-            this.tbDescricao.Location = new System.Drawing.Point(26, 90);
+            this.tbDescricao.Location = new System.Drawing.Point(26, 136);
             this.tbDescricao.Multiline = true;
             this.tbDescricao.Name = "tbDescricao";
             this.tbDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbDescricao.Size = new System.Drawing.Size(313, 140);
+            this.tbDescricao.Size = new System.Drawing.Size(313, 94);
             this.tbDescricao.TabIndex = 20;
             // 
             // BtnGravarObjeto
@@ -153,6 +157,44 @@
             this.BtnApagarImagem.TabIndex = 26;
             this.BtnApagarImagem.UseVisualStyleBackColor = false;
             // 
+            // tbObjeto
+            // 
+            this.tbObjeto.Location = new System.Drawing.Point(26, 90);
+            this.tbObjeto.Name = "tbObjeto";
+            this.tbObjeto.Size = new System.Drawing.Size(313, 23);
+            this.tbObjeto.TabIndex = 29;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(26, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 17);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Objeto";
+            // 
+            // chbNecessidade
+            // 
+            this.chbNecessidade.AutoSize = true;
+            this.chbNecessidade.Location = new System.Drawing.Point(97, 236);
+            this.chbNecessidade.Name = "chbNecessidade";
+            this.chbNecessidade.Size = new System.Drawing.Size(92, 19);
+            this.chbNecessidade.TabIndex = 30;
+            this.chbNecessidade.Text = "Necessidade";
+            this.chbNecessidade.UseVisualStyleBackColor = true;
+            // 
+            // chbDoação
+            // 
+            this.chbDoação.AutoSize = true;
+            this.chbDoação.Location = new System.Drawing.Point(26, 236);
+            this.chbDoação.Name = "chbDoação";
+            this.chbDoação.Size = new System.Drawing.Size(66, 19);
+            this.chbDoação.TabIndex = 31;
+            this.chbDoação.Text = "Doação";
+            this.chbDoação.UseVisualStyleBackColor = true;
+            // 
             // idPessoa
             // 
             this.idPessoa.Location = new System.Drawing.Point(297, 15);
@@ -167,6 +209,10 @@
             this.BackgroundImage = global::CadastroObjetos.Properties.Resources._5254e7f0_1af9_4b25_8b98_904cfd551103__1_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.chbNecessidade);
+            this.Controls.Add(this.chbDoação);
+            this.Controls.Add(this.tbObjeto);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.idPessoa);
             this.Controls.Add(this.BtnApagarImagem);
             this.Controls.Add(this.BtnImagens);
@@ -196,6 +242,10 @@
         private Button BtnGravarObjeto;
         private Button BtnImagens;
         private Button BtnApagarImagem;
+        private TextBox tbObjeto;
+        private Label label4;
+        private CheckBox chbNecessidade;
+        private CheckBox chbDoação;
         private TextBox idPessoa;
     }
 }

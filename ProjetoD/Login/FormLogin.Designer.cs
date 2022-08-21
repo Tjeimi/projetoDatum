@@ -76,7 +76,7 @@
             // 
             // BtnLogin
             // 
-            this.BtnLogin.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BtnLogin.BackColor = System.Drawing.Color.Transparent;
             this.BtnLogin.Image = global::Login.Properties.Resources.icons8_login_20px;
             this.BtnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnLogin.Location = new System.Drawing.Point(241, 142);

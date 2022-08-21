@@ -33,16 +33,20 @@
             this.idPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnGravarPessoa = new System.Windows.Forms.Button();
-            this.txtContatoPessoa = new System.Windows.Forms.TextBox();
+            this.BtnGravarUsuario = new System.Windows.Forms.Button();
+            this.tbContatoUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtEnderecoPessoa = new System.Windows.Forms.TextBox();
+            this.tbEnderecoUsuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNomePessoa = new System.Windows.Forms.TextBox();
+            this.tbNomeUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnEditar = new System.Windows.Forms.Button();
-            this.BtnInativar = new System.Windows.Forms.Button();
+            this.BtnEditarUsuario = new System.Windows.Forms.Button();
+            this.BtnInativarUsuario = new System.Windows.Forms.Button();
             this.BtnPesquisar = new System.Windows.Forms.Button();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbSenha = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPessoas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,60 +91,60 @@
             this.contato.Name = "contato";
             this.contato.ReadOnly = true;
             // 
-            // BtnGravarPessoa
+            // BtnGravarUsuario
             // 
-            this.BtnGravarPessoa.BackColor = System.Drawing.Color.Transparent;
-            this.BtnGravarPessoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnGravarPessoa.Image = global::CadastroUsuarios.Properties.Resources.icons8_save_all_20px;
-            this.BtnGravarPessoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGravarPessoa.Location = new System.Drawing.Point(208, 177);
-            this.BtnGravarPessoa.Name = "BtnGravarPessoa";
-            this.BtnGravarPessoa.Size = new System.Drawing.Size(33, 33);
-            this.BtnGravarPessoa.TabIndex = 20;
-            this.BtnGravarPessoa.UseVisualStyleBackColor = false;
+            this.BtnGravarUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.BtnGravarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnGravarUsuario.Image = global::CadastroUsuarios.Properties.Resources.icons8_save_all_20px;
+            this.BtnGravarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGravarUsuario.Location = new System.Drawing.Point(208, 216);
+            this.BtnGravarUsuario.Name = "BtnGravarUsuario";
+            this.BtnGravarUsuario.Size = new System.Drawing.Size(33, 33);
+            this.BtnGravarUsuario.TabIndex = 20;
+            this.BtnGravarUsuario.UseVisualStyleBackColor = false;
             // 
-            // txtContatoPessoa
+            // tbContatoUsuario
             // 
-            this.txtContatoPessoa.Location = new System.Drawing.Point(27, 148);
-            this.txtContatoPessoa.Name = "txtContatoPessoa";
-            this.txtContatoPessoa.Size = new System.Drawing.Size(292, 23);
-            this.txtContatoPessoa.TabIndex = 17;
+            this.tbContatoUsuario.Location = new System.Drawing.Point(27, 140);
+            this.tbContatoUsuario.Name = "tbContatoUsuario";
+            this.tbContatoUsuario.Size = new System.Drawing.Size(292, 23);
+            this.tbContatoUsuario.TabIndex = 17;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(27, 128);
+            this.label4.Location = new System.Drawing.Point(27, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 17);
             this.label4.TabIndex = 16;
             this.label4.Text = "Contato";
             // 
-            // txtEnderecoPessoa
+            // tbEnderecoUsuario
             // 
-            this.txtEnderecoPessoa.Location = new System.Drawing.Point(27, 96);
-            this.txtEnderecoPessoa.Name = "txtEnderecoPessoa";
-            this.txtEnderecoPessoa.Size = new System.Drawing.Size(292, 23);
-            this.txtEnderecoPessoa.TabIndex = 15;
+            this.tbEnderecoUsuario.Location = new System.Drawing.Point(27, 93);
+            this.tbEnderecoUsuario.Name = "tbEnderecoUsuario";
+            this.tbEnderecoUsuario.Size = new System.Drawing.Size(292, 23);
+            this.tbEnderecoUsuario.TabIndex = 15;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(27, 76);
+            this.label3.Location = new System.Drawing.Point(27, 73);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 17);
             this.label3.TabIndex = 14;
             this.label3.Text = "Endereço";
             // 
-            // txtNomePessoa
+            // tbNomeUsuario
             // 
-            this.txtNomePessoa.Location = new System.Drawing.Point(27, 46);
-            this.txtNomePessoa.Name = "txtNomePessoa";
-            this.txtNomePessoa.Size = new System.Drawing.Size(292, 23);
-            this.txtNomePessoa.TabIndex = 13;
+            this.tbNomeUsuario.Location = new System.Drawing.Point(27, 46);
+            this.tbNomeUsuario.Name = "tbNomeUsuario";
+            this.tbNomeUsuario.Size = new System.Drawing.Size(292, 23);
+            this.tbNomeUsuario.TabIndex = 13;
             // 
             // label1
             // 
@@ -153,27 +157,27 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Nome";
             // 
-            // BtnEditar
+            // BtnEditarUsuario
             // 
-            this.BtnEditar.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BtnEditar.Image = global::CadastroUsuarios.Properties.Resources.icons8_pencil_drawing_20px;
-            this.BtnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditar.Location = new System.Drawing.Point(247, 177);
-            this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(33, 33);
-            this.BtnEditar.TabIndex = 20;
-            this.BtnEditar.UseVisualStyleBackColor = false;
+            this.BtnEditarUsuario.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BtnEditarUsuario.Image = global::CadastroUsuarios.Properties.Resources.icons8_pencil_drawing_20px;
+            this.BtnEditarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEditarUsuario.Location = new System.Drawing.Point(247, 216);
+            this.BtnEditarUsuario.Name = "BtnEditarUsuario";
+            this.BtnEditarUsuario.Size = new System.Drawing.Size(33, 33);
+            this.BtnEditarUsuario.TabIndex = 20;
+            this.BtnEditarUsuario.UseVisualStyleBackColor = false;
             // 
-            // BtnInativar
+            // BtnInativarUsuario
             // 
-            this.BtnInativar.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BtnInativar.Image = global::CadastroUsuarios.Properties.Resources.icons8_unavailable_20px;
-            this.BtnInativar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnInativar.Location = new System.Drawing.Point(286, 177);
-            this.BtnInativar.Name = "BtnInativar";
-            this.BtnInativar.Size = new System.Drawing.Size(33, 33);
-            this.BtnInativar.TabIndex = 20;
-            this.BtnInativar.UseVisualStyleBackColor = false;
+            this.BtnInativarUsuario.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BtnInativarUsuario.Image = global::CadastroUsuarios.Properties.Resources.icons8_denied_20px;
+            this.BtnInativarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnInativarUsuario.Location = new System.Drawing.Point(286, 216);
+            this.BtnInativarUsuario.Name = "BtnInativarUsuario";
+            this.BtnInativarUsuario.Size = new System.Drawing.Size(33, 33);
+            this.BtnInativarUsuario.TabIndex = 20;
+            this.BtnInativarUsuario.UseVisualStyleBackColor = false;
             // 
             // BtnPesquisar
             // 
@@ -186,6 +190,42 @@
             this.BtnPesquisar.UseVisualStyleBackColor = false;
             this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
+            // tbUsername
+            // 
+            this.tbUsername.Location = new System.Drawing.Point(27, 187);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(158, 23);
+            this.tbUsername.TabIndex = 25;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(27, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 17);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Username";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(191, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 17);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Senha";
+            // 
+            // tbSenha
+            // 
+            this.tbSenha.Location = new System.Drawing.Point(191, 187);
+            this.tbSenha.Name = "tbSenha";
+            this.tbSenha.Size = new System.Drawing.Size(128, 23);
+            this.tbSenha.TabIndex = 25;
+            // 
             // FormCadastroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -193,16 +233,20 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbSenha);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tbUsername);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnPesquisar);
             this.Controls.Add(this.DgvPessoas);
-            this.Controls.Add(this.BtnInativar);
-            this.Controls.Add(this.BtnEditar);
-            this.Controls.Add(this.BtnGravarPessoa);
-            this.Controls.Add(this.txtContatoPessoa);
+            this.Controls.Add(this.BtnInativarUsuario);
+            this.Controls.Add(this.BtnEditarUsuario);
+            this.Controls.Add(this.BtnGravarUsuario);
+            this.Controls.Add(this.tbContatoUsuario);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtEnderecoPessoa);
+            this.Controls.Add(this.tbEnderecoUsuario);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNomePessoa);
+            this.Controls.Add(this.tbNomeUsuario);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadastroUsuarios";
@@ -218,15 +262,19 @@
         private DataGridViewTextBoxColumn idPessoa;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn contato;
-        private Button BtnGravarPessoa;
-        private TextBox txtContatoPessoa;
+        private Button BtnGravarUsuario;
+        private TextBox tbContatoUsuario;
         private Label label4;
-        private TextBox txtEnderecoPessoa;
+        private TextBox tbEnderecoUsuario;
         private Label label3;
-        private TextBox txtNomePessoa;
+        private TextBox tbNomeUsuario;
         private Label label1;
-        private Button BtnEditar;
-        private Button BtnInativar;
+        private Button BtnEditarUsuario;
+        private Button BtnInativarUsuario;
         private Button BtnPesquisar;
+        private TextBox tbUsername;
+        private Label label2;
+        private Label label5;
+        private TextBox tbSenha;
     }
 }

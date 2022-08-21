@@ -109,7 +109,7 @@
             this.BtnCarregarRelatorio.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtnCarregarRelatorio.Image = global::Relatorios.Properties.Resources.icons8_open_document_20px;
             this.BtnCarregarRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCarregarRelatorio.Location = new System.Drawing.Point(156, 121);
+            this.BtnCarregarRelatorio.Location = new System.Drawing.Point(160, 121);
             this.BtnCarregarRelatorio.Name = "BtnCarregarRelatorio";
             this.BtnCarregarRelatorio.Size = new System.Drawing.Size(33, 33);
             this.BtnCarregarRelatorio.TabIndex = 24;

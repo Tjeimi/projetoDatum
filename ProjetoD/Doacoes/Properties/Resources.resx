@@ -118,34 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8_save_all_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_save_all_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_handle_with_care" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_handle_with_care.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_delete_trash_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_delete_trash_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_search_for_love" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_search_for_love.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="5254e7f0-1af9-4b25-8b98-904cfd551103 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5254e7f0-1af9-4b25-8b98-904cfd551103 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_search_for_love_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_search_for_love_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_pencil_drawing_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_pencil_drawing_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_trust_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_trust_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_welfare" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_welfare.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="5254e7f0-1af9-4b25-8b98-904cfd551103 (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5254e7f0-1af9-4b25-8b98-904cfd551103 (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_add_image_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_add_image_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_denied_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_denied_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_handle_with_care_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_handle_with_care_2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_handle_with_care_20px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_handle_with_care_20px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_welfare_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_welfare_1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
