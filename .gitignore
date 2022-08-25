@@ -375,6 +375,6 @@ Temporary Items
 InteropTests/NativeTests/out
 /src/System.Windows.Forms/src/comctl32.dll
 *.received.*
+!/ProjetoD/ServerBase/ServerBin/*
 /ProjetoD/ServerBase/ServerBin/PostgreSQL/14/data
 /ProjetoD/ServerBase/ServerBin/PostgreSQL/14/logfile
-!/ProjetoD/ServerBase/ServerBin/*
