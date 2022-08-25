@@ -1,0 +1,30 @@
+2022-08-23 22:34:36.138 -03 [10792] LOG:  starting PostgreSQL 14.4, compiled by Visual C++ build 1914, 64-bit
+2022-08-23 22:34:36.144 -03 [10792] LOG:  listening on IPv6 address "::1", port 5439
+2022-08-23 22:34:36.144 -03 [10792] LOG:  listening on IPv4 address "127.0.0.1", port 5439
+2022-08-23 22:34:36.204 -03 [2124] LOG:  database system was shut down at 2022-08-23 22:30:07 -03
+2022-08-23 22:34:36.255 -03 [10792] LOG:  database system is ready to accept connections
+2022-08-23 22:34:41.988 -03 [10792] LOG:  received fast shutdown request
+2022-08-23 22:34:41.990 -03 [10792] LOG:  aborting any active transactions
+2022-08-23 22:34:41.997 -03 [10792] LOG:  background worker "logical replication launcher" (PID 8308) exited with exit code 1
+2022-08-23 22:34:42.000 -03 [5400] LOG:  shutting down
+2022-08-23 22:34:42.033 -03 [10792] LOG:  database system is shut down
+2022-08-23 23:26:02.070 -03 [7360] LOG:  starting PostgreSQL 14.4, compiled by Visual C++ build 1914, 64-bit
+2022-08-23 23:26:02.076 -03 [7360] LOG:  listening on IPv6 address "::1", port 5439
+2022-08-23 23:26:02.076 -03 [7360] LOG:  listening on IPv4 address "127.0.0.1", port 5439
+2022-08-23 23:26:02.131 -03 [10808] LOG:  database system was shut down at 2022-08-23 23:25:14 -03
+2022-08-23 23:26:02.170 -03 [7360] LOG:  database system is ready to accept connections
+2022-08-23 23:26:42.934 -03 [7360] LOG:  received fast shutdown request
+2022-08-23 23:26:42.936 -03 [7360] LOG:  aborting any active transactions
+2022-08-23 23:26:42.943 -03 [7360] LOG:  background worker "logical replication launcher" (PID 10472) exited with exit code 1
+2022-08-23 23:26:42.944 -03 [10888] LOG:  shutting down
+2022-08-23 23:26:42.978 -03 [7360] LOG:  database system is shut down
+2022-08-23 23:32:48.271 -03 [12840] LOG:  starting PostgreSQL 14.4, compiled by Visual C++ build 1914, 64-bit
+2022-08-23 23:32:48.277 -03 [12840] LOG:  listening on IPv6 address "::1", port 5439
+2022-08-23 23:32:48.277 -03 [12840] LOG:  listening on IPv4 address "127.0.0.1", port 5439
+2022-08-23 23:32:48.343 -03 [6776] LOG:  database system was shut down at 2022-08-23 23:31:38 -03
+2022-08-23 23:32:48.411 -03 [12840] LOG:  database system is ready to accept connections
+2022-08-23 23:32:51.767 -03 [12840] LOG:  received fast shutdown request
+2022-08-23 23:32:51.769 -03 [12840] LOG:  aborting any active transactions
+2022-08-23 23:32:51.778 -03 [12840] LOG:  background worker "logical replication launcher" (PID 9516) exited with exit code 1
+2022-08-23 23:32:51.778 -03 [13808] LOG:  shutting down
+2022-08-23 23:32:51.816 -03 [12840] LOG:  database system is shut down

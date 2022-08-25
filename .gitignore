@@ -377,7 +377,10 @@ InteropTests/NativeTests/out
 *.received.*
 
 # server
-!/ProjetoD/ServerBase/ServerBin/Debug/MQTT/
-!/ProjetoD/ServerBase/ServerBin/Debug/PostgreSQL/
+!/ProjetoD/ServerBase/ServerBin/Debug/
 /ProjetoD/ServerBase/ServerBin/Debug/PostgreSQL/14/data
 /ProjetoD/ServerBase/ServerBin/Debug/logfile
+/ProjetoD/ServerBase/ServerBin/Debug/ServerBase.deps.json
+/ProjetoD/ServerBase/ServerBin/Debug/ServerBase.dll
+/ProjetoD/ServerBase/ServerBin/Debug/ServerBase.exe
+/ProjetoD/ServerBase/ServerBin/Debug/ServerBase.runtimeconfig.json
