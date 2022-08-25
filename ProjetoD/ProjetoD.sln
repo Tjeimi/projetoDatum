@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Login", "Login\Login.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Doacoes", "Doacoes\Doacoes.csproj", "{BDEB4148-D59C-48B1-97A6-4C51A47CAE83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerBase", "ServerBase\ServerBase.csproj", "{7AD9A5F0-19BC-4C60-ACD4-9CCA710A9C24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerBase", "ServerBase\ServerBase.csproj", "{7AD9A5F0-19BC-4C60-ACD4-9CCA710A9C24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
