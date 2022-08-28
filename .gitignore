@@ -377,5 +377,6 @@ InteropTests/NativeTests/out
 *.received.*
 
 # server
+!/ProjetoD/ServerBin/PostgreSQL/14/bin
 /ProjetoD/ServerBin/PostgreSQL/14/data
 /ProjetoD/ServerBin/PostgreSQL/14/logfile
