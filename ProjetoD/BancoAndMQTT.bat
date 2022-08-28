@@ -14,7 +14,7 @@ cd ..\..\MQTT
 ECHO "TENTANDO PARAR O MQTT BROKER CASO ESTEJA RODANDO"
 taskkill /IM "mosquitto.exe" /F
 ECHO "TENTANDO INICIAR O MQTT BROKER"
-start cmd /c "mosquitto.exe -v -p 1884"
+start cmd /c "mosquitto.exe -v -p 1883"
 
 ECHO "PRESSIONE QUALQUER TECLA PARA ENCERRAR O BANCO DE DADOS E O MQTT"
 @pause
