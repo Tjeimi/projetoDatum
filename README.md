@@ -14,5 +14,7 @@
 4. Abrir o arquivo "pgAdmin4.exe" presente dentro da pasta "...\pgAdmin 4\bin\" que você acabou de extrair
 5. Senha para o pgAdmin pode ser qualquer, recomendo colocar "1" para ficar de mais fácil acesso
 6. Adicionar um novo servidor, colocando um nome qualquer, no endereço de ip "127.0.0.1", na porta "5434" e clicando em "save"
+
 ![image](https://user-images.githubusercontent.com/109689901/187571213-6e88dd0f-bd89-44d0-9df1-f30792b9aa20.png)
+
 7. Se deu tudo certo, o elefante já vai estar aparecendo na parte esquerda pronto para ser usado🐘
