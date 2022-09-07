@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Data;
+using System.Runtime.CompilerServices;
 using Npgsql;
 
 internal class Program {
@@ -15,21 +16,19 @@ internal class Program {
     public Program(){
     connString = String.Format("Server={0};Port={1};User Id={2};Password={3};Database={4};",
                                         serverName, port, userName, password, databaseName);
-}
-
-    
+    }
+  
     //Inserir registros
-    public void InserirRegistros()//(string nome)
+    public void InserirRegistros(int idong, string nome, bool ativa)
     {
-
         try
         {
             using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString))
             {
-                //Abra a conexão com o PgSQL                  
+                //Abre a conexão com o PgSQL                  
                 pgsqlConnection.Open();
 
-                string cmdInserir = String.Format("INSERT INTO pessoa (id, idong, nome, ativa) VALUES(3, 3, 'teste', FALSE)");
+                string cmdInserir = String.Format("INSERT INTO pessoa (id, idong, nome, ativa) VALUES(1,{0},'{1}',{2})", idong, nome, ativa);
 
                 using (NpgsqlCommand pgsqlcommand = new NpgsqlCommand(cmdInserir, pgsqlConnection))
                 {
@@ -51,11 +50,14 @@ internal class Program {
         }
     }
 
+    private static void Main(string[] args){
 
-    private static void Main(string[] args) {
+        int idong = 1000;
+        string nome = "Andrielly";
+        bool ativa = true;
 
         Program program = new Program();
-        program.InserirRegistros();
+        program.InserirRegistros(idong, nome, ativa);
 
     }
 }
