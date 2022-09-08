@@ -26,9 +26,10 @@ internal class Program {
             using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString))
             {
                 //Abre a conexão com o PgSQL                  
-                pgsqlConnection.Open();
+                pgsqlConnection.Open();  
 
-                string cmdInserir = String.Format("INSERT INTO pessoa (id, idong, nome, ativa) VALUES(1,{0},'{1}',{2})", idong, nome, ativa);
+
+                string cmdInserir = $"INSERT INTO pessoa (id, idong, nome, ativa) VALUES(1,{idong},'{nome}',{ativa})";
 
                 using (NpgsqlCommand pgsqlcommand = new NpgsqlCommand(cmdInserir, pgsqlConnection))
                 {

@@ -132,6 +132,7 @@
             this.BtnGravarObjeto.Size = new System.Drawing.Size(33, 33);
             this.BtnGravarObjeto.TabIndex = 25;
             this.BtnGravarObjeto.UseVisualStyleBackColor = false;
+            this.BtnGravarObjeto.Click += new System.EventHandler(this.BtnGravarObjeto_Click);
             // 
             // BtnImagens
             // 

@@ -1,6 +1,6 @@
 namespace ServerModel
 {
-    internal static class Program
+    public static class Program
     {
         //MODELOS DE PACOTES [BANCO DE DADOS]
         public class PessoasModel
