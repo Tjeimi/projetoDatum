@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroOngs));
             this.cbCidadesParceiras = new System.Windows.Forms.ComboBox();
             this.cbEstado = new System.Windows.Forms.ComboBox();
-            this.txtContatoOng = new System.Windows.Forms.TextBox();
+            this.tbContatoOng = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtEnderecoOng = new System.Windows.Forms.TextBox();
+            this.tbEnderecoOng = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtNomeOng = new System.Windows.Forms.TextBox();
+            this.tbNomeOng = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,6 +50,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.BtnGravarParceira = new System.Windows.Forms.Button();
             this.BtnApagarParceira = new System.Windows.Forms.Button();
+            this.idOng = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvParceiras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -565,18 +568,18 @@
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Items.AddRange(new object[] {
             "RS"});
-            this.cbEstado.Location = new System.Drawing.Point(250, 178);
+            this.cbEstado.Location = new System.Drawing.Point(250, 225);
             this.cbEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(67, 23);
             this.cbEstado.TabIndex = 3;
             // 
-            // txtContatoOng
+            // tbContatoOng
             // 
-            this.txtContatoOng.Location = new System.Drawing.Point(25, 133);
-            this.txtContatoOng.Name = "txtContatoOng";
-            this.txtContatoOng.Size = new System.Drawing.Size(292, 23);
-            this.txtContatoOng.TabIndex = 23;
+            this.tbContatoOng.Location = new System.Drawing.Point(25, 133);
+            this.tbContatoOng.Name = "tbContatoOng";
+            this.tbContatoOng.Size = new System.Drawing.Size(292, 23);
+            this.tbContatoOng.TabIndex = 23;
             // 
             // label1
             // 
@@ -589,12 +592,12 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Contato";
             // 
-            // txtEnderecoOng
+            // tbEnderecoOng
             // 
-            this.txtEnderecoOng.Location = new System.Drawing.Point(25, 87);
-            this.txtEnderecoOng.Name = "txtEnderecoOng";
-            this.txtEnderecoOng.Size = new System.Drawing.Size(292, 23);
-            this.txtEnderecoOng.TabIndex = 21;
+            this.tbEnderecoOng.Location = new System.Drawing.Point(25, 87);
+            this.tbEnderecoOng.Name = "tbEnderecoOng";
+            this.tbEnderecoOng.Size = new System.Drawing.Size(292, 23);
+            this.tbEnderecoOng.TabIndex = 21;
             // 
             // label3
             // 
@@ -607,12 +610,12 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Endereço";
             // 
-            // txtNomeOng
+            // tbNomeOng
             // 
-            this.txtNomeOng.Location = new System.Drawing.Point(25, 41);
-            this.txtNomeOng.Name = "txtNomeOng";
-            this.txtNomeOng.Size = new System.Drawing.Size(292, 23);
-            this.txtNomeOng.TabIndex = 19;
+            this.tbNomeOng.Location = new System.Drawing.Point(25, 41);
+            this.tbNomeOng.Name = "tbNomeOng";
+            this.tbNomeOng.Size = new System.Drawing.Size(292, 23);
+            this.tbNomeOng.TabIndex = 19;
             // 
             // label2
             // 
@@ -641,7 +644,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(250, 159);
+            this.label4.Location = new System.Drawing.Point(250, 206);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(23, 17);
             this.label4.TabIndex = 22;
@@ -653,18 +656,19 @@
             this.BtnGravarOng.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnGravarOng.Image = global::CadastroOngs.Properties.Resources.icons8_save_all_20px;
             this.BtnGravarOng.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGravarOng.Location = new System.Drawing.Point(284, 206);
+            this.BtnGravarOng.Location = new System.Drawing.Point(284, 253);
             this.BtnGravarOng.Name = "BtnGravarOng";
             this.BtnGravarOng.Size = new System.Drawing.Size(33, 33);
             this.BtnGravarOng.TabIndex = 24;
             this.BtnGravarOng.UseVisualStyleBackColor = false;
+            this.BtnGravarOng.Click += new System.EventHandler(this.BtnGravarOng_Click);
             // 
             // txtDadosOng
             // 
             this.txtDadosOng.Location = new System.Drawing.Point(323, 41);
             this.txtDadosOng.Multiline = true;
             this.txtDadosOng.Name = "txtDadosOng";
-            this.txtDadosOng.Size = new System.Drawing.Size(240, 198);
+            this.txtDadosOng.Size = new System.Drawing.Size(240, 207);
             this.txtDadosOng.TabIndex = 25;
             // 
             // label5
@@ -684,11 +688,12 @@
             this.BtnEditarOng.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnEditarOng.Image = global::CadastroOngs.Properties.Resources.icons8_pencil_drawing_20px;
             this.BtnEditarOng.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditarOng.Location = new System.Drawing.Point(530, 242);
+            this.BtnEditarOng.Location = new System.Drawing.Point(530, 253);
             this.BtnEditarOng.Name = "BtnEditarOng";
             this.BtnEditarOng.Size = new System.Drawing.Size(33, 33);
             this.BtnEditarOng.TabIndex = 24;
             this.BtnEditarOng.UseVisualStyleBackColor = false;
+            this.BtnEditarOng.Click += new System.EventHandler(this.BtnEditarOng_Click);
             // 
             // DgvParceiras
             // 
@@ -704,7 +709,7 @@
             this.DgvParceiras.ReadOnly = true;
             this.DgvParceiras.RowHeadersVisible = false;
             this.DgvParceiras.RowTemplate.Height = 25;
-            this.DgvParceiras.Size = new System.Drawing.Size(219, 170);
+            this.DgvParceiras.Size = new System.Drawing.Size(219, 179);
             this.DgvParceiras.TabIndex = 26;
             // 
             // idPessoa
@@ -1224,7 +1229,7 @@
             "Vitória das Missões",
             "Westfália",
             "Xangri-lá"});
-            this.cbCidade.Location = new System.Drawing.Point(25, 178);
+            this.cbCidade.Location = new System.Drawing.Point(25, 225);
             this.cbCidade.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbCidade.Name = "cbCidade";
             this.cbCidade.Size = new System.Drawing.Size(219, 23);
@@ -1235,7 +1240,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(25, 159);
+            this.label7.Location = new System.Drawing.Point(25, 205);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 17);
             this.label7.TabIndex = 22;
@@ -1247,11 +1252,12 @@
             this.BtnGravarParceira.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnGravarParceira.Image = global::CadastroOngs.Properties.Resources.icons8_save_all_20px;
             this.BtnGravarParceira.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGravarParceira.Location = new System.Drawing.Point(755, 242);
+            this.BtnGravarParceira.Location = new System.Drawing.Point(755, 253);
             this.BtnGravarParceira.Name = "BtnGravarParceira";
             this.BtnGravarParceira.Size = new System.Drawing.Size(33, 33);
             this.BtnGravarParceira.TabIndex = 24;
             this.BtnGravarParceira.UseVisualStyleBackColor = false;
+            this.BtnGravarParceira.Click += new System.EventHandler(this.BtnGravarParceira_Click);
             // 
             // BtnApagarParceira
             // 
@@ -1259,11 +1265,37 @@
             this.BtnApagarParceira.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnApagarParceira.Image = global::CadastroOngs.Properties.Resources.icons8_delete_trash_20px;
             this.BtnApagarParceira.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnApagarParceira.Location = new System.Drawing.Point(716, 242);
+            this.BtnApagarParceira.Location = new System.Drawing.Point(716, 253);
             this.BtnApagarParceira.Name = "BtnApagarParceira";
             this.BtnApagarParceira.Size = new System.Drawing.Size(33, 33);
             this.BtnApagarParceira.TabIndex = 24;
             this.BtnApagarParceira.UseVisualStyleBackColor = false;
+            this.BtnApagarParceira.Click += new System.EventHandler(this.BtnApagarParceira_Click);
+            // 
+            // idOng
+            // 
+            this.idOng.Location = new System.Drawing.Point(273, 12);
+            this.idOng.Name = "idOng";
+            this.idOng.Size = new System.Drawing.Size(44, 23);
+            this.idOng.TabIndex = 27;
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(25, 180);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(292, 23);
+            this.tbEmail.TabIndex = 29;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(25, 160);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 17);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "E-mail";
             // 
             // FormCadastroOngs
             // 
@@ -1272,20 +1304,23 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbEmail);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.idOng);
             this.Controls.Add(this.DgvParceiras);
             this.Controls.Add(this.txtDadosOng);
             this.Controls.Add(this.BtnEditarOng);
             this.Controls.Add(this.BtnApagarParceira);
             this.Controls.Add(this.BtnGravarParceira);
             this.Controls.Add(this.BtnGravarOng);
-            this.Controls.Add(this.txtContatoOng);
+            this.Controls.Add(this.tbContatoOng);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtEnderecoOng);
+            this.Controls.Add(this.tbEnderecoOng);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNomeOng);
+            this.Controls.Add(this.tbNomeOng);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbEstado);
@@ -1305,11 +1340,11 @@
         #endregion
         private ComboBox cbCidadesParceiras;
         private ComboBox cbEstado;
-        private TextBox txtContatoOng;
+        private TextBox tbContatoOng;
         private Label label1;
-        private TextBox txtEnderecoOng;
+        private TextBox tbEnderecoOng;
         private Label label3;
-        private TextBox txtNomeOng;
+        private TextBox tbNomeOng;
         private Label label2;
         private Label label6;
         private Label label4;
@@ -1324,5 +1359,8 @@
         private Label label7;
         private Button BtnGravarParceira;
         private Button BtnApagarParceira;
+        private TextBox idOng;
+        private TextBox tbEmail;
+        private Label label8;
     }
 }

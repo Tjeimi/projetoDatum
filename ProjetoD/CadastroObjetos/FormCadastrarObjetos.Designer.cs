@@ -36,13 +36,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbDescricao = new System.Windows.Forms.TextBox();
             this.BtnGravarObjeto = new System.Windows.Forms.Button();
-            this.BtnImagens = new System.Windows.Forms.Button();
+            this.BtnCarregarImagem = new System.Windows.Forms.Button();
             this.BtnApagarImagem = new System.Windows.Forms.Button();
             this.tbObjeto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.chbNecessidade = new System.Windows.Forms.CheckBox();
             this.chbDoação = new System.Windows.Forms.CheckBox();
             this.idPessoa = new System.Windows.Forms.TextBox();
+            this.idObjeto = new System.Windows.Forms.TextBox();
+            this.idUsuario = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // cbCategorias
@@ -134,17 +136,18 @@
             this.BtnGravarObjeto.UseVisualStyleBackColor = false;
             this.BtnGravarObjeto.Click += new System.EventHandler(this.BtnGravarObjeto_Click);
             // 
-            // BtnImagens
+            // BtnCarregarImagem
             // 
-            this.BtnImagens.BackColor = System.Drawing.Color.Transparent;
-            this.BtnImagens.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnImagens.Image = global::CadastroObjetos.Properties.Resources.icons8_add_image_20px;
-            this.BtnImagens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnImagens.Location = new System.Drawing.Point(356, 45);
-            this.BtnImagens.Name = "BtnImagens";
-            this.BtnImagens.Size = new System.Drawing.Size(33, 33);
-            this.BtnImagens.TabIndex = 25;
-            this.BtnImagens.UseVisualStyleBackColor = false;
+            this.BtnCarregarImagem.BackColor = System.Drawing.Color.Transparent;
+            this.BtnCarregarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnCarregarImagem.Image = global::CadastroObjetos.Properties.Resources.icons8_add_image_20px;
+            this.BtnCarregarImagem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCarregarImagem.Location = new System.Drawing.Point(356, 45);
+            this.BtnCarregarImagem.Name = "BtnCarregarImagem";
+            this.BtnCarregarImagem.Size = new System.Drawing.Size(33, 33);
+            this.BtnCarregarImagem.TabIndex = 25;
+            this.BtnCarregarImagem.UseVisualStyleBackColor = false;
+            this.BtnCarregarImagem.Click += new System.EventHandler(this.BtnCarregarImagem_Click);
             // 
             // BtnApagarImagem
             // 
@@ -157,6 +160,7 @@
             this.BtnApagarImagem.Size = new System.Drawing.Size(33, 33);
             this.BtnApagarImagem.TabIndex = 26;
             this.BtnApagarImagem.UseVisualStyleBackColor = false;
+            this.BtnApagarImagem.Click += new System.EventHandler(this.BtnApagarImagem_Click);
             // 
             // tbObjeto
             // 
@@ -198,10 +202,27 @@
             // 
             // idPessoa
             // 
+            this.idPessoa.Enabled = false;
             this.idPessoa.Location = new System.Drawing.Point(297, 15);
             this.idPessoa.Name = "idPessoa";
             this.idPessoa.Size = new System.Drawing.Size(42, 23);
             this.idPessoa.TabIndex = 27;
+            // 
+            // idObjeto
+            // 
+            this.idObjeto.Enabled = false;
+            this.idObjeto.Location = new System.Drawing.Point(249, 15);
+            this.idObjeto.Name = "idObjeto";
+            this.idObjeto.Size = new System.Drawing.Size(42, 23);
+            this.idObjeto.TabIndex = 32;
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.Enabled = false;
+            this.idUsuario.Location = new System.Drawing.Point(201, 15);
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.Size = new System.Drawing.Size(42, 23);
+            this.idUsuario.TabIndex = 33;
             // 
             // FormCadastrarObjetos
             // 
@@ -210,13 +231,15 @@
             this.BackgroundImage = global::CadastroObjetos.Properties.Resources._5254e7f0_1af9_4b25_8b98_904cfd551103__1_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.idUsuario);
+            this.Controls.Add(this.idObjeto);
             this.Controls.Add(this.chbNecessidade);
             this.Controls.Add(this.chbDoação);
             this.Controls.Add(this.tbObjeto);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.idPessoa);
             this.Controls.Add(this.BtnApagarImagem);
-            this.Controls.Add(this.BtnImagens);
+            this.Controls.Add(this.BtnCarregarImagem);
             this.Controls.Add(this.BtnGravarObjeto);
             this.Controls.Add(this.tbDescricao);
             this.Controls.Add(this.tbImagens);
@@ -241,12 +264,14 @@
         private Label label3;
         private TextBox tbDescricao;
         private Button BtnGravarObjeto;
-        private Button BtnImagens;
+        private Button BtnCarregarImagem;
         private Button BtnApagarImagem;
         private TextBox tbObjeto;
         private Label label4;
         private CheckBox chbNecessidade;
         private CheckBox chbDoação;
         private TextBox idPessoa;
+        private TextBox idObjeto;
+        private TextBox idUsuario;
     }
 }
