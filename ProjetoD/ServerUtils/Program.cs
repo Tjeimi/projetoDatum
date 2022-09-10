@@ -16,8 +16,9 @@ internal class Program {
     }
   
     //Inserir registros
-    public void InserirRegistros(object obj)
+    public void InserirRegistros(PessoasModel obj)
     {
+        //PessoasModel pessoalModelTemp = (PessoasModel)obj;
         try
         {
             using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString))
@@ -29,11 +30,11 @@ internal class Program {
 
                 using (NpgsqlCommand pgsqlcommand = new NpgsqlCommand(CreateInsertQuery(obj), pgsqlConnection))
                 {
-                    /*pgsqlcommand.Parameters.AddWithValue("id", 001);
-                    pgsqlcommand.Parameters.AddWithValue("idong", 1001);
-                    pgsqlcommand.Parameters.AddWithValue("nome", "nometeste");
-                    pgsqlcommand.Parameters.AddWithValue("ativo", true);*/
-                    //pgsqlcommand.Prepare();
+                    pgsqlcommand.Parameters.AddWithValue("id", obj.id);
+                    pgsqlcommand.Parameters.AddWithValue("idong", obj.idong);
+                    pgsqlcommand.Parameters.AddWithValue("nome", obj.nome);
+                    pgsqlcommand.Parameters.AddWithValue("ativo", obj.ativo);
+                    pgsqlcommand.Prepare();
                     pgsqlcommand.ExecuteNonQuery();
                 }
             }
@@ -65,9 +66,9 @@ internal class Program {
         string s = ("INSERT INTO "
                                   + GetTableName(obj)
                                   + $"({GetColumns(obj)}) "
-                            + $"VALUES({GetColumnsForValues(obj)}) "
-                            + $"ON CONFLICT (id) DO UPDATE "
-                            + $"SET {GetColumnsForUpdate(obj)} ");
+                            + $"VALUES({GetColumnsForValues(obj)}) ");
+                            //+ $"ON CONFLICT (id) DO UPDATE "
+                            //+ $"SET {GetColumnsForUpdate(obj)} ");
 
 
         Console.WriteLine("");
@@ -178,11 +179,11 @@ internal class Program {
 
 private static void Main(string[] args){
 
-        var pessoaTeste = new PessoasModel();
+        PessoasModel pessoaTeste = new PessoasModel();
         pessoaTeste.tablename = "pessoas";
-        pessoaTeste.id = 123456;
-        pessoaTeste.nome = "testevalor1";
-        pessoaTeste.idong = 2;
+        pessoaTeste.id = 123;
+        pessoaTeste.nome = "testeNome";
+        pessoaTeste.idong = 10;
         pessoaTeste.ativo = true;
 
         Program program = new Program();
