@@ -42,11 +42,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BtnEditarUsuario = new System.Windows.Forms.Button();
             this.BtnInativarUsuario = new System.Windows.Forms.Button();
-            this.BtnPesquisar = new System.Windows.Forms.Button();
+            this.BtnPesquisarUsuario = new System.Windows.Forms.Button();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tbSenha = new System.Windows.Forms.TextBox();
+            this.chbAtivo = new System.Windows.Forms.CheckBox();
+            this.idOng = new System.Windows.Forms.TextBox();
+            this.idUsuario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPessoas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +105,7 @@
             this.BtnGravarUsuario.Size = new System.Drawing.Size(33, 33);
             this.BtnGravarUsuario.TabIndex = 20;
             this.BtnGravarUsuario.UseVisualStyleBackColor = false;
+            this.BtnGravarUsuario.Click += new System.EventHandler(this.BtnGravarUsuario_Click);
             // 
             // tbContatoUsuario
             // 
@@ -167,6 +171,7 @@
             this.BtnEditarUsuario.Size = new System.Drawing.Size(33, 33);
             this.BtnEditarUsuario.TabIndex = 20;
             this.BtnEditarUsuario.UseVisualStyleBackColor = false;
+            this.BtnEditarUsuario.Click += new System.EventHandler(this.BtnEditarUsuario_Click);
             // 
             // BtnInativarUsuario
             // 
@@ -178,17 +183,18 @@
             this.BtnInativarUsuario.Size = new System.Drawing.Size(33, 33);
             this.BtnInativarUsuario.TabIndex = 20;
             this.BtnInativarUsuario.UseVisualStyleBackColor = false;
+            this.BtnInativarUsuario.Click += new System.EventHandler(this.BtnInativarUsuario_Click);
             // 
-            // BtnPesquisar
+            // BtnPesquisarUsuario
             // 
-            this.BtnPesquisar.BackColor = System.Drawing.Color.Transparent;
-            this.BtnPesquisar.Image = global::CadastroUsuarios.Properties.Resources.icons8_search_client_20px;
-            this.BtnPesquisar.Location = new System.Drawing.Point(321, 46);
-            this.BtnPesquisar.Name = "BtnPesquisar";
-            this.BtnPesquisar.Size = new System.Drawing.Size(27, 25);
-            this.BtnPesquisar.TabIndex = 23;
-            this.BtnPesquisar.UseVisualStyleBackColor = false;
-            this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
+            this.BtnPesquisarUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.BtnPesquisarUsuario.Image = global::CadastroUsuarios.Properties.Resources.icons8_search_client_20px;
+            this.BtnPesquisarUsuario.Location = new System.Drawing.Point(321, 46);
+            this.BtnPesquisarUsuario.Name = "BtnPesquisarUsuario";
+            this.BtnPesquisarUsuario.Size = new System.Drawing.Size(27, 25);
+            this.BtnPesquisarUsuario.TabIndex = 23;
+            this.BtnPesquisarUsuario.UseVisualStyleBackColor = false;
+            this.BtnPesquisarUsuario.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
             // tbUsername
             // 
@@ -226,6 +232,30 @@
             this.tbSenha.Size = new System.Drawing.Size(128, 23);
             this.tbSenha.TabIndex = 25;
             // 
+            // chbAtivo
+            // 
+            this.chbAtivo.AutoSize = true;
+            this.chbAtivo.Location = new System.Drawing.Point(27, 216);
+            this.chbAtivo.Name = "chbAtivo";
+            this.chbAtivo.Size = new System.Drawing.Size(54, 19);
+            this.chbAtivo.TabIndex = 26;
+            this.chbAtivo.Text = "Ativo";
+            this.chbAtivo.UseVisualStyleBackColor = true;
+            // 
+            // idOng
+            // 
+            this.idOng.Location = new System.Drawing.Point(273, 16);
+            this.idOng.Name = "idOng";
+            this.idOng.Size = new System.Drawing.Size(42, 23);
+            this.idOng.TabIndex = 27;
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.Location = new System.Drawing.Point(225, 16);
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.Size = new System.Drawing.Size(42, 23);
+            this.idUsuario.TabIndex = 27;
+            // 
             // FormCadastroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -233,11 +263,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.idUsuario);
+            this.Controls.Add(this.idOng);
+            this.Controls.Add(this.chbAtivo);
             this.Controls.Add(this.tbSenha);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.BtnPesquisar);
+            this.Controls.Add(this.BtnPesquisarUsuario);
             this.Controls.Add(this.DgvPessoas);
             this.Controls.Add(this.BtnInativarUsuario);
             this.Controls.Add(this.BtnEditarUsuario);
@@ -271,10 +304,13 @@
         private Label label1;
         private Button BtnEditarUsuario;
         private Button BtnInativarUsuario;
-        private Button BtnPesquisar;
+        private Button BtnPesquisarUsuario;
         private TextBox tbUsername;
         private Label label2;
         private Label label5;
         private TextBox tbSenha;
+        private CheckBox chbAtivo;
+        private TextBox idOng;
+        private TextBox idUsuario;
     }
 }

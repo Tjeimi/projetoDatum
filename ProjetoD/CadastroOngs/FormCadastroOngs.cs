@@ -32,7 +32,8 @@ namespace CadastroOngs
 
         private void BtnApagarParceira_Click(object sender, EventArgs e)
         {
-
+            var ong = new ServerModel.Program.DadosONGModel();
+            ong.id = int.Parse(idOng.Text);
         }
 
         private void BtnGravarParceira_Click(object sender, EventArgs e)

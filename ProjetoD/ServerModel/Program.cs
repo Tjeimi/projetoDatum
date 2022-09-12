@@ -9,6 +9,10 @@ namespace ServerModel
             public string? nome { get; set; }
             public long? idong { get; set; }
             public bool? ativo { get; set; }
+            public string? fone { get; set; }
+            public string? endereco { get; set; }
+            public string? cidade { get; set; }
+            public string? estado { get; set; }
         }
 
         public class CategoriasObjetosModel
@@ -18,24 +22,6 @@ namespace ServerModel
             public bool? ativo { get; set; }
         }
 
-        public class ContatosModel
-        {
-            public long? id { get; set; }
-            public long? idpessoa { get; set; }
-            public string? tipocontato { get; set; }
-            public string? contato { get; set; }
-        }
-
-        public class EnderecosModel
-        {
-            public long? id { get; set; }
-            public long? idpessoa { get; set; }
-            public string? tipoendereco { get; set; }
-            public string? endereco { get; set; }
-            public string? bairro { get; set; }
-            public string? cidade { get; set; }
-            public string? estado { get; set; }
-        }
         public class LogModel
         {
             public long? id { get; set; }
