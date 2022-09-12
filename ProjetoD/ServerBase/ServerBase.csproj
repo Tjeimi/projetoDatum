@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DatumMQTT\DatumMQTT.csproj" />
+    <ProjectReference Include="..\ServerModel\ServerModel.csproj" />
   </ItemGroup>
 
 </Project>

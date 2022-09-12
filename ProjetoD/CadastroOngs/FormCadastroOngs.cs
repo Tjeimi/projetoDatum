@@ -9,7 +9,7 @@ namespace CadastroOngs
 
         private void BtnGravarOng_Click(object sender, EventArgs e)
         {
-            var ong = new ServerModel.Program.DadosONGModel();
+            var ong = new Models.DadosONGModel();
             ong.nome = tbNomeOng.Text;
             ong.endereco = tbEnderecoOng.Text;
             ong.fone = tbContatoOng.Text;
@@ -20,7 +20,7 @@ namespace CadastroOngs
 
         private void BtnEditarOng_Click(object sender, EventArgs e)
         {
-            var ong = new ServerModel.Program.DadosONGModel();
+            var ong = new Models.DadosONGModel();
             ong.id = int.Parse(idOng.Text);
             ong.nome = tbNomeOng.Text;
             ong.endereco = tbEnderecoOng.Text;
@@ -32,13 +32,13 @@ namespace CadastroOngs
 
         private void BtnApagarParceira_Click(object sender, EventArgs e)
         {
-            var ong = new ServerModel.Program.DadosONGModel();
+            var ong = new Models.DadosONGModel();
             ong.id = int.Parse(idOng.Text);
         }
 
         private void BtnGravarParceira_Click(object sender, EventArgs e)
         {
-            var ong = new ServerModel.Program.ParceriasONGModel();
+            var ong = new Models.ParceriasONGModel();
             ong.id = int.Parse(idOng.Text);
             ong.idcidadeparceria = int.Parse(cbCidadesParceiras.Text);
         }

@@ -9,7 +9,7 @@ namespace CadastroPessoas
 
         private void BtnGravarPessoa_Click(object sender, EventArgs e)
         {
-            var pessoa = new ServerModel.Program.PessoasModel();
+            var pessoa = new Models.PessoasModel();
             pessoa.nome = tbNomePessoa.Text;
             pessoa.idong = int.Parse(idOng.Text);
             //pessoa.ativo = chbAtivo.Checked ? 1 : 0;
@@ -21,7 +21,7 @@ namespace CadastroPessoas
 
         private void BtnEditarPessoa_Click(object sender, EventArgs e)
         {
-            var pessoa = new ServerModel.Program.PessoasModel();
+            var pessoa = new Models.PessoasModel();
             pessoa.id = int.Parse(tbIdPessoa.Text);
             pessoa.nome = tbNomePessoa.Text;
             pessoa.idong = int.Parse(idOng.Text);

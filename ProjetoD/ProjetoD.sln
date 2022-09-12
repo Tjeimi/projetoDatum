@@ -41,7 +41,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GLOBAL", "GLOBAL", "{3FCAB8
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatumMQTT", "DatumMQTT\DatumMQTT.csproj", "{7555B3E5-CB68-460B-B81E-74B6D663669C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatumPostgreSQL", "DatumPostgreSQL\DatumPostgreSQL.csproj", "{5A92CB4F-0C66-4BB6-96DB-B0402ABE7330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatumPostgreSQL", "DatumPostgreSQL\DatumPostgreSQL.csproj", "{5A92CB4F-0C66-4BB6-96DB-B0402ABE7330}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

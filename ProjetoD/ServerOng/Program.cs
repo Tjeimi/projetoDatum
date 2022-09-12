@@ -2,8 +2,10 @@
 
 public class ServerOng {
     static void Main(string[] args) {
-        //var jsonPai = JsonSerializer.Deserialize<JsonPai>(json);
-        //Console.WriteLine(json + "abc");
+        Console.WriteLine(args[0]);
+        Console.WriteLine(args[1]);
 
+
+        Console.ReadLine();
     }
 }

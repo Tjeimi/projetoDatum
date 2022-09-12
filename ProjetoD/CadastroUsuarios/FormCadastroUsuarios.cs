@@ -14,7 +14,7 @@ namespace CadastroUsuarios
 
         private void BtnGravarUsuario_Click(object sender, EventArgs e)
         {
-            var usuario = new ServerModel.Program.UsuariosModel();
+            var usuario = new Models.UsuariosModel();
             usuario.idong = int.Parse(idOng.Text);
             usuario.nome = tbNomeUsuario.Text;
             usuario.username = tbUsername.Text;
@@ -25,7 +25,7 @@ namespace CadastroUsuarios
 
         private void BtnEditarUsuario_Click(object sender, EventArgs e)
         {
-            var usuario = new ServerModel.Program.UsuariosModel();
+            var usuario = new Models.UsuariosModel();
             usuario.id = int.Parse(idUsuario.Text);
             usuario.idong = int.Parse(idOng.Text);
             usuario.nome = tbNomeUsuario.Text;
