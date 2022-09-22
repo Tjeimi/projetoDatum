@@ -12,17 +12,49 @@ public class Utils {
 
     static void Main(string[] args) {
         var p = new Models.PessoasModel();
+        p.id = 1;
         CreateInsertQuery(p);
+        CreateUpdateQuery(p);
+        CreateDeleteQuery(p);
     }
 
     public static string CreateInsertQuery(object obj) {
-        string s = ($"INSERT INTO {GetTableName(obj)}" 
-                            + $"({GetColumns(obj, false, false, false)}) " 
-                      + $"VALUES({GetColumns(obj, true, false, false)})"
-                      + $"PARA O UPDATE :) {GetColumns(obj, false, false, true)}");
+        string s = ($"INSERT INTO {GetTableName(obj)}"
+                            + $"({GetColumns(obj, false, false, false)}) "
+                      + $"VALUES({GetColumns(obj, true, false, false)})");
+                     // + $"PARA O UPDATE :) {GetColumns(obj, false, false, true)}");
 
         Console.WriteLine(s);
         return s;
+    }
+
+    public static string CreateUpdateQuery(object obj)
+    {
+        string s = (@$"UPDATE {GetTableName(obj)} SET {GetColumns(obj, false, false, true)} WHERE ID = {GetId(obj)}");
+
+        Console.WriteLine(s);
+        return s;
+    }
+
+    public static string CreateDeleteQuery(object obj)
+    {
+        string s = (@$"DELETE FROM {GetTableName(obj)} WHERE ID = {GetId(obj)}");
+
+        Console.WriteLine(s);
+        return s;
+    }
+
+    static string GetId(object obj)
+    {
+        //busca todas as propriedades do objeto passado e busca o que tiver o nome "id"
+        var idProperty = obj.GetType().GetProperties().FirstOrDefault(x => x.Name == "id");
+
+        //verifica se existe mesmo o id no objeto, se não existe volta string em branco
+        if (idProperty == null || idProperty.GetValue(obj, null) == null)
+            return "";
+
+        // retorna o id (o valor de id)
+        return idProperty.GetValue(obj, null)!.ToString()!;
     }
 
     static string GetTableName(object obj) {
@@ -60,6 +92,7 @@ public class Utils {
         //se for para o update
         if (forUpdate) {
             foreach (var prop in properties) {
+                listProperties.RemoveAt(0);
                 listProperties.Add($"{prop.Name} = @{prop.Name}");
             }
         }
