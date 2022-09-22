@@ -56,6 +56,7 @@
             this.idOng = new System.Windows.Forms.TextBox();
             this.chbAtivo = new System.Windows.Forms.CheckBox();
             this.tbIdPessoa = new System.Windows.Forms.TextBox();
+            this.tbDebug = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPessoas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,7 +159,7 @@
             this.BtnAddItens.TabIndex = 9;
             this.BtnAddItens.Text = "Adicionar Itens";
             this.BtnAddItens.UseVisualStyleBackColor = false;
-            this.BtnAddItens.Click += new System.EventHandler(this.BtnAddItens_Click);
+            this.BtnAddItens.Click += new System.EventHandler(this.BtnAddItens_ClickAsync);
             // 
             // DgvPessoas
             // 
@@ -830,6 +831,14 @@
             this.tbIdPessoa.Size = new System.Drawing.Size(42, 23);
             this.tbIdPessoa.TabIndex = 30;
             // 
+            // tbDebug
+            // 
+            this.tbDebug.Location = new System.Drawing.Point(425, 294);
+            this.tbDebug.Multiline = true;
+            this.tbDebug.Name = "tbDebug";
+            this.tbDebug.Size = new System.Drawing.Size(339, 112);
+            this.tbDebug.TabIndex = 31;
+            // 
             // FormCadastroPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -837,6 +846,7 @@
             this.BackgroundImage = global::CadastroPessoas.Properties.Resources._5254e7f0_1af9_4b25_8b98_904cfd551103__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbDebug);
             this.Controls.Add(this.tbIdPessoa);
             this.Controls.Add(this.chbAtivo);
             this.Controls.Add(this.idOng);
@@ -898,5 +908,6 @@
         private TextBox idOng;
         private CheckBox chbAtivo;
         private TextBox tbIdPessoa;
+        private TextBox tbDebug;
     }
 }

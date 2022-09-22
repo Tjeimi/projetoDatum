@@ -94,8 +94,10 @@ namespace Models {
     }
 
     public class BasePacket {
-        public string? processName { get; set; }
-        public object? model { get; set; }
+        public string? serverName { get; set; }
+        public string? action { get; set; }
+        public string? responseTopic { get; set; }
+        public object? dados { get; set; }
     }
 
     public class ParametersModel {

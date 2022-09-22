@@ -8,8 +8,9 @@ namespace DatumPostgreSQL {
 
         //Inserir registros
         public static void InserirRegistro(object obj) {
-            var parms = serverUtils.Utils.ReadParms();
-            string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
+            //var parms = serverUtils.Utils.ReadParms();
+            //string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
+            string connString = "";
             try {
                 using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
                     //Abre a conexão com o PgSQL                  

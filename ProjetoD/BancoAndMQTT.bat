@@ -16,7 +16,19 @@ taskkill /IM "mosquitto.exe" /F
 ECHO "TENTANDO INICIAR O MQTT BROKER"
 start cmd /c "mosquitto.exe -v -p 1883"
 
+REM TROCA O DIRETORIO ATUAL PARA O ServerBase PARA EVITAR PROBLEMAS...
+cd ..\ServerBase
+
+ECHO "TENTANDO PARAR O SERVIDOR BASE CASO ESTEJA RODANDO"
+taskkill /IM "ServerBase.exe" /F
+ECHO "TENTANDO INICIAR O SERVIDOR BASE"
+start cmd /c "ServerBase.exe"
+
+REM VOLTA PARA A PASTA PRINCIPAL DO PROJ
+cd ..\..\
+
 ECHO "PRESSIONE QUALQUER TECLA PARA ENCERRAR O BANCO DE DADOS E O MQTT"
 @pause
 start cmd /c "%~dp0\ServerBin\PostgreSQL\14\StopDB.bat"
 taskkill /IM "mosquitto.exe" /F
+taskkill /IM "ServerBase.exe" /F

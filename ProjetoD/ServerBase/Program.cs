@@ -13,23 +13,7 @@ using static datumMQTT.Utils;
 internal class Program {
     static async Task Main(string[] args) {
         CheckIfConfigExists();
-        await EscutaIssoAsync("datum/save", StartProcessSave);
-        await EscutaIssoAsync("datum/delete", StartProcessDelete);
-        await EscutaIssoAsync("datum/query", StartProcessQuery);
-
-        //teste
-        PessoasModel pessoa = new();
-        pessoa.id = 1;
-        pessoa.nome = "raynezitos2001";
-
-        BasePacket bp = new();
-        bp.model = pessoa;
-        bp.processName = "ServerPessoa";
-
-        string payload = JsonSerializer.Serialize(bp);
-        Console.WriteLine(payload);
-        await PublicaIssoAsync("datum/save",payload);
-        //teste
+        await EscutarAsync("datum/server", StartProcess);
 
         Console.ReadLine();
     }
@@ -54,22 +38,15 @@ internal class Program {
         }
     }
 
-    static void StartProcessSave(string payload) {
+    static void StartProcess(string pacote) {
         try {
-            var pl = JsonSerializer.Deserialize<Models.BasePacket>(payload);
-            var startInfo = new ProcessStartInfo($"{pl!.processName}.exe");
-            startInfo.Arguments = $"Save \"{Convert.ToBase64String(Encoding.UTF8.GetBytes(JsonSerializer.Serialize(pl.model)))}\"";
+            var pkt = JsonSerializer.Deserialize<BasePacket>(pacote);
+            var startInfo = new ProcessStartInfo($"{pkt!.serverName}.exe");
+            startInfo.Arguments = $"{pkt.action} {pkt.responseTopic} \"{Convert.ToBase64String(Encoding.UTF8.GetBytes(JsonSerializer.Serialize(pkt.dados)))}\"";
             Process.Start(startInfo);
         } catch(Exception ex) {
             Console.WriteLine(ex.Message);
         }
     }
-    static void StartProcessDelete(string payload) {
-        Console.Write("Delete");
-    }
-    static void StartProcessQuery(string payload) {
-        Console.Write("Query");
-    }
-
 
 }

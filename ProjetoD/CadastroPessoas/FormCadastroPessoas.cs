@@ -1,3 +1,9 @@
+using Models;
+using System.Text.Json;
+using System.Windows.Forms;
+using static datumMQTT.Utils;
+
+
 namespace CadastroPessoas
 {
     public partial class FormCadastroPessoas : Form
@@ -42,11 +48,43 @@ namespace CadastroPessoas
             // pesquisa por nome e por telefone
         }
 
-        private void BtnAddItens_Click(object sender, EventArgs e)
+        private async void BtnAddItens_ClickAsync(object sender, EventArgs e)
         {
             // esse button executa a tela de cadastro de objetos
             // se chbDoador.Checked salva objeto na tabela de itens a serem doados 
             // se chbNecessitado.Checked salva o objeto na tabela de necessidades
+
+            //teste
+            PessoasModel pessoa = new();
+            pessoa.id = 1;
+            pessoa.nome = tbNomePessoa.Text;
+
+            BasePacket pacote = new();
+            pacote.dados = pessoa;
+            pacote.serverName = "ServerPessoa";
+            pacote.action = "Save";
+
+            string topicoResposta = await PublicarAsync("datum/server", pacote);
+            await EscutarAsync(topicoResposta, MostraNaTela);
+
+            //teste
+        }
+
+        private void MostraNaTela(string pacote) {
+            var pkt = JsonSerializer.Deserialize<PessoasModel>(pacote);
+            //Fica em outra thread esperando mensagens, então quando chega, tem que "invocar" a thread com a UI 
+            //para que não de erro na hora de imprimir para a tela
+            MethodInvoker methodInvokerDelegate = delegate () {
+                //aqui dentro lida diretamente com a UI de forma segura
+                tbDebug.Text = pkt!.endereco;
+                tbDebug.Text += "aaaaaaaaa";
+            };
+
+            //boilerplate para invocar a thread da UI e não dar problemas
+            if (this.InvokeRequired)
+                this.Invoke(methodInvokerDelegate);
+            else
+                methodInvokerDelegate();
         }
 
         private void BtnAddContato_Click(object sender, EventArgs e)

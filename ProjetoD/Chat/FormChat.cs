@@ -10,7 +10,7 @@ namespace Chat {
 
         #region LOAD
         private async void FormChat_LoadAsync(object sender, EventArgs e) {
-            await datumMQTT.Utils.EscutaIssoAsync("datum/chatTopic", PrintToChat);
+            await datumMQTT.Utils.EscutarAsync("datum/chatTopic", PrintToChat);
         }
 
         #endregion
@@ -42,7 +42,7 @@ namespace Chat {
             msg.usuario = "Raynê";
             msg.mensagem = tbMensagemEnvio.Text;
             var publicacao = JsonSerializer.Serialize(msg);
-            await datumMQTT.Utils.PublicaIssoAsync("datum/chatTopic", publicacao);
+            await datumMQTT.Utils.PublicarRespostaAsync("datum/chatTopic", publicacao);
             tbMensagemEnvio.Text = "";
             tbMensagemEnvio.Focus();
         }
