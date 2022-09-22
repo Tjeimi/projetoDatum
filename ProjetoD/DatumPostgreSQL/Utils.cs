@@ -31,12 +31,7 @@ namespace DatumPostgreSQL {
         }
 
         public static string CreateInsertQuery(object obj) {
-            string s = ("INSERT INTO "
-                                      + GetTableName(obj)
-                                      + $"({GetColumns(obj)}) "
-                                + $"VALUES({GetColumnsForValues(obj)}) "
-                                + $"ON CONFLICT (id) DO UPDATE "
-                                + $"SET {GetColumnsForUpdate(obj)} ");
+            string s = (@$"INSERT INTO {GetTableName(obj)}({string.Join(",", GetColumns(obj, false, false))}) VALUES({string.Join(",", GetColumns(obj, true, false))})");
 
             Console.WriteLine(s);
             return s;
@@ -54,55 +49,29 @@ namespace DatumPostgreSQL {
             return tableNameProperty.GetValue(obj, null)!.ToString()!;
         }
 
-        static string GetColumns(object obj) {
+        static string[] GetColumns(object obj, bool forValue, bool withId) {
             //cria uma variavel contendo todas as propriedades do objeto passado por parâmetro
             var properties = obj.GetType().GetProperties();
-            string columns = "";
-            //adiciona todos os nomes das propriedades do objeto para dentro da string columns
-            foreach (var prop in properties) {
-                columns += $", {prop.Name}";
-            }
-            //remove a propriedade tablename
-            columns = columns.Replace(", tablename, ", "");
-            //retorna as propriedades do objeto formatado para a query
-            return columns;
-        }
+            List<string> listProperties = new();
 
-        static string GetColumnsForValues(object obj) {
-            //basicamente a mesma função de cima, mas com uma formatação diferente
-            //(para poder adicionar o valor por parâmetros e evitar sqli)
-            var tableNameProperties = obj.GetType().GetProperties();
-            string columns = "";
-            foreach (var prop in tableNameProperties) {
-                //verifica se o nome da prop é id e se ela é NULL, coloca o valor como DEFAULT porque o postgres é burro
-                if (prop.Name == "id" && prop.GetValue(obj, null) == null) {
-                    columns += $", DEFAULT";
-                    continue;
+            //adiciona o nome das properties em uma lista
+            //caso seja para a parte com os values, adiciona o @ no começo do nome de cada campo
+            if (!forValue) {
+                foreach (var prop in properties) {
+                    listProperties.Add(prop.Name);
                 }
-                columns += $", @{prop.Name}";
-            }
-            columns = columns.Replace(", @tablename, ", "");
-
-            return columns;
-        }
-
-        static string GetColumnsForUpdate(object obj) {
-            //busca todas as propriedades do objeto
-            var tableNameProperties = obj.GetType().GetProperties();
-            string columns = "";
-            //itera por todas as propriedades que não são o tablename e nem o id
-            foreach (var prop in tableNameProperties) {
-                if (prop.Name != "tablename") {
-                    if (prop.Name != "id") {
-                        columns += $"{prop.Name} = EXCLUDED.{prop.Name}, ";
-                    }
+            } else {
+                foreach (var prop in properties) {
+                    listProperties.Add($"@{prop.Name}");
                 }
             }
-            //adiciona o ; para caso ocorra de ficar , ; ele poder substituir por só ;
-            columns += ";";
-            columns = columns.Replace(", ;", ";");
-            return columns;
+
+
+            listProperties.RemoveAt(0);
+            //retorna a lista de propriedades em formato de array para poder formatar
+            return listProperties.ToArray();
         }
+
 
         static Dictionary<string, object?> GetColumnsAndValues(object obj) {
             //cria um dicionario contendo como chave uma string (onde fica o nome da coluna/nome da propriedade do objeto)
