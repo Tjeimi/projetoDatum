@@ -2,12 +2,13 @@
 using System.Text.Json;
 using Models;
 using static datumMQTT.Utils;
+using static DatumPostgreSQL.Utils;
 
 public class ServerPessoa {
     static void Main(string[] args) {
         switch (args[0]) {
-            case "Save":
-                Save(args[1], Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
+            case "Insert":
+                Insert(args[1], Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
                 break;
             case "Delete":
                 Delete(Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
@@ -15,15 +16,19 @@ public class ServerPessoa {
         }
     }
 
-    static async void Save(string topicoResposta, string dados) {
+    static async void Insert(string topicoResposta, string dados) {
         try {
-            Console.WriteLine(dados);
             var d = JsonSerializer.Deserialize<PessoasModel>(dados);
-            //Console.WriteLine(DatumPostgreSQL.Utils.CreateInsertQuery(d!));
-            //Console.WriteLine(d!.nome);
-            //DatumPostgreSQL.Utils.InserirRegistro(d!);
-            Console.WriteLine(topicoResposta);
-            d!.endereco = "aadeucerto";
+            try {
+                Console.WriteLine(CreateInsertQuery(d!));
+                InserirRegistro(d!);
+            } catch (Exception ex) {
+                Console.WriteLine(ex);
+                //limpa para não retornar nenhum dado
+                d = new();
+            }
+            //retorna os dados
+            Console.WriteLine("enviando a resposta");
             await PublicarRespostaAsync(topicoResposta, d);
         } catch (Exception ex) {
             Console.WriteLine(ex.Message);
