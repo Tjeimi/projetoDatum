@@ -44,12 +44,13 @@
             this.idPessoa = new System.Windows.Forms.TextBox();
             this.idObjeto = new System.Windows.Forms.TextBox();
             this.idUsuario = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tbImagens = new System.Windows.Forms.PictureBox();
             this.dgvObjHistorico = new System.Windows.Forms.DataGridView();
             this.objeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tbResultado = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.tbImagens)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjHistorico)).BeginInit();
             this.SuspendLayout();
             // 
@@ -221,13 +222,13 @@
             this.idUsuario.Size = new System.Drawing.Size(42, 23);
             this.idUsuario.TabIndex = 33;
             // 
-            // pictureBox1
+            // tbImagens
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(355, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(173, 120);
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
+            this.tbImagens.Location = new System.Drawing.Point(355, 44);
+            this.tbImagens.Name = "tbImagens";
+            this.tbImagens.Size = new System.Drawing.Size(173, 120);
+            this.tbImagens.TabIndex = 34;
+            this.tbImagens.TabStop = false;
             // 
             // dgvObjHistorico
             // 
@@ -270,6 +271,15 @@
             this.label5.TabIndex = 36;
             this.label5.Text = "Carregar imagem";
             // 
+            // tbResultado
+            // 
+            this.tbResultado.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tbResultado.ForeColor = System.Drawing.Color.White;
+            this.tbResultado.Location = new System.Drawing.Point(0, 427);
+            this.tbResultado.Name = "tbResultado";
+            this.tbResultado.Size = new System.Drawing.Size(785, 23);
+            this.tbResultado.TabIndex = 37;
+            // 
             // FormCadastrarObjetos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -277,9 +287,10 @@
             this.BackgroundImage = global::CadastroObjetos.Properties.Resources._5254e7f0_1af9_4b25_8b98_904cfd551103__1_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(785, 450);
+            this.Controls.Add(this.tbResultado);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvObjHistorico);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.tbImagens);
             this.Controls.Add(this.idUsuario);
             this.Controls.Add(this.idObjeto);
             this.Controls.Add(this.chbNecessidade);
@@ -298,7 +309,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadastrarObjetos";
             this.Text = "Cadastro de Objetos";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbImagens)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjHistorico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -322,10 +333,11 @@
         private TextBox idPessoa;
         private TextBox idObjeto;
         private TextBox idUsuario;
-        private PictureBox pictureBox1;
+        private PictureBox tbImagens;
         private DataGridView dgvObjHistorico;
         private DataGridViewTextBoxColumn objeto;
         private DataGridViewTextBoxColumn tipo;
         private Label label5;
+        private TextBox tbResultado;
     }
 }

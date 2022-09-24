@@ -53,6 +53,7 @@
             this.idOng = new System.Windows.Forms.TextBox();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.tbResultado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvParceiras)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1297,6 +1298,15 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "E-mail";
             // 
+            // tbResultado
+            // 
+            this.tbResultado.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tbResultado.ForeColor = System.Drawing.Color.White;
+            this.tbResultado.Location = new System.Drawing.Point(0, 427);
+            this.tbResultado.Name = "tbResultado";
+            this.tbResultado.Size = new System.Drawing.Size(800, 23);
+            this.tbResultado.TabIndex = 32;
+            // 
             // FormCadastroOngs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1304,6 +1314,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbResultado);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.idOng);
@@ -1362,5 +1373,6 @@
         private TextBox idOng;
         private TextBox tbEmail;
         private Label label8;
+        private TextBox tbResultado;
     }
 }

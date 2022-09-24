@@ -4,7 +4,7 @@ using Models;
 using static datumMQTT.Utils;
 using static DatumPostgreSQL.Utils;
 
-public class ServerPessoa {
+public class ServerUsuarios {
     static void Main(string[] args) {
         switch (args[0]) {
             case "Save":
@@ -18,7 +18,7 @@ public class ServerPessoa {
 
     static async void Save(string topicoResposta, string dados) {
         try {
-            var d = JsonSerializer.Deserialize<PessoasModel>(dados);
+            var d = JsonSerializer.Deserialize<UsuariosModel>(dados);
             if (d.id == null) {
                 InserirRegistro(d!);
             } else {

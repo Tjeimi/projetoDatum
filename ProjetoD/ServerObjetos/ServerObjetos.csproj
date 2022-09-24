@@ -8,4 +8,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DatumMQTT\DatumMQTT.csproj" />
+    <ProjectReference Include="..\DatumPostgreSQL\DatumPostgreSQL.csproj" />
+    <ProjectReference Include="..\ServerBase\ServerBase.csproj" />
+    <ProjectReference Include="..\ServerModel\ServerModel.csproj" />
+  </ItemGroup>
+
 </Project>

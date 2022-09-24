@@ -50,6 +50,7 @@
             this.chbAtivo = new System.Windows.Forms.CheckBox();
             this.idOng = new System.Windows.Forms.TextBox();
             this.idUsuario = new System.Windows.Forms.TextBox();
+            this.tbResultado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPessoas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -256,6 +257,15 @@
             this.idUsuario.Size = new System.Drawing.Size(42, 23);
             this.idUsuario.TabIndex = 27;
             // 
+            // tbResultado
+            // 
+            this.tbResultado.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tbResultado.ForeColor = System.Drawing.Color.White;
+            this.tbResultado.Location = new System.Drawing.Point(0, 427);
+            this.tbResultado.Name = "tbResultado";
+            this.tbResultado.Size = new System.Drawing.Size(800, 23);
+            this.tbResultado.TabIndex = 32;
+            // 
             // FormCadastroUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -263,6 +273,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbResultado);
             this.Controls.Add(this.idUsuario);
             this.Controls.Add(this.idOng);
             this.Controls.Add(this.chbAtivo);
@@ -312,5 +323,6 @@
         private CheckBox chbAtivo;
         private TextBox idOng;
         private TextBox idUsuario;
+        private TextBox tbResultado;
     }
 }

@@ -1,17 +1,60 @@
+using System.Text;
+using System.Text.Json;
+using Models;
+using static datumMQTT.Utils;
+using static DatumPostgreSQL.Utils;
+
 namespace ServerUsuarios
 {
-    internal static class Program
+    public class ServerPessoa
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            switch (args[0])
+            {
+                case "Save":
+                    Save(args[1], Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
+                    break;
+                case "Delete":
+                    Delete(Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
+                    break;
+            }
+        }
+
+        static async void Save(string topicoResposta, string dados)
+        {
+            try
+            {
+                var d = JsonSerializer.Deserialize<PessoasModel>(dados);
+                if (d.id == null)
+                {
+                    InserirRegistro(d!);
+                }
+                else
+                {
+                    UpdateRegistro(d!);
+                }
+                //retorna os dados
+                Console.WriteLine("enviando a resposta");
+                var bpr = new BasePacketResposta();
+                bpr.codigo = 200;
+                bpr.mensagem = "sucesso";
+                bpr.dados = d;
+                await PublicarRespostaAsync(topicoResposta, bpr);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("enviando a resposta");
+                var bpr = new BasePacketResposta();
+                bpr.codigo = 500;
+                bpr.mensagem = "Erro: " + ex.Message;
+                await PublicarRespostaAsync(topicoResposta, bpr);
+            }
+        }
+
+        static void Delete(string dados)
+        {
+
         }
     }
-}
