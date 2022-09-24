@@ -26,7 +26,7 @@ namespace CadastroPessoas {
             BasePacket pacote = new();
             pacote.dados = pessoa;
             pacote.serverName = "ServerPessoa";
-            pacote.action = "Insert";
+            pacote.action = "Save";
 
             string topicoResposta = await PublicarAsync("datum/server", pacote);
             await EscutarRespostaAsync(topicoResposta, RetornarDados);

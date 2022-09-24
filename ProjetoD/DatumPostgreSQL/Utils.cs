@@ -11,11 +11,28 @@ namespace DatumPostgreSQL {
         public static void InserirRegistro(object obj) {
             var parms = ReadParms();
             string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
-            try {
                 using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
                     //Abre a conexão com o PgSQL                  
                     pgsqlConnection.Open();
                     using (NpgsqlCommand pgsqlcommand = new NpgsqlCommand(CreateInsertQuery(obj), pgsqlConnection)) {
+                        var ColumnsAndValues = GetColumnsAndValues(obj);
+                        foreach (var ColumnAndValue in ColumnsAndValues) {
+                            pgsqlcommand.Parameters.AddWithValue(ColumnAndValue.Key, ColumnAndValue.Value ?? DBNull.Value);
+                        }
+                        pgsqlcommand.Prepare();
+                        pgsqlcommand.ExecuteNonQuery();
+                    }
+                }
+        }
+        //Inserir registros
+        public static void UpdateRegistro(object obj) {
+            var parms = ReadParms();
+            string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
+            try {
+                using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
+                    //Abre a conexão com o PgSQL                  
+                    pgsqlConnection.Open();
+                    using (NpgsqlCommand pgsqlcommand = new NpgsqlCommand(CreateUpdateQuery(obj), pgsqlConnection)) {
                         var ColumnsAndValues = GetColumnsAndValues(obj);
                         foreach (var ColumnAndValue in ColumnsAndValues) {
                             pgsqlcommand.Parameters.AddWithValue(ColumnAndValue.Key, ColumnAndValue.Value ?? DBNull.Value);
@@ -44,6 +61,8 @@ namespace DatumPostgreSQL {
             ColumnsAndValues.Remove("tablename");
             //remove o id do dicionario
             ColumnsAndValues.Remove("id");
+            foreach (var col in ColumnsAndValues)
+                Console.WriteLine(col.Key + col.Value);
             //retorna o dicionario contendo o nome das propriedades e as colunas
             return ColumnsAndValues;
         }

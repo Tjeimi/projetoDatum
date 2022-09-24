@@ -100,6 +100,12 @@ namespace Models {
         public object? dados { get; set; }
     }
 
+    public class BasePacketResposta {
+        public long? resposta { get; set; }
+        public string? mensagem { get; set; }
+        public object? dados { get; set; }
+    }
+
     public class ParametersModel {
         public string? pgServerName { get; set; }
         public string? pgPort { get; set; }
