@@ -2,48 +2,43 @@
 using System.Data;
 using System.Reflection;
 using System.Text.Json;
+using static serverUtils.Utils;
 
 internal class Program {
+    static void Main(string[] args) {
+        var dt = Select("SELECT * FROM pessoas LIMIT 100");
+        foreach(DataRow row in dt.Rows) {
+            Console.WriteLine(row["nome"]);
+        }
+    }
 
     //Pega um registro pelo id
-    public DataTable GetRegistroPorId(int id)
-    {
+    public static DataTable Select(string query) {
         DataTable dt = new DataTable();
 
-        try
-        {
-            var parms = ReadParms();
-            string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
-            using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString))
-            {
+        var parms = ReadParms();
+        string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
+        using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
+            try {
                 //Abre a conexão com o PgSQL                  
                 pgsqlConnection.Open();
-                string s = $"SELECT * FROM {GetTableName(dt)} WHERE id = " + id;
-                Console.WriteLine(s);
+                //string s = $"SELECT * FROM {GetTableName(dt)} WHERE id = " + id + " LIMIT 100";
+                Console.WriteLine(query);
 
-                using (NpgsqlDataAdapter Adpt = new NpgsqlDataAdapter(s, pgsqlConnection))
-                {
+                using (NpgsqlDataAdapter Adpt = new NpgsqlDataAdapter(query, pgsqlConnection)) {
                     Adpt.Fill(dt);
                 }
+
+            } catch (NpgsqlException ex) {
+                throw ex;
+            } finally {
+                pgsqlConnection.Close();
             }
-        }
-        catch (NpgsqlException ex)
-        {
-            throw ex;
-        }
-        catch (Exception ex)
-        {
-            throw ex;
-        }
-        finally
-        {
-            pgsqlConnection.Close();
         }
         return dt;
     }
 
-    static string GetTableName(object obj)
-    {
+    static string GetTableName(object obj) {
         //busca todas as propriedades do objeto passado e busca o que tiver o nome "tablename"
         var tableNameProperty = obj.GetType().GetProperties().FirstOrDefault(x => x.Name == "tablename");
 
@@ -55,5 +50,5 @@ internal class Program {
         return tableNameProperty.GetValue(obj, null)!.ToString()!;
     }
 
-   
+
 }

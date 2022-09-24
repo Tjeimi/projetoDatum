@@ -54,7 +54,7 @@ namespace CadastroPessoas {
             // pesquisa por nome e por telefone
         }
 
-        private async void BtnAddItens_ClickAsync(object sender, EventArgs e) {
+        private void BtnAddItens_Click(object sender, EventArgs e) {
             // esse button executa a tela de cadastro de objetos
             // se chbDoador.Checked salva objeto na tabela de itens a serem doados 
             // se chbNecessitado.Checked salva o objeto na tabela de necessidades
@@ -71,18 +71,21 @@ namespace CadastroPessoas {
         #endregion
 
         #region METODOS
-        void RetornarDados(string resposta) {
+        void RetornarDados(string r) {
             MethodInvoker methodInvokerDelegate = delegate () {
-                try {
-                    //tenta desserializar e colocar o id inserido na tela
-                    var pessoa = JsonSerializer.Deserialize<PessoasModel>(resposta);
-                    tbIdPessoa.Text = pessoa!.id.ToString();
+                //tenta desserializar e colocar o id inserido na tela
+                var resposta = JsonSerializer.Deserialize<BasePacketResposta>(r);
+                if (resposta!.codigo == 200) {
+                    var pessoa = (PessoasModel)resposta.dados!;
                     //só para dar um feedback se deu certo
                     tbResultado.BackColor = Color.DarkGreen;
-                    tbResultado.Text = "Sucesso";
-                } catch {
+                    tbResultado.Text = resposta.mensagem;
+                    //joga o id na tela
+                    tbIdPessoa.Text = pessoa!.id.ToString();
+                } else {
+                    //só para dar um feedback se deu certo
                     tbResultado.BackColor = Color.DarkRed;
-                    tbResultado.Text = "Falha";
+                    tbResultado.Text = resposta.mensagem;
                 }
             };
             //boilerplate para invocar a thread da UI e não dar problemas
@@ -93,5 +96,10 @@ namespace CadastroPessoas {
 
         }
         #endregion
+
+        private void tbIdPessoa_TextChanged(object sender, EventArgs e) {
+            if (tbIdPessoa.Text != "")
+                BtnAddItens.Enabled = true;
+        }
     }
 }

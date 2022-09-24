@@ -35,8 +35,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbContatoPessoa = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.BtnAddEndereco = new System.Windows.Forms.Button();
-            this.BtnAddContato = new System.Windows.Forms.Button();
             this.BtnGravarPessoa = new System.Windows.Forms.Button();
             this.BtnAddItens = new System.Windows.Forms.Button();
             this.DgvPessoas = new System.Windows.Forms.DataGridView();
@@ -45,14 +43,12 @@
             this.contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnPesquisar = new System.Windows.Forms.Button();
-            this.BtnDesativar = new System.Windows.Forms.Button();
             this.chbDoador = new System.Windows.Forms.CheckBox();
             this.chbNecessitado = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.cbCidade = new System.Windows.Forms.ComboBox();
-            this.BtnEditarPessoa = new System.Windows.Forms.Button();
             this.tbIdOng = new System.Windows.Forms.TextBox();
             this.chbAtivo = new System.Windows.Forms.CheckBox();
             this.tbIdPessoa = new System.Windows.Forms.TextBox();
@@ -114,34 +110,12 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Contato";
             // 
-            // BtnAddEndereco
-            // 
-            this.BtnAddEndereco.BackColor = System.Drawing.Color.Transparent;
-            this.BtnAddEndereco.Image = global::CadastroPessoas.Properties.Resources.icons8_add_20px;
-            this.BtnAddEndereco.Location = new System.Drawing.Point(320, 137);
-            this.BtnAddEndereco.Name = "BtnAddEndereco";
-            this.BtnAddEndereco.Size = new System.Drawing.Size(27, 25);
-            this.BtnAddEndereco.TabIndex = 6;
-            this.BtnAddEndereco.UseVisualStyleBackColor = false;
-            this.BtnAddEndereco.Click += new System.EventHandler(this.BtnAddEndereco_Click);
-            // 
-            // BtnAddContato
-            // 
-            this.BtnAddContato.BackColor = System.Drawing.Color.Transparent;
-            this.BtnAddContato.Image = global::CadastroPessoas.Properties.Resources.icons8_add_20px;
-            this.BtnAddContato.Location = new System.Drawing.Point(320, 91);
-            this.BtnAddContato.Name = "BtnAddContato";
-            this.BtnAddContato.Size = new System.Drawing.Size(27, 25);
-            this.BtnAddContato.TabIndex = 7;
-            this.BtnAddContato.UseVisualStyleBackColor = false;
-            this.BtnAddContato.Click += new System.EventHandler(this.BtnAddContato_Click);
-            // 
             // BtnGravarPessoa
             // 
             this.BtnGravarPessoa.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtnGravarPessoa.Image = global::CadastroPessoas.Properties.Resources.icons8_save_all_20px;
             this.BtnGravarPessoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGravarPessoa.Location = new System.Drawing.Point(176, 237);
+            this.BtnGravarPessoa.Location = new System.Drawing.Point(213, 237);
             this.BtnGravarPessoa.Name = "BtnGravarPessoa";
             this.BtnGravarPessoa.Size = new System.Drawing.Size(33, 33);
             this.BtnGravarPessoa.TabIndex = 8;
@@ -151,15 +125,16 @@
             // BtnAddItens
             // 
             this.BtnAddItens.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.BtnAddItens.Enabled = false;
             this.BtnAddItens.Image = global::CadastroPessoas.Properties.Resources.icons8_welfare_20px;
             this.BtnAddItens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAddItens.Location = new System.Drawing.Point(27, 237);
             this.BtnAddItens.Name = "BtnAddItens";
-            this.BtnAddItens.Size = new System.Drawing.Size(143, 33);
+            this.BtnAddItens.Size = new System.Drawing.Size(180, 33);
             this.BtnAddItens.TabIndex = 9;
             this.BtnAddItens.Text = "Adicionar Itens";
             this.BtnAddItens.UseVisualStyleBackColor = false;
-            this.BtnAddItens.Click += new System.EventHandler(this.BtnAddItens_ClickAsync);
+            this.BtnAddItens.Click += new System.EventHandler(this.BtnAddItens_Click);
             // 
             // DgvPessoas
             // 
@@ -214,24 +189,12 @@
             // 
             this.BtnPesquisar.BackColor = System.Drawing.Color.Transparent;
             this.BtnPesquisar.Image = global::CadastroPessoas.Properties.Resources.icons8_search_client_20px;
-            this.BtnPesquisar.Location = new System.Drawing.Point(320, 46);
+            this.BtnPesquisar.Location = new System.Drawing.Point(325, 45);
             this.BtnPesquisar.Name = "BtnPesquisar";
             this.BtnPesquisar.Size = new System.Drawing.Size(27, 25);
             this.BtnPesquisar.TabIndex = 11;
             this.BtnPesquisar.UseVisualStyleBackColor = false;
             this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
-            // 
-            // BtnDesativar
-            // 
-            this.BtnDesativar.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BtnDesativar.Image = global::CadastroPessoas.Properties.Resources.icons8_denied_20px;
-            this.BtnDesativar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDesativar.Location = new System.Drawing.Point(252, 237);
-            this.BtnDesativar.Name = "BtnDesativar";
-            this.BtnDesativar.Size = new System.Drawing.Size(33, 33);
-            this.BtnDesativar.TabIndex = 8;
-            this.BtnDesativar.UseVisualStyleBackColor = false;
-            this.BtnDesativar.Click += new System.EventHandler(this.BtnDesativar_Click);
             // 
             // chbDoador
             // 
@@ -793,19 +756,6 @@
             this.cbCidade.Size = new System.Drawing.Size(219, 23);
             this.cbCidade.TabIndex = 23;
             // 
-            // BtnEditarPessoa
-            // 
-            this.BtnEditarPessoa.BackColor = System.Drawing.Color.Transparent;
-            this.BtnEditarPessoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnEditarPessoa.Image = global::CadastroPessoas.Properties.Resources.icons8_pencil_drawing_20px;
-            this.BtnEditarPessoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnEditarPessoa.Location = new System.Drawing.Point(213, 237);
-            this.BtnEditarPessoa.Name = "BtnEditarPessoa";
-            this.BtnEditarPessoa.Size = new System.Drawing.Size(33, 33);
-            this.BtnEditarPessoa.TabIndex = 27;
-            this.BtnEditarPessoa.UseVisualStyleBackColor = false;
-            this.BtnEditarPessoa.Click += new System.EventHandler(this.BtnEditarPessoa_Click);
-            // 
             // tbIdOng
             // 
             this.tbIdOng.Enabled = false;
@@ -830,6 +780,7 @@
             this.tbIdPessoa.Name = "tbIdPessoa";
             this.tbIdPessoa.Size = new System.Drawing.Size(42, 23);
             this.tbIdPessoa.TabIndex = 30;
+            this.tbIdPessoa.TextChanged += new System.EventHandler(this.tbIdPessoa_TextChanged);
             // 
             // tbResultado
             // 
@@ -851,7 +802,6 @@
             this.Controls.Add(this.tbIdPessoa);
             this.Controls.Add(this.chbAtivo);
             this.Controls.Add(this.tbIdOng);
-            this.Controls.Add(this.BtnEditarPessoa);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbEstado);
@@ -861,10 +811,7 @@
             this.Controls.Add(this.BtnPesquisar);
             this.Controls.Add(this.DgvPessoas);
             this.Controls.Add(this.BtnAddItens);
-            this.Controls.Add(this.BtnDesativar);
             this.Controls.Add(this.BtnGravarPessoa);
-            this.Controls.Add(this.BtnAddContato);
-            this.Controls.Add(this.BtnAddEndereco);
             this.Controls.Add(this.tbContatoPessoa);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbEnderecoPessoa);
@@ -888,13 +835,10 @@
         private Label label3;
         private TextBox tbContatoPessoa;
         private Label label4;
-        private Button BtnAddEndereco;
-        private Button BtnAddContato;
         private Button BtnGravarPessoa;
         private Button BtnAddItens;
         private DataGridView DgvPessoas;
         private Button BtnPesquisar;
-        private Button BtnDesativar;
         private DataGridViewTextBoxColumn idPessoa;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn contato;
@@ -905,7 +849,6 @@
         private Label label7;
         private ComboBox cbEstado;
         private ComboBox cbCidade;
-        private Button BtnEditarPessoa;
         private TextBox tbIdOng;
         private CheckBox chbAtivo;
         private TextBox tbIdPessoa;

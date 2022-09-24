@@ -101,7 +101,7 @@ namespace Models {
     }
 
     public class BasePacketResposta {
-        public long? resposta { get; set; }
+        public long? codigo { get; set; }
         public string? mensagem { get; set; }
         public object? dados { get; set; }
     }

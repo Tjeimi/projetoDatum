@@ -32,7 +32,6 @@
             this.cbCategorias = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbImagens = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbDescricao = new System.Windows.Forms.TextBox();
             this.BtnGravarObjeto = new System.Windows.Forms.Button();
@@ -45,6 +44,13 @@
             this.idPessoa = new System.Windows.Forms.TextBox();
             this.idObjeto = new System.Windows.Forms.TextBox();
             this.idUsuario = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgvObjHistorico = new System.Windows.Forms.DataGridView();
+            this.objeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjHistorico)).BeginInit();
             this.SuspendLayout();
             // 
             // cbCategorias
@@ -94,25 +100,16 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Descrição";
             // 
-            // tbImagens
-            // 
-            this.tbImagens.Location = new System.Drawing.Point(355, 44);
-            this.tbImagens.Multiline = true;
-            this.tbImagens.Name = "tbImagens";
-            this.tbImagens.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.tbImagens.Size = new System.Drawing.Size(420, 186);
-            this.tbImagens.TabIndex = 20;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(355, 24);
+            this.label3.Location = new System.Drawing.Point(534, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 17);
+            this.label3.Size = new System.Drawing.Size(127, 17);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Carregar imagens";
+            this.label3.Text = "Histórico de objetos";
             // 
             // tbDescricao
             // 
@@ -142,7 +139,7 @@
             this.BtnCarregarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnCarregarImagem.Image = global::CadastroObjetos.Properties.Resources.icons8_add_image_20px;
             this.BtnCarregarImagem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnCarregarImagem.Location = new System.Drawing.Point(356, 45);
+            this.BtnCarregarImagem.Location = new System.Drawing.Point(456, 170);
             this.BtnCarregarImagem.Name = "BtnCarregarImagem";
             this.BtnCarregarImagem.Size = new System.Drawing.Size(33, 33);
             this.BtnCarregarImagem.TabIndex = 25;
@@ -155,7 +152,7 @@
             this.BtnApagarImagem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnApagarImagem.Image = global::CadastroObjetos.Properties.Resources.icons8_delete_trash_20px;
             this.BtnApagarImagem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnApagarImagem.Location = new System.Drawing.Point(742, 236);
+            this.BtnApagarImagem.Location = new System.Drawing.Point(495, 170);
             this.BtnApagarImagem.Name = "BtnApagarImagem";
             this.BtnApagarImagem.Size = new System.Drawing.Size(33, 33);
             this.BtnApagarImagem.TabIndex = 26;
@@ -224,13 +221,65 @@
             this.idUsuario.Size = new System.Drawing.Size(42, 23);
             this.idUsuario.TabIndex = 33;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(355, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 120);
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dgvObjHistorico
+            // 
+            this.dgvObjHistorico.AllowUserToAddRows = false;
+            this.dgvObjHistorico.AllowUserToDeleteRows = false;
+            this.dgvObjHistorico.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvObjHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvObjHistorico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.objeto,
+            this.tipo});
+            this.dgvObjHistorico.Location = new System.Drawing.Point(534, 44);
+            this.dgvObjHistorico.Name = "dgvObjHistorico";
+            this.dgvObjHistorico.ReadOnly = true;
+            this.dgvObjHistorico.RowHeadersVisible = false;
+            this.dgvObjHistorico.RowTemplate.Height = 25;
+            this.dgvObjHistorico.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvObjHistorico.Size = new System.Drawing.Size(240, 150);
+            this.dgvObjHistorico.TabIndex = 35;
+            // 
+            // objeto
+            // 
+            this.objeto.HeaderText = "objeto";
+            this.objeto.Name = "objeto";
+            this.objeto.ReadOnly = true;
+            // 
+            // tipo
+            // 
+            this.tipo.HeaderText = "tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(355, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 17);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Carregar imagem";
+            // 
             // FormCadastrarObjetos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CadastroObjetos.Properties.Resources._5254e7f0_1af9_4b25_8b98_904cfd551103__1_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(785, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dgvObjHistorico);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.idUsuario);
             this.Controls.Add(this.idObjeto);
             this.Controls.Add(this.chbNecessidade);
@@ -242,7 +291,6 @@
             this.Controls.Add(this.BtnCarregarImagem);
             this.Controls.Add(this.BtnGravarObjeto);
             this.Controls.Add(this.tbDescricao);
-            this.Controls.Add(this.tbImagens);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -250,6 +298,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadastrarObjetos";
             this.Text = "Cadastro de Objetos";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvObjHistorico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,7 +310,6 @@
         private ComboBox cbCategorias;
         private Label label2;
         private Label label1;
-        private TextBox tbImagens;
         private Label label3;
         private TextBox tbDescricao;
         private Button BtnGravarObjeto;
@@ -273,5 +322,10 @@
         private TextBox idPessoa;
         private TextBox idObjeto;
         private TextBox idUsuario;
+        private PictureBox pictureBox1;
+        private DataGridView dgvObjHistorico;
+        private DataGridViewTextBoxColumn objeto;
+        private DataGridViewTextBoxColumn tipo;
+        private Label label5;
     }
 }

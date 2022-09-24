@@ -27,7 +27,7 @@ public class ServerPessoa {
                 //retorna os dados
             Console.WriteLine("enviando a resposta");
             var bpr = new BasePacketResposta();
-            bpr.resposta = 200;
+            bpr.codigo = 200;
             bpr.mensagem = "sucesso";
             bpr.dados = d;
             await PublicarRespostaAsync(topicoResposta, bpr);
@@ -35,8 +35,8 @@ public class ServerPessoa {
             Console.WriteLine(ex.Message);
             Console.WriteLine("enviando a resposta");
             var bpr = new BasePacketResposta();
-            bpr.resposta = 500;
-            bpr.mensagem = ex.Message;
+            bpr.codigo = 500;
+            bpr.mensagem = "Erro: " + ex.Message;
             await PublicarRespostaAsync(topicoResposta, bpr);
         }
     }
