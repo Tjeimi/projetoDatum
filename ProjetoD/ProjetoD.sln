@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatumMQTT", "DatumMQTT\Datu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatumPostgreSQL", "DatumPostgreSQL\DatumPostgreSQL.csproj", "{5A92CB4F-0C66-4BB6-96DB-B0402ABE7330}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerTestes", "ServerTestes\ServerTestes.csproj", "{A528266F-85BE-4A05-A306-7623B4E4DCC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{5A92CB4F-0C66-4BB6-96DB-B0402ABE7330}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A92CB4F-0C66-4BB6-96DB-B0402ABE7330}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A92CB4F-0C66-4BB6-96DB-B0402ABE7330}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A528266F-85BE-4A05-A306-7623B4E4DCC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A528266F-85BE-4A05-A306-7623B4E4DCC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A528266F-85BE-4A05-A306-7623B4E4DCC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A528266F-85BE-4A05-A306-7623B4E4DCC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,6 +145,7 @@ Global
 		{02160022-6271-4CB4-A96B-56BF7396E723} = {9F4AD789-C203-4155-A3D7-0653CD509FE2}
 		{7555B3E5-CB68-460B-B81E-74B6D663669C} = {3FCAB870-00FF-4E8C-8D01-8C5D4F5DE38C}
 		{5A92CB4F-0C66-4BB6-96DB-B0402ABE7330} = {3FCAB870-00FF-4E8C-8D01-8C5D4F5DE38C}
+		{A528266F-85BE-4A05-A306-7623B4E4DCC6} = {7C62B8FF-966F-49A9-8DEC-6E09577F3BD5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {67343298-AA15-40C7-A66C-8B16205A413F}

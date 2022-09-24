@@ -14,9 +14,11 @@ namespace CadastroPessoas {
         #region EVENTOS
         private async void BtnGravarPessoa_Click(object sender, EventArgs e) {
             var pessoa = new PessoasModel();
+            if (tbIdPessoa.Text != "")
+                pessoa.id = Convert.ToInt64(tbIdPessoa.Text);
+            if (tbIdOng.Text != "")
+                pessoa.idong = Convert.ToInt64(tbIdOng.Text);
             pessoa.nome = tbNomePessoa.Text;
-            if (idOng.Text != "")
-                pessoa.idong = Convert.ToInt64(idOng.Text);
             pessoa.ativo = chbAtivo.Checked;
             pessoa.fone = tbContatoPessoa.Text;
             pessoa.endereco = tbContatoPessoa.Text;
@@ -36,7 +38,7 @@ namespace CadastroPessoas {
             PessoasModel pessoa = new();
             pessoa.id = int.Parse(tbIdPessoa.Text);
             pessoa.nome = tbNomePessoa.Text;
-            pessoa.idong = int.Parse(idOng.Text);
+            pessoa.idong = int.Parse(tbIdOng.Text);
             pessoa.ativo = chbAtivo.Checked;
             pessoa.fone = tbContatoPessoa.Text;
             pessoa.endereco = tbContatoPessoa.Text;

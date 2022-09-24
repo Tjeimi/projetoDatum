@@ -53,7 +53,7 @@
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.cbCidade = new System.Windows.Forms.ComboBox();
             this.BtnEditarPessoa = new System.Windows.Forms.Button();
-            this.idOng = new System.Windows.Forms.TextBox();
+            this.tbIdOng = new System.Windows.Forms.TextBox();
             this.chbAtivo = new System.Windows.Forms.CheckBox();
             this.tbIdPessoa = new System.Windows.Forms.TextBox();
             this.tbResultado = new System.Windows.Forms.TextBox();
@@ -806,13 +806,13 @@
             this.BtnEditarPessoa.UseVisualStyleBackColor = false;
             this.BtnEditarPessoa.Click += new System.EventHandler(this.BtnEditarPessoa_Click);
             // 
-            // idOng
+            // tbIdOng
             // 
-            this.idOng.Enabled = false;
-            this.idOng.Location = new System.Drawing.Point(277, 12);
-            this.idOng.Name = "idOng";
-            this.idOng.Size = new System.Drawing.Size(42, 23);
-            this.idOng.TabIndex = 28;
+            this.tbIdOng.Enabled = false;
+            this.tbIdOng.Location = new System.Drawing.Point(277, 12);
+            this.tbIdOng.Name = "tbIdOng";
+            this.tbIdOng.Size = new System.Drawing.Size(42, 23);
+            this.tbIdOng.TabIndex = 28;
             // 
             // chbAtivo
             // 
@@ -850,7 +850,7 @@
             this.Controls.Add(this.tbResultado);
             this.Controls.Add(this.tbIdPessoa);
             this.Controls.Add(this.chbAtivo);
-            this.Controls.Add(this.idOng);
+            this.Controls.Add(this.tbIdOng);
             this.Controls.Add(this.BtnEditarPessoa);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
@@ -906,7 +906,7 @@
         private ComboBox cbEstado;
         private ComboBox cbCidade;
         private Button BtnEditarPessoa;
-        private TextBox idOng;
+        private TextBox tbIdOng;
         private CheckBox chbAtivo;
         private TextBox tbIdPessoa;
         private TextBox tbResultado;
