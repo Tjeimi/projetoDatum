@@ -13,9 +13,9 @@ namespace DatumPostgreSQL {
             string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
             using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
                 //Abre a conexão com o PgSQL                  
-                pgsqlConnection.Open();
                 try {
                     using (NpgsqlCommand pgsqlcommand = new NpgsqlCommand(CreateInsertQuery(obj), pgsqlConnection)) {
+                        pgsqlConnection.Open();
                         var ColumnsAndValues = GetColumnsAndValues(obj);
                         foreach (var ColumnAndValue in ColumnsAndValues) {
                             pgsqlcommand.Parameters.AddWithValue(ColumnAndValue.Key, ColumnAndValue.Value ?? DBNull.Value);
@@ -37,9 +37,9 @@ namespace DatumPostgreSQL {
             string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
             using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
                 //Abre a conexão com o PgSQL                  
-                pgsqlConnection.Open();
                 try {
                     using (NpgsqlCommand pgsqlcommand = new NpgsqlCommand(CreateUpdateQuery(obj), pgsqlConnection)) {
+                        pgsqlConnection.Open();
                         var ColumnsAndValues = GetColumnsAndValues(obj);
                         foreach (var ColumnAndValue in ColumnsAndValues) {
                             pgsqlcommand.Parameters.AddWithValue(ColumnAndValue.Key, ColumnAndValue.Value ?? DBNull.Value);

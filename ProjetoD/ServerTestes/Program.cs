@@ -23,8 +23,8 @@ internal class Program {
             try {
                 //Abre a conexão com o PgSQL                  
                 pgsqlConnection.Open();
-                (tipo)object? objeto = new();
-                string query = $"SELECT * FROM {tableName} LIMIT 100";
+                object? objeto = new();
+                string query = $"SELECT * FROM {(tipo)objeto.GetType().GetProperties()[0].GetValue(objeto)!} LIMIT 1000";
                 Console.WriteLine(query);
 
                 using (NpgsqlDataAdapter Adpt = new NpgsqlDataAdapter(query, pgsqlConnection)) {
