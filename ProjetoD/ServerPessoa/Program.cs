@@ -47,7 +47,7 @@ public class ServerPessoa {
     static async void BuscarRegistros(string topicoResposta, string dados) {
         try {
             string nome = JsonSerializer.Deserialize<PessoasModel>(dados)!.nome!;
-            var pessoasList = QueryLivre<PessoasModel>($"SELECT * FROM PESSOAS WHERE nome LIKE '%{nome}%' ORDER BY id DESC");
+            var pessoasList = QueryLivre<PessoasModel>($"SELECT * FROM pessoas WHERE nome LIKE '%{nome}%' ORDER BY id DESC");
             Console.WriteLine("enviando a resposta");
             var bpr = new BasePacketResposta();
             bpr.codigo = 200;

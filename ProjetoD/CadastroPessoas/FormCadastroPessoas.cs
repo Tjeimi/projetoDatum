@@ -1,3 +1,4 @@
+using CadastroObjetos;
 using Models;
 using System.Diagnostics;
 using System.Text.Json;
@@ -49,9 +50,9 @@ namespace CadastroPessoas {
         }
 
         private void BtnAddItens_Click(object sender, EventArgs e) {
+            FormCadastrarObjetos form = new(Convert.ToInt64(tbIdPessoa.Text));
+            form.ShowDialog();
             // esse button executa a tela de cadastro de objetos
-            // se chbDoador.Checked salva objeto na tabela de itens a serem doados 
-            // se chbNecessitado.Checked salva o objeto na tabela de necessidades
 
         }
 
@@ -154,8 +155,6 @@ namespace CadastroPessoas {
             tbContatoPessoa.Text = (row["contato"].Value ?? "").ToString();
             tbEnderecoPessoa.Text = (row["endereco"].Value ?? "").ToString();
             chbAtivo.Checked = Convert.ToBoolean(row["ativo"].Value ?? false);
-            //chbDoador.Checked
-            //chbNecessitado.Checked 
         }
     }
 }
