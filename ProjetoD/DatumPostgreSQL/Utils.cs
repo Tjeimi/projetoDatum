@@ -11,9 +11,10 @@ namespace DatumPostgreSQL {
         public static void InserirRegistro(object obj) {
             var parms = ReadParms();
             string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
-                using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
-                    //Abre a conexão com o PgSQL                  
-                    pgsqlConnection.Open();
+            using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
+                //Abre a conexão com o PgSQL                  
+                pgsqlConnection.Open();
+                try {
                     using (NpgsqlCommand pgsqlcommand = new NpgsqlCommand(CreateInsertQuery(obj), pgsqlConnection)) {
                         var ColumnsAndValues = GetColumnsAndValues(obj);
                         foreach (var ColumnAndValue in ColumnsAndValues) {
@@ -22,16 +23,22 @@ namespace DatumPostgreSQL {
                         pgsqlcommand.Prepare();
                         pgsqlcommand.ExecuteNonQuery();
                     }
+                } catch (NpgsqlException ex) {
+                    Console.WriteLine(ex);
+                    throw ex;
+                } finally {
+                    pgsqlConnection.Close();
                 }
+            }
         }
         //Inserir registros
         public static void UpdateRegistro(object obj) {
             var parms = ReadParms();
             string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
-            try {
-                using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
-                    //Abre a conexão com o PgSQL                  
-                    pgsqlConnection.Open();
+            using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
+                //Abre a conexão com o PgSQL                  
+                pgsqlConnection.Open();
+                try {
                     using (NpgsqlCommand pgsqlcommand = new NpgsqlCommand(CreateUpdateQuery(obj), pgsqlConnection)) {
                         var ColumnsAndValues = GetColumnsAndValues(obj);
                         foreach (var ColumnAndValue in ColumnsAndValues) {
@@ -40,10 +47,12 @@ namespace DatumPostgreSQL {
                         pgsqlcommand.Prepare();
                         pgsqlcommand.ExecuteNonQuery();
                     }
+                } catch (NpgsqlException ex) {
+                    Console.WriteLine(ex);
+                    throw ex;
+                } finally {
+                    pgsqlConnection.Close();
                 }
-            } catch (NpgsqlException ex) {
-                Console.WriteLine(ex);
-                throw ex;
             }
         }
         static Dictionary<string, object?> GetColumnsAndValues(object obj) {
