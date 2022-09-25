@@ -29,7 +29,7 @@ using static DatumPostgreSQL.Utils;
                 var bpr = new BasePacketResposta();
                 bpr.codigo = 200;
                 bpr.mensagem = "sucesso";
-                bpr.dados = d;
+                bpr.dados = JsonSerializer.Serialize(d);
                 await PublicarRespostaAsync(topicoResposta, bpr);
             } catch (Exception ex) {
                 Console.WriteLine(ex.Message);

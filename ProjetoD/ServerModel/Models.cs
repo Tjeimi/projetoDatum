@@ -103,7 +103,7 @@ namespace Models {
     public class BasePacketResposta {
         public long? codigo { get; set; }
         public string? mensagem { get; set; }
-        public object? dados { get; set; }
+        public string? dados { get; set; }
     }
 
     public class ParametersModel {

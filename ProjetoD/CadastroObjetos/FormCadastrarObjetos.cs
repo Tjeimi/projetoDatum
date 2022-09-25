@@ -60,7 +60,7 @@ namespace CadastroObjetos
                 var resposta = JsonSerializer.Deserialize<BasePacketResposta>(r);
                 if (resposta!.codigo == 200)
                 {
-                    var objeto = (PessoasModel)resposta.dados!;
+                    var objeto = JsonSerializer.Deserialize<ObjetosModel>(resposta.dados!)!;
                     //só para dar um feedback se deu certo
                     tbResultado.BackColor = Color.DarkGreen;
                     tbResultado.Text = resposta.mensagem;

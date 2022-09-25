@@ -76,7 +76,7 @@ namespace CadastroPessoas {
                 //tenta desserializar e colocar o id inserido na tela
                 var resposta = JsonSerializer.Deserialize<BasePacketResposta>(r);
                 if (resposta!.codigo == 200) {
-                    var pessoa = (PessoasModel)resposta.dados!;
+                    PessoasModel pessoa = JsonSerializer.Deserialize<PessoasModel>(resposta.dados!)!;
                     //só para dar um feedback se deu certo
                     tbResultado.BackColor = Color.DarkGreen;
                     tbResultado.Text = resposta.mensagem;
