@@ -78,7 +78,7 @@ namespace DatumPostgreSQL {
         public static string CreateInsertQuery(object obj) {
             string s = ($"INSERT INTO {GetTableName(obj)}"
                                 + $"({GetColumns(obj, false, false, false)}) "
-                          + $"VALUES({GetColumns(obj, true, false, false)})");
+                          + $"VALUES ({GetColumns(obj, true, false, false)})");
 
             Console.WriteLine(s);
             return s;

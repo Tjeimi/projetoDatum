@@ -7,14 +7,16 @@ using static serverUtils.Utils;
 
 internal class Program {
     static void Main(string[] args) {
-        List<PessoasModel?> pessoasList = new();
-        pessoasList = (List<PessoasModel?>)Select<PessoasModel?>();
-        
+        List<PessoasModel> pessoasList = new();
+        pessoasList = Select<PessoasModel>("pessoas");
+        foreach(var p in pessoasList) {
+            Console.WriteLine(p.nome);
+        }
 
     }
 
     //Pega um registro pelo id
-    public static object Select<tipo>() {
+    public static List<T> Select<T>(string tablename) {
         DataTable dt = new DataTable();
 
         var parms = ReadParms();
@@ -23,8 +25,7 @@ internal class Program {
             try {
                 //Abre a conexão com o PgSQL                  
                 pgsqlConnection.Open();
-                object? objeto = new();
-                string query = $"SELECT * FROM {(tipo)objeto.GetType().GetProperties()[0].GetValue(objeto)!} LIMIT 1000";
+                string query = $"SELECT * FROM {tablename} LIMIT 1000";
                 Console.WriteLine(query);
 
                 using (NpgsqlDataAdapter Adpt = new NpgsqlDataAdapter(query, pgsqlConnection)) {
@@ -37,10 +38,10 @@ internal class Program {
                 pgsqlConnection.Close();
             }
         }
-        List<object?> resultados = new();
+        List<T> resultados = new();
         foreach (DataRow row in dt.Rows) {
-            object? objeto = new();
-            foreach (var prop in ((tipo)objeto).GetType().GetProperties()) {
+            var objeto = (T)Activator.CreateInstance(typeof(T))!;
+            foreach (var prop in (objeto).GetType().GetProperties()) {
                 if (prop.Name == "tablename")
                     continue;
                 if (row[prop.Name].GetType() == typeof(DBNull)) {
