@@ -4,7 +4,6 @@ using Models;
 using static datumMQTT.Utils;
 using static DatumPostgreSQL.Utils;
 
-namespace ServerPessoa {
     public class ServerPessoa {
         static void Main(string[] args) {
             switch (args[0]) {
