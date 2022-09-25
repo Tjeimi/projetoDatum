@@ -14,7 +14,8 @@ internal class Program {
     static async Task Main(string[] args) {
         CheckIfConfigExists();
         await EscutarAsync("datum/server", StartProcess);
-
+        Console.WriteLine("Servidor iniciado, você pode minimizar essa janela agora :)");
+        Console.WriteLine("Clique em qualquer tecla para encerrar o servidor");
         Console.ReadLine();
     }
 

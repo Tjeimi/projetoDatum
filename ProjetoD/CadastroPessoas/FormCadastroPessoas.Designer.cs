@@ -41,10 +41,11 @@
             this.idPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnPesquisar = new System.Windows.Forms.Button();
-            this.chbDoador = new System.Windows.Forms.CheckBox();
-            this.chbNecessitado = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.ComboBox();
@@ -53,6 +54,7 @@
             this.chbAtivo = new System.Windows.Forms.CheckBox();
             this.tbIdPessoa = new System.Windows.Forms.TextBox();
             this.tbResultado = new System.Windows.Forms.TextBox();
+            this.btNovo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPessoas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -115,7 +117,7 @@
             this.BtnGravarPessoa.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BtnGravarPessoa.Image = global::CadastroPessoas.Properties.Resources.icons8_save_all_20px;
             this.BtnGravarPessoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGravarPessoa.Location = new System.Drawing.Point(213, 237);
+            this.BtnGravarPessoa.Location = new System.Drawing.Point(213, 211);
             this.BtnGravarPessoa.Name = "BtnGravarPessoa";
             this.BtnGravarPessoa.Size = new System.Drawing.Size(33, 33);
             this.BtnGravarPessoa.TabIndex = 8;
@@ -128,7 +130,7 @@
             this.BtnAddItens.Enabled = false;
             this.BtnAddItens.Image = global::CadastroPessoas.Properties.Resources.icons8_welfare_20px;
             this.BtnAddItens.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAddItens.Location = new System.Drawing.Point(27, 237);
+            this.BtnAddItens.Location = new System.Drawing.Point(27, 211);
             this.BtnAddItens.Name = "BtnAddItens";
             this.BtnAddItens.Size = new System.Drawing.Size(180, 33);
             this.BtnAddItens.TabIndex = 9;
@@ -140,25 +142,29 @@
             // 
             this.DgvPessoas.AllowUserToAddRows = false;
             this.DgvPessoas.AllowUserToDeleteRows = false;
-            this.DgvPessoas.AllowUserToOrderColumns = true;
             this.DgvPessoas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvPessoas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPessoa,
             this.nome,
             this.contato,
-            this.Tipo});
+            this.cidade,
+            this.endereco,
+            this.estado,
+            this.ativo});
             this.DgvPessoas.Location = new System.Drawing.Point(385, 46);
             this.DgvPessoas.Name = "DgvPessoas";
             this.DgvPessoas.ReadOnly = true;
             this.DgvPessoas.RowHeadersVisible = false;
             this.DgvPessoas.RowTemplate.Height = 25;
-            this.DgvPessoas.Size = new System.Drawing.Size(379, 224);
+            this.DgvPessoas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvPessoas.Size = new System.Drawing.Size(379, 198);
             this.DgvPessoas.TabIndex = 10;
+            this.DgvPessoas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPessoas_CellDoubleClick);
             // 
             // idPessoa
             // 
             this.idPessoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idPessoa.HeaderText = "idP";
+            this.idPessoa.HeaderText = "idPessoa";
             this.idPessoa.Name = "idPessoa";
             this.idPessoa.ReadOnly = true;
             this.idPessoa.Visible = false;
@@ -178,12 +184,33 @@
             this.contato.Name = "contato";
             this.contato.ReadOnly = true;
             // 
-            // Tipo
+            // cidade
             // 
-            this.Tipo.FillWeight = 25F;
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
+            this.cidade.FillWeight = 25F;
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            this.cidade.ReadOnly = true;
+            // 
+            // endereco
+            // 
+            this.endereco.HeaderText = "endereco";
+            this.endereco.Name = "endereco";
+            this.endereco.ReadOnly = true;
+            this.endereco.Visible = false;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "estado";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            this.estado.Visible = false;
+            // 
+            // ativo
+            // 
+            this.ativo.HeaderText = "ativo";
+            this.ativo.Name = "ativo";
+            this.ativo.ReadOnly = true;
+            this.ativo.Visible = false;
             // 
             // BtnPesquisar
             // 
@@ -195,26 +222,6 @@
             this.BtnPesquisar.TabIndex = 11;
             this.BtnPesquisar.UseVisualStyleBackColor = false;
             this.BtnPesquisar.Click += new System.EventHandler(this.BtnPesquisar_Click);
-            // 
-            // chbDoador
-            // 
-            this.chbDoador.AutoSize = true;
-            this.chbDoador.Location = new System.Drawing.Point(27, 209);
-            this.chbDoador.Name = "chbDoador";
-            this.chbDoador.Size = new System.Drawing.Size(65, 19);
-            this.chbDoador.TabIndex = 12;
-            this.chbDoador.Text = "Doador";
-            this.chbDoador.UseVisualStyleBackColor = true;
-            // 
-            // chbNecessitado
-            // 
-            this.chbNecessitado.AutoSize = true;
-            this.chbNecessitado.Location = new System.Drawing.Point(98, 209);
-            this.chbNecessitado.Name = "chbNecessitado";
-            this.chbNecessitado.Size = new System.Drawing.Size(90, 19);
-            this.chbNecessitado.TabIndex = 12;
-            this.chbNecessitado.Text = "Necessitado";
-            this.chbNecessitado.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -767,7 +774,7 @@
             // chbAtivo
             // 
             this.chbAtivo.AutoSize = true;
-            this.chbAtivo.Location = new System.Drawing.Point(192, 209);
+            this.chbAtivo.Location = new System.Drawing.Point(27, 4);
             this.chbAtivo.Name = "chbAtivo";
             this.chbAtivo.Size = new System.Drawing.Size(54, 19);
             this.chbAtivo.TabIndex = 29;
@@ -776,6 +783,7 @@
             // 
             // tbIdPessoa
             // 
+            this.tbIdPessoa.Enabled = false;
             this.tbIdPessoa.Location = new System.Drawing.Point(229, 12);
             this.tbIdPessoa.Name = "tbIdPessoa";
             this.tbIdPessoa.Size = new System.Drawing.Size(42, 23);
@@ -791,6 +799,20 @@
             this.tbResultado.Size = new System.Drawing.Size(800, 23);
             this.tbResultado.TabIndex = 31;
             // 
+            // btNovo
+            // 
+            this.btNovo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btNovo.Image = global::CadastroPessoas.Properties.Resources.icons8_arquivo_20;
+            this.btNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btNovo.Location = new System.Drawing.Point(252, 211);
+            this.btNovo.Name = "btNovo";
+            this.btNovo.Size = new System.Drawing.Size(67, 33);
+            this.btNovo.TabIndex = 32;
+            this.btNovo.Text = "Novo";
+            this.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btNovo.UseVisualStyleBackColor = false;
+            this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
+            // 
             // FormCadastroPessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -798,6 +820,7 @@
             this.BackgroundImage = global::CadastroPessoas.Properties.Resources._5254e7f0_1af9_4b25_8b98_904cfd551103__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btNovo);
             this.Controls.Add(this.tbResultado);
             this.Controls.Add(this.tbIdPessoa);
             this.Controls.Add(this.chbAtivo);
@@ -806,8 +829,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.cbCidade);
-            this.Controls.Add(this.chbNecessitado);
-            this.Controls.Add(this.chbDoador);
             this.Controls.Add(this.BtnPesquisar);
             this.Controls.Add(this.DgvPessoas);
             this.Controls.Add(this.BtnAddItens);
@@ -839,12 +860,6 @@
         private Button BtnAddItens;
         private DataGridView DgvPessoas;
         private Button BtnPesquisar;
-        private DataGridViewTextBoxColumn idPessoa;
-        private DataGridViewTextBoxColumn nome;
-        private DataGridViewTextBoxColumn contato;
-        private DataGridViewTextBoxColumn Tipo;
-        private CheckBox chbDoador;
-        private CheckBox chbNecessitado;
         private Label label2;
         private Label label7;
         private ComboBox cbEstado;
@@ -853,5 +868,13 @@
         private CheckBox chbAtivo;
         private TextBox tbIdPessoa;
         private TextBox tbResultado;
+        private Button btNovo;
+        private DataGridViewTextBoxColumn idPessoa;
+        private DataGridViewTextBoxColumn nome;
+        private DataGridViewTextBoxColumn contato;
+        private DataGridViewTextBoxColumn cidade;
+        private DataGridViewTextBoxColumn endereco;
+        private DataGridViewTextBoxColumn estado;
+        private DataGridViewTextBoxColumn ativo;
     }
 }

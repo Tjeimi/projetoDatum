@@ -4,14 +4,10 @@ using Models;
 using static datumMQTT.Utils;
 using static DatumPostgreSQL.Utils;
 
-namespace ServerObjetos
-{
-    public class ServerObjetos
-    {
-        static void Main(string[] args)
-        {
-            switch (args[0])
-            {
+namespace ServerObjetos {
+    public class ServerObjetos {
+        static void Main(string[] args) {
+            switch (args[0]) {
                 case "Save":
                     Save(args[1], Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
                     break;
@@ -21,29 +17,22 @@ namespace ServerObjetos
             }
         }
 
-        static async void Save(string topicoResposta, string dados)
-        {
-            try
-            {
-                var d = JsonSerializer.Deserialize<ObjetosModel>(dados);
-                if (d.id == null)
-                {
-                    InserirRegistro(d!);
-                }
-                else
-                {
-                    UpdateRegistro(d!);
+        static async void Save(string topicoResposta, string dados) {
+            try {
+                var objeto = JsonSerializer.Deserialize<ObjetosModel>(dados);
+                if (objeto!.id == null) {
+                    objeto!.id = InserirRegistro(objeto!);
+                } else {
+                    UpdateRegistro(objeto!);
                 }
                 //retorna os dados
                 Console.WriteLine("enviando a resposta");
                 var bpr = new BasePacketResposta();
                 bpr.codigo = 200;
-                bpr.mensagem = "sucesso";
-                bpr.dados = d;
+                bpr.mensagem = $"Sucesso {DateTime.Now.ToString()}";
+                bpr.dados = JsonSerializer.Serialize(objeto);
                 await PublicarRespostaAsync(topicoResposta, bpr);
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Console.WriteLine(ex.Message);
                 Console.WriteLine("enviando a resposta");
                 var bpr = new BasePacketResposta();
@@ -53,8 +42,7 @@ namespace ServerObjetos
             }
         }
 
-        static void Delete(string dados)
-        {
+        static void Delete(string dados) {
 
         }
     }

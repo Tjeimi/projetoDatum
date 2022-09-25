@@ -55,17 +55,5 @@ internal class Program {
         return resultados;
     }
 
-    static string GetTableName(object obj) {
-        //busca todas as propriedades do objeto passado e busca o que tiver o nome "tablename"
-        var tableNameProperty = obj.GetType().GetProperties().FirstOrDefault(x => x.Name == "tablename");
-
-        //verifica se existe mesmo o tablename no objeto, se não existe volta string em branco
-        if (tableNameProperty == null || tableNameProperty.GetValue(obj, null) == null)
-            return "";
-
-        // retorna o nome da tabela (o valor de tablename)
-        return tableNameProperty.GetValue(obj, null)!.ToString()!;
-    }
-
 
 }

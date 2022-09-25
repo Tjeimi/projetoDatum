@@ -41,16 +41,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.chbNecessidade = new System.Windows.Forms.CheckBox();
             this.chbDoação = new System.Windows.Forms.CheckBox();
-            this.idPessoa = new System.Windows.Forms.TextBox();
-            this.idObjeto = new System.Windows.Forms.TextBox();
-            this.idUsuario = new System.Windows.Forms.TextBox();
-            this.tbImagens = new System.Windows.Forms.PictureBox();
+            this.tbIdPessoa = new System.Windows.Forms.TextBox();
+            this.tbIdObjeto = new System.Windows.Forms.TextBox();
+            this.tbIdUsuario = new System.Windows.Forms.TextBox();
+            this.pbImagem = new System.Windows.Forms.PictureBox();
             this.dgvObjHistorico = new System.Windows.Forms.DataGridView();
             this.objeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.tbResultado = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.tbImagens)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjHistorico)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,9 +108,9 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(534, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 17);
+            this.label3.Size = new System.Drawing.Size(192, 17);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Histórico de objetos";
+            this.label3.Text = "Histórico de objetos da pessoa";
             // 
             // tbDescricao
             // 
@@ -198,37 +198,37 @@
             this.chbDoação.Text = "Doação";
             this.chbDoação.UseVisualStyleBackColor = true;
             // 
-            // idPessoa
+            // tbIdPessoa
             // 
-            this.idPessoa.Enabled = false;
-            this.idPessoa.Location = new System.Drawing.Point(297, 15);
-            this.idPessoa.Name = "idPessoa";
-            this.idPessoa.Size = new System.Drawing.Size(42, 23);
-            this.idPessoa.TabIndex = 27;
+            this.tbIdPessoa.Enabled = false;
+            this.tbIdPessoa.Location = new System.Drawing.Point(297, 15);
+            this.tbIdPessoa.Name = "tbIdPessoa";
+            this.tbIdPessoa.Size = new System.Drawing.Size(42, 23);
+            this.tbIdPessoa.TabIndex = 27;
             // 
-            // idObjeto
+            // tbIdObjeto
             // 
-            this.idObjeto.Enabled = false;
-            this.idObjeto.Location = new System.Drawing.Point(249, 15);
-            this.idObjeto.Name = "idObjeto";
-            this.idObjeto.Size = new System.Drawing.Size(42, 23);
-            this.idObjeto.TabIndex = 32;
+            this.tbIdObjeto.Enabled = false;
+            this.tbIdObjeto.Location = new System.Drawing.Point(249, 15);
+            this.tbIdObjeto.Name = "tbIdObjeto";
+            this.tbIdObjeto.Size = new System.Drawing.Size(42, 23);
+            this.tbIdObjeto.TabIndex = 32;
             // 
-            // idUsuario
+            // tbIdUsuario
             // 
-            this.idUsuario.Enabled = false;
-            this.idUsuario.Location = new System.Drawing.Point(201, 15);
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.Size = new System.Drawing.Size(42, 23);
-            this.idUsuario.TabIndex = 33;
+            this.tbIdUsuario.Enabled = false;
+            this.tbIdUsuario.Location = new System.Drawing.Point(201, 15);
+            this.tbIdUsuario.Name = "tbIdUsuario";
+            this.tbIdUsuario.Size = new System.Drawing.Size(42, 23);
+            this.tbIdUsuario.TabIndex = 33;
             // 
-            // tbImagens
+            // pbImagem
             // 
-            this.tbImagens.Location = new System.Drawing.Point(355, 44);
-            this.tbImagens.Name = "tbImagens";
-            this.tbImagens.Size = new System.Drawing.Size(173, 120);
-            this.tbImagens.TabIndex = 34;
-            this.tbImagens.TabStop = false;
+            this.pbImagem.Location = new System.Drawing.Point(355, 44);
+            this.pbImagem.Name = "pbImagem";
+            this.pbImagem.Size = new System.Drawing.Size(173, 120);
+            this.pbImagem.TabIndex = 34;
+            this.pbImagem.TabStop = false;
             // 
             // dgvObjHistorico
             // 
@@ -290,14 +290,14 @@
             this.Controls.Add(this.tbResultado);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dgvObjHistorico);
-            this.Controls.Add(this.tbImagens);
-            this.Controls.Add(this.idUsuario);
-            this.Controls.Add(this.idObjeto);
+            this.Controls.Add(this.pbImagem);
+            this.Controls.Add(this.tbIdUsuario);
+            this.Controls.Add(this.tbIdObjeto);
             this.Controls.Add(this.chbNecessidade);
             this.Controls.Add(this.chbDoação);
             this.Controls.Add(this.tbObjeto);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.idPessoa);
+            this.Controls.Add(this.tbIdPessoa);
             this.Controls.Add(this.BtnApagarImagem);
             this.Controls.Add(this.BtnCarregarImagem);
             this.Controls.Add(this.BtnGravarObjeto);
@@ -309,7 +309,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadastrarObjetos";
             this.Text = "Cadastro de Objetos";
-            ((System.ComponentModel.ISupportInitialize)(this.tbImagens)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjHistorico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -330,10 +330,10 @@
         private Label label4;
         private CheckBox chbNecessidade;
         private CheckBox chbDoação;
-        private TextBox idPessoa;
-        private TextBox idObjeto;
-        private TextBox idUsuario;
-        private PictureBox tbImagens;
+        private TextBox tbIdPessoa;
+        private TextBox tbIdObjeto;
+        private TextBox tbIdUsuario;
+        private PictureBox pbImagem;
         private DataGridView dgvObjHistorico;
         private DataGridViewTextBoxColumn objeto;
         private DataGridViewTextBoxColumn tipo;

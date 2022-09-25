@@ -31,27 +31,21 @@ namespace CadastroPessoas {
             pacote.action = "Save";
 
             string topicoResposta = await PublicarAsync("datum/server", pacote);
-            await EscutarRespostaAsync(topicoResposta, RetornarDados);
+            await EscutarRespostaAsync(topicoResposta, RetornarSave);
         }
 
-        private void BtnEditarPessoa_Click(object sender, EventArgs e) {
-            PessoasModel pessoa = new();
-            pessoa.id = int.Parse(tbIdPessoa.Text);
+        private async void BtnPesquisar_Click(object sender, EventArgs e) {
+            // pesquisa por nome 
+            var pessoa = new PessoasModel();
             pessoa.nome = tbNomePessoa.Text;
-            pessoa.idong = int.Parse(tbIdOng.Text);
-            pessoa.ativo = chbAtivo.Checked;
-            pessoa.fone = tbContatoPessoa.Text;
-            pessoa.endereco = tbContatoPessoa.Text;
-            pessoa.cidade = cbCidade.Text;
-            pessoa.estado = cbEstado.Text;
-        }
 
-        private void BtnDesativar_Click(object sender, EventArgs e) {
-            //quando clica no botão para desativar a pessoa deve desabilitar a edição dos campos e setar no banco "0"
-        }
+            BasePacket pacote = new();
+            pacote.dados = pessoa;
+            pacote.serverName = "ServerPessoa";
+            pacote.action = "BuscarRegistros";
 
-        private void BtnPesquisar_Click(object sender, EventArgs e) {
-            // pesquisa por nome e por telefone
+            string topicoResposta = await PublicarAsync("datum/server", pacote);
+            await EscutarRespostaAsync(topicoResposta, RetornarPesquisa);
         }
 
         private void BtnAddItens_Click(object sender, EventArgs e) {
@@ -61,17 +55,10 @@ namespace CadastroPessoas {
 
         }
 
-        private void BtnAddContato_Click(object sender, EventArgs e) {
-            // add mais contato pra pessoa. É necessário???
-        }
-
-        private void BtnAddEndereco_Click(object sender, EventArgs e) {
-            // add mais endereços pra pessoa. É necessário???
-        }
         #endregion
 
         #region METODOS
-        void RetornarDados(string r) {
+        void RetornarSave(string r) {
             MethodInvoker methodInvokerDelegate = delegate () {
                 //tenta desserializar e colocar o id inserido na tela
                 var resposta = JsonSerializer.Deserialize<BasePacketResposta>(r);
@@ -95,11 +82,80 @@ namespace CadastroPessoas {
                 methodInvokerDelegate();
 
         }
+
+        void RetornarPesquisa(string r) {
+            MethodInvoker methodInvokerDelegate = delegate () {
+                //tenta desserializar e colocar o id inserido na tela
+                var resposta = JsonSerializer.Deserialize<BasePacketResposta>(r);
+                if (resposta!.codigo == 200) {
+                    var pessoas = JsonSerializer.Deserialize<List<PessoasModel>>(resposta.dados!)!;
+                    //só para dar um feedback se deu certo
+                    tbResultado.BackColor = Color.DarkGreen;
+                    tbResultado.Text = resposta.mensagem;
+                    //joga os resultados na tela
+                    DgvPessoas.Rows.Clear();
+                    foreach (var p in pessoas) {
+                        var index = DgvPessoas.Rows.Add();
+                        var row = DgvPessoas.Rows[index].Cells;
+                        row["idPessoa"].Value = p.id;
+                        //row["idOng"].Value;
+                        row["nome"].Value = p.nome;
+                        row["contato"].Value = p.fone;
+                        row["cidade"].Value = p.cidade;
+                        row["estado"].Value = p.estado;
+                        row["contato"].Value = p.fone;
+                        row["endereco"].Value = p.endereco;
+                        row["ativo"].Value = p.ativo;
+                    }
+                } else {
+                    //só para dar um feedback se deu certo
+                    tbResultado.BackColor = Color.DarkRed;
+                    tbResultado.Text = resposta.mensagem;
+                }
+            };
+            //boilerplate para invocar a thread da UI e não dar problemas
+            if (this.InvokeRequired)
+                this.Invoke(methodInvokerDelegate);
+            else
+                methodInvokerDelegate();
+
+        }
+
         #endregion
 
         private void tbIdPessoa_TextChanged(object sender, EventArgs e) {
-            if (tbIdPessoa.Text != "")
-                BtnAddItens.Enabled = true;
+            if (tbIdPessoa.Text == "") {
+                BtnAddItens.Enabled = false;
+                return;
+            }
+            BtnAddItens.Enabled = true;
+        }
+
+        private void btNovo_Click(object sender, EventArgs e) {
+            tbIdPessoa.Text = "";
+            tbIdOng.Text = "";
+            tbNomePessoa.Text = "";
+            cbCidade.Text = "";
+            cbEstado.Text = "";
+            tbContatoPessoa.Text = "";
+            tbEnderecoPessoa.Text = "";
+            chbAtivo.Checked = false;
+        }
+
+        private void DgvPessoas_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex < 0)
+                return;
+            var row = DgvPessoas.Rows[e.RowIndex].Cells;
+            tbIdPessoa.Text = row["idPessoa"].Value.ToString();
+            //tbIdOng.Text
+            tbNomePessoa.Text = (row["nome"].Value ?? "").ToString();
+            cbCidade.Text = (row["cidade"].Value ?? "").ToString();
+            cbEstado.Text = (row["estado"].Value ?? "").ToString();
+            tbContatoPessoa.Text = (row["contato"].Value ?? "").ToString();
+            tbEnderecoPessoa.Text = (row["endereco"].Value ?? "").ToString();
+            chbAtivo.Checked = Convert.ToBoolean(row["ativo"].Value ?? false);
+            //chbDoador.Checked
+            //chbNecessitado.Checked 
         }
     }
 }

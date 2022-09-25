@@ -28,12 +28,14 @@ namespace Models {
     }
 
     public class ObjetosModel {
+        public string tablename { get; set; } = "objetos";
         public long? id { get; set; }
         public long? idcategoria { get; set; }
         public string? objeto { get; set; }
-        public string? imagem { get; set; }
+        public byte[]? imagem { get; set; }
         public string? descricao { get; set; }
         public string? status { get; set; }
+        public string? tipo { get; set; }
     }
 
     public class ObjetosDoandoModel {

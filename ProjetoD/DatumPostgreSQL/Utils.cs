@@ -7,8 +7,8 @@ using static serverUtils.Utils;
 namespace DatumPostgreSQL {
     public class Utils {
 
-        //Inserir registros
-        public static void InserirRegistro(object obj) {
+
+        public static long? InserirRegistro(object obj) {
             var parms = ReadParms();
             string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
             using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
@@ -21,7 +21,8 @@ namespace DatumPostgreSQL {
                             pgsqlcommand.Parameters.AddWithValue(ColumnAndValue.Key, ColumnAndValue.Value ?? DBNull.Value);
                         }
                         pgsqlcommand.Prepare();
-                        pgsqlcommand.ExecuteNonQuery();
+                        var res = pgsqlcommand.ExecuteScalar();
+                        return Convert.ToInt64(res);
                     }
                 } catch (NpgsqlException ex) {
                     Console.WriteLine(ex);
@@ -31,7 +32,7 @@ namespace DatumPostgreSQL {
                 }
             }
         }
-        //Inserir registros
+
         public static void UpdateRegistro(object obj) {
             var parms = ReadParms();
             string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
@@ -55,6 +56,86 @@ namespace DatumPostgreSQL {
                 }
             }
         }
+
+        public static List<T> BuscarUltimosMil<T>(string tablename) {
+            DataTable dt = new DataTable();
+
+            var parms = ReadParms();
+            string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
+            using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
+                try {
+                    //Abre a conexão com o PgSQL                  
+                    pgsqlConnection.Open();
+                    string query = $"SELECT * FROM {tablename} ORDER BY id DESC LIMIT 1000";
+                    Console.WriteLine(query);
+
+                    using (NpgsqlDataAdapter Adpt = new NpgsqlDataAdapter(query, pgsqlConnection)) {
+                        Adpt.Fill(dt);
+                    }
+
+                } catch (NpgsqlException ex) {
+                    throw ex;
+                } finally {
+                    pgsqlConnection.Close();
+                }
+            }
+            List<T> resultados = new();
+            foreach (DataRow row in dt.Rows) {
+                var objeto = (T)Activator.CreateInstance(typeof(T))!;
+                foreach (var prop in (objeto).GetType().GetProperties()) {
+                    if (prop.Name == "tablename")
+                        continue;
+                    if (row[prop.Name].GetType() == typeof(DBNull)) {
+                        prop.SetValue(objeto, null);
+                        continue;
+                    }
+                    prop.SetValue(objeto, row[prop.Name]);
+                }
+                resultados.Add(objeto);
+            }
+            return resultados;
+        }
+
+        public static List<T> QueryLivre<T>(string query) {
+            DataTable dt = new DataTable();
+
+            var parms = ReadParms();
+            string connString = $"Server={parms.pgServerName};Port={parms.pgPort};User Id={parms.pgUserName};Password={parms.pgPassword};Database={parms.pgDatabaseName};";
+            using (NpgsqlConnection pgsqlConnection = new NpgsqlConnection(connString)) {
+                try {
+                    //Abre a conexão com o PgSQL                  
+                    pgsqlConnection.Open();
+                    //string query = $"SELECT * FROM {tablename} ORDER BY id DESC LIMIT 1000";
+                    Console.WriteLine(query);
+
+                    using (NpgsqlDataAdapter Adpt = new NpgsqlDataAdapter(query, pgsqlConnection)) {
+                        Adpt.Fill(dt);
+                    }
+
+                } catch (NpgsqlException ex) {
+                    throw ex;
+                } finally {
+                    pgsqlConnection.Close();
+                }
+            }
+            List<T> resultados = new();
+            foreach (DataRow row in dt.Rows) {
+                var objeto = (T)Activator.CreateInstance(typeof(T))!;
+                foreach (var prop in (objeto).GetType().GetProperties()) {
+                    if (prop.Name == "tablename")
+                        continue;
+                    if (row[prop.Name].GetType() == typeof(DBNull)) {
+                        prop.SetValue(objeto, null);
+                        continue;
+                    }
+                    prop.SetValue(objeto, row[prop.Name]);
+                }
+                resultados.Add(objeto);
+            }
+            return resultados;
+        }
+
+
         static Dictionary<string, object?> GetColumnsAndValues(object obj) {
             //cria um dicionario contendo como chave uma string (onde fica o nome da coluna/nome da propriedade do objeto)
             //e também contendo no valor outra string, essa sendo o nosso valor da propriedade do objeto
@@ -75,10 +156,11 @@ namespace DatumPostgreSQL {
             //retorna o dicionario contendo o nome das propriedades e as colunas
             return ColumnsAndValues;
         }
+
         public static string CreateInsertQuery(object obj) {
             string s = ($"INSERT INTO {GetTableName(obj)}"
                                 + $"({GetColumns(obj, false, false, false)}) "
-                          + $"VALUES ({GetColumns(obj, true, false, false)})");
+                          + $"VALUES ({GetColumns(obj, true, false, false)}) RETURNING id");
 
             Console.WriteLine(s);
             return s;
