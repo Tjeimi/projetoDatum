@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CadastroPessoas\CadastroPessoas.csproj" />
     <ProjectReference Include="..\DatumMQTT\DatumMQTT.csproj" />
     <ProjectReference Include="..\ServerModel\ServerModel.csproj" />
   </ItemGroup>

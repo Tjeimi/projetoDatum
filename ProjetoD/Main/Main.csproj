@@ -11,10 +11,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CadastroObjetos\CadastroObjetos.csproj" />
+    <ProjectReference Include="..\CadastroOngs\CadastroOngs.csproj" />
     <ProjectReference Include="..\CadastroPessoas\CadastroPessoas.csproj" />
     <ProjectReference Include="..\CadastroUsuarios\CadastroUsuarios.csproj" />
     <ProjectReference Include="..\Chat\Chat.csproj" />
     <ProjectReference Include="..\Doacoes\Doacoes.csproj" />
+    <ProjectReference Include="..\PesquisaObjetos\PesquisaObjetos.csproj" />
   </ItemGroup>
 
   <ItemGroup>

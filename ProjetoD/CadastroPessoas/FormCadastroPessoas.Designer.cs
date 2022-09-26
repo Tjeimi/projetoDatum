@@ -134,7 +134,7 @@
             this.BtnAddItens.Name = "BtnAddItens";
             this.BtnAddItens.Size = new System.Drawing.Size(180, 33);
             this.BtnAddItens.TabIndex = 9;
-            this.BtnAddItens.Text = "Adicionar Itens";
+            this.BtnAddItens.Text = "Adicionar ou ver itens";
             this.BtnAddItens.UseVisualStyleBackColor = false;
             this.BtnAddItens.Click += new System.EventHandler(this.BtnAddItens_Click);
             // 
@@ -842,6 +842,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadastroPessoas";
             this.Text = "Cadastro de Pessoas";
+            this.Load += new System.EventHandler(this.FormCadastroPessoas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvPessoas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

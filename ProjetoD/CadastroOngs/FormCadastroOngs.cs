@@ -4,17 +4,13 @@ using System.Text.Json;
 using System.Windows.Forms;
 using static datumMQTT.Utils;
 
-namespace CadastroOngs
-{
-    public partial class FormCadastroOngs : Form
-    {
-        public FormCadastroOngs()
-        {
+namespace CadastroOngs {
+    public partial class FormCadastroOngs : Form {
+        public FormCadastroOngs() {
             InitializeComponent();
         }
 
-        private async void BtnGravarOng_Click(object sender, EventArgs e)
-        {
+        private async void BtnGravarOng_Click(object sender, EventArgs e) {
             var ong = new DadosONGModel();
             if (idOng.Text != "")
                 ong.id = Convert.ToInt64(idOng.Text);
@@ -24,9 +20,6 @@ namespace CadastroOngs
             ong.cidade = cbCidade.Text;
             ong.estado = cbEstado.Text;
             ong.email = tbEmail.Text;
-
-            Console.WriteLine("BOTÃO SALVAR!!!!!!!!!!!!!!!!!!!!!!!!!!");
-
             BasePacket pacote = new();
             pacote.dados = ong;
             pacote.serverName = "ServerOng";
@@ -37,48 +30,20 @@ namespace CadastroOngs
 
         }
 
-        /*private void BtnEditarOng_Click(object sender, EventArgs e)
-        {
-            var ong = new Models.DadosONGModel();
-            ong.id = int.Parse(idOng.Text);
-            ong.nome = tbNomeOng.Text;
-            ong.endereco = tbEnderecoOng.Text;
-            ong.fone = tbContatoOng.Text;
-            ong.cidade = cbCidade.Text;
-            ong.estado = cbEstado.Text;
-            ong.email = tbEmail.Text;
-        }*/
 
-        /*private void BtnApagarParceira_Click(object sender, EventArgs e)
-        {
-            var ong = new Models.DadosONGModel();
-            ong.id = int.Parse(idOng.Text);
-        }
-
-        private void BtnGravarParceira_Click(object sender, EventArgs e)
-        {
-            var ong = new Models.ParceriasONGModel();
-            ong.id = int.Parse(idOng.Text);
-            ong.idcidadeparceria = int.Parse(cbCidadesParceiras.Text);
-        }*/
-
-        void RetornarDados(string r)
-        {
+        void RetornarDados(string r) {
             MethodInvoker methodInvokerDelegate = delegate () {
                 //tenta desserializar e colocar o id inserido na tela
                 var resposta = JsonSerializer.Deserialize<BasePacketResposta>(r);
-                if (resposta!.codigo == 200)
-                {
+                if (resposta!.codigo == 200) {
                     DadosONGModel ong = JsonSerializer.Deserialize<DadosONGModel>(resposta.dados!)!;
                     //só para dar um feedback se deu certo
                     tbResultado.BackColor = Color.DarkGreen;
                     tbResultado.Text = resposta.mensagem;
                     //joga o id na tela
                     idOng.Text = ong!.id.ToString();
-                    
-                }
-                else
-                {
+
+                } else {
                     //só para dar um feedback se deu certo
                     tbResultado.BackColor = Color.DarkRed;
                     tbResultado.Text = resposta.mensagem;

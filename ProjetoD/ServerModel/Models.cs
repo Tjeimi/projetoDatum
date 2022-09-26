@@ -58,15 +58,16 @@ namespace Models {
     }
 
     public class PesquisaObjetoReqModel {
-        public string? descricao { get; set; }
+        public string? objeto { get; set; }
         public string? categoria { get; set; }
     }
 
-    public class PesquisaObjetoRetModel {
+    public class PesquisaObjetoRetModel { 
         public long? idpessoa { get; set; }
+        public string? objeto { get; set; }
         public string? categoria { get; set; }
-        public string? descricao { get; set; }
-        public string? tipo { get; set; }
+        public bool? doacao { get; set; }
+        public bool? necessidade { get; set; }
     }
 
     public class BasePacket {

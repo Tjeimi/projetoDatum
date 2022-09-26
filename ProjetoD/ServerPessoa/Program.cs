@@ -13,6 +13,9 @@ public class ServerPessoa {
             case "BuscarRegistros":
                 BuscarRegistros(args[1], Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
                 break;
+            case "Select":
+                Select(args[1], Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
+                break;
             case "Delete":
                 Delete(Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
                 break;
@@ -53,6 +56,26 @@ public class ServerPessoa {
             bpr.codigo = 200;
             bpr.mensagem = "Sucesso";
             bpr.dados = JsonSerializer.Serialize(pessoasList);
+            await PublicarRespostaAsync(topicoResposta, bpr);
+        } catch (Exception ex) {
+            Console.WriteLine(ex.Message);
+            Console.WriteLine("enviando a resposta");
+            var bpr = new BasePacketResposta();
+            bpr.codigo = 500;
+            bpr.mensagem = "Erro: " + ex.Message;
+            await PublicarRespostaAsync(topicoResposta, bpr);
+        }
+    }
+
+    static async void Select(string topicoResposta, string dados) {
+        try {
+            var id = JsonSerializer.Deserialize<PessoasModel>(dados)!.id!;
+            var pessoasList = QueryLivre<PessoasModel>($"SELECT * FROM pessoas WHERE id = {id} LIMIT 1");
+            Console.WriteLine("enviando a resposta");
+            var bpr = new BasePacketResposta();
+            bpr.codigo = 200;
+            bpr.mensagem = "Sucesso";
+            bpr.dados = JsonSerializer.Serialize(pessoasList[0]);
             await PublicarRespostaAsync(topicoResposta, bpr);
         } catch (Exception ex) {
             Console.WriteLine(ex.Message);

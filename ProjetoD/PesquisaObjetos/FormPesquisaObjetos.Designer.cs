@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPesquisaObjetos));
             this.DgvPesquisaObjetos = new System.Windows.Forms.DataGridView();
             this.idPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriaO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbDescricao = new System.Windows.Forms.TextBox();
+            this.tbObjeto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCategorias = new System.Windows.Forms.ComboBox();
@@ -50,8 +50,8 @@
             this.DgvPesquisaObjetos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvPesquisaObjetos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPessoa,
-            this.categoriaO,
-            this.descricao,
+            this.categoria,
+            this.objeto,
             this.tipo});
             this.DgvPesquisaObjetos.Location = new System.Drawing.Point(12, 73);
             this.DgvPesquisaObjetos.Name = "DgvPesquisaObjetos";
@@ -61,6 +61,7 @@
             this.DgvPesquisaObjetos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvPesquisaObjetos.Size = new System.Drawing.Size(776, 343);
             this.DgvPesquisaObjetos.TabIndex = 11;
+            this.DgvPesquisaObjetos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPesquisaObjetos_CellDoubleClick);
             // 
             // idPessoa
             // 
@@ -70,20 +71,20 @@
             this.idPessoa.ReadOnly = true;
             this.idPessoa.Visible = false;
             // 
-            // categoriaO
+            // categoria
             // 
-            this.categoriaO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.categoriaO.FillWeight = 50F;
-            this.categoriaO.HeaderText = "Categoria";
-            this.categoriaO.Name = "categoriaO";
-            this.categoriaO.ReadOnly = true;
+            this.categoria.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.categoria.FillWeight = 50F;
+            this.categoria.HeaderText = "Categoria";
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
             // 
-            // descricao
+            // objeto
             // 
-            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descricao.HeaderText = "Descrição";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
+            this.objeto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.objeto.HeaderText = "Objeto";
+            this.objeto.Name = "objeto";
+            this.objeto.ReadOnly = true;
             // 
             // tipo
             // 
@@ -92,12 +93,12 @@
             this.tipo.Name = "tipo";
             this.tipo.ReadOnly = true;
             // 
-            // tbDescricao
+            // tbObjeto
             // 
-            this.tbDescricao.Location = new System.Drawing.Point(12, 44);
-            this.tbDescricao.Name = "tbDescricao";
-            this.tbDescricao.Size = new System.Drawing.Size(418, 23);
-            this.tbDescricao.TabIndex = 12;
+            this.tbObjeto.Location = new System.Drawing.Point(12, 44);
+            this.tbObjeto.Name = "tbObjeto";
+            this.tbObjeto.Size = new System.Drawing.Size(418, 23);
+            this.tbObjeto.TabIndex = 12;
             // 
             // label1
             // 
@@ -106,9 +107,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 17);
+            this.label1.Size = new System.Drawing.Size(48, 17);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Descrição";
+            this.label1.Text = "Objeto";
             // 
             // label2
             // 
@@ -178,7 +179,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbCategorias);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbDescricao);
+            this.Controls.Add(this.tbObjeto);
             this.Controls.Add(this.DgvPesquisaObjetos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPesquisaObjetos";
@@ -192,7 +193,7 @@
         #endregion
 
         private DataGridView DgvPesquisaObjetos;
-        private TextBox tbDescricao;
+        private TextBox tbObjeto;
         private Label label1;
         private Label label2;
         private ComboBox cbCategorias;
@@ -202,5 +203,7 @@
         private DataGridViewTextBoxColumn descricao;
         private DataGridViewTextBoxColumn tipo;
         private TextBox tbResultado;
+        private DataGridViewTextBoxColumn categoria;
+        private DataGridViewTextBoxColumn objeto;
     }
 }

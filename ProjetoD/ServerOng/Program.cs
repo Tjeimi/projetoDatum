@@ -5,14 +5,6 @@ using static datumMQTT.Utils;
 using static DatumPostgreSQL.Utils;
 
 public class ServerOng {
-    /*static void Main(string[] args) {
-        Console.WriteLine(args[0]);
-        Console.WriteLine(args[1]);
-
-        Console.ReadLine();
-    }*/
-
-    //public class ServerObjetos{
         static void Main(string[] args)
         {
             switch (args[0])

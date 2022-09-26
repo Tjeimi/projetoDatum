@@ -59,6 +59,7 @@
             this.BtnOng.Text = "ONG";
             this.BtnOng.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnOng.UseVisualStyleBackColor = true;
+            this.BtnOng.Click += new System.EventHandler(this.BtnOng_Click);
             // 
             // btnPessoas
             // 
@@ -94,6 +95,7 @@
             this.btnObjetos.Text = "OBJETOS";
             this.btnObjetos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnObjetos.UseVisualStyleBackColor = true;
+            this.btnObjetos.Click += new System.EventHandler(this.btnObjetos_Click);
             // 
             // btnDoacoes
             // 

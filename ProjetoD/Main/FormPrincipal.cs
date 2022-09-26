@@ -1,6 +1,8 @@
+using CadastroOngs;
 using CadastroPessoas;
 using CadastroUsuarios;
 using Chat;
+using PesquisaObjetos;
 
 namespace Main {
     public partial class FormPrincipal : Form {
@@ -25,6 +27,16 @@ namespace Main {
 
         private void btnUsuarios_Click(object sender, EventArgs e) {
             FormCadastroUsuarios form = new();
+            form.Show();
+        }
+
+        private void BtnOng_Click(object sender, EventArgs e) {
+            FormCadastroOngs form = new();
+            form.Show();
+        }
+
+        private void btnObjetos_Click(object sender, EventArgs e) {
+            FormPesquisaObjetos form = new();
             form.Show();
         }
     }

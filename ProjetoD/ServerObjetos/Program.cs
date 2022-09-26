@@ -70,8 +70,8 @@ namespace ServerObjetos {
 
         static async void Pesquisa(string topicoResposta, string dados) {
             try {
-                long? idpessoa = JsonSerializer.Deserialize<ObjetosModel>(dados)!.idpessoa!;
-                var ObjetosList = QueryLivre<ObjetosModel>($"SELECT * FROM objetos WHERE idpessoa = {idpessoa} ORDER BY id DESC");
+                var pesquisa = JsonSerializer.Deserialize<PesquisaObjetoReqModel>(dados)!;
+                var ObjetosList = QueryLivre<PesquisaObjetoRetModel>($"select idpessoa, objeto, categoria, doacao, necessidade from objetos where categoria LIKE '%{pesquisa.categoria}%' and objeto like '%{pesquisa.objeto}%' LIMIT 100");
                 Console.WriteLine("enviando a resposta");
                 var bpr = new BasePacketResposta();
                 bpr.codigo = 200;

@@ -1,3 +1,5 @@
+using CadastroObjetos;
+using CadastroPessoas;
 using Models;
 using System.Text.Json;
 using static datumMQTT.Utils;
@@ -9,8 +11,8 @@ namespace PesquisaObjetos {
 
         private async void BtnPesquisarObjetos_Click(object sender, EventArgs e) {
             PesquisaObjetoReqModel p = new();
-            p.categoria = cbCategorias.Text; 
-            p.descricao = tbDescricao.Text;
+            p.categoria = cbCategorias.Text;
+            p.objeto = tbObjeto.Text;
 
             BasePacket pacote = new();
             pacote.dados = p;
@@ -37,8 +39,11 @@ namespace PesquisaObjetos {
                         var row = DgvPesquisaObjetos.Rows[index].Cells;
                         row["idPessoa"].Value = p.idpessoa;
                         row["categoria"].Value = p.categoria;
-                        row["descricao"].Value = p.descricao;
-                        row["tipo"].Value = p.tipo;
+                        row["objeto"].Value = p.objeto;
+                        if (p.doacao == true)
+                            row["tipo"].Value = "Doação";
+                        else
+                            row["tipo"].Value = "Necessidade";
                     }
                 } else {
                     //só para dar um feedback se deu certo
@@ -51,6 +56,15 @@ namespace PesquisaObjetos {
                 this.Invoke(methodInvokerDelegate);
             else
                 methodInvokerDelegate();
+        }
+
+        private void DgvPesquisaObjetos_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex < 0)
+                return;
+            var row = DgvPesquisaObjetos.Rows[e.RowIndex].Cells;
+            FormCadastroPessoas form = new(Convert.ToInt64(row["idPessoa"].Value));
+            form.ShowDialog();
+            //tbIdPessoa.Text = row["idPessoa"].Value.ToString();
         }
     }
 }
