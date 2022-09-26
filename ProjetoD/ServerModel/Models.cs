@@ -42,7 +42,6 @@ namespace Models {
     public class UsuariosModel {
         public string tablename { get; set; } = "usuarios";
         public long? id { get; set; }
-        public long? idong { get; set; }
         public bool? ativo { get; set; }
         public string? nome { get; set; }
         public string? username { get; set; }

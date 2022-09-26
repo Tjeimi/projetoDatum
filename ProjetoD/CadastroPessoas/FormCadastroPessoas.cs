@@ -119,7 +119,6 @@ namespace CadastroPessoas {
                 this.Invoke(methodInvokerDelegate);
             else
                 methodInvokerDelegate();
-
         }
 
         #endregion
