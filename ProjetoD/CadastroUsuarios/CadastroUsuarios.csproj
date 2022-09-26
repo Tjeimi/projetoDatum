@@ -11,8 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DatumMQTT\DatumMQTT.csproj" />
-    <ProjectReference Include="..\ServerBase\ServerBase.csproj" />
     <ProjectReference Include="..\ServerModel\ServerModel.csproj" />
+    <ProjectReference Include="..\ServerUtils\ServerUtils.csproj" />
   </ItemGroup>
 
   <ItemGroup>

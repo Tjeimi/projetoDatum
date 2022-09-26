@@ -41,7 +41,7 @@
             this.tbUsuario.Location = new System.Drawing.Point(32, 62);
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(242, 23);
-            this.tbUsuario.TabIndex = 15;
+            this.tbUsuario.TabIndex = 0;
             // 
             // label1
             // 
@@ -72,7 +72,7 @@
             this.tbSenha.Location = new System.Drawing.Point(32, 113);
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(242, 23);
-            this.tbSenha.TabIndex = 15;
+            this.tbSenha.TabIndex = 1;
             // 
             // BtnLogin
             // 
@@ -82,7 +82,7 @@
             this.BtnLogin.Location = new System.Drawing.Point(241, 142);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(33, 33);
-            this.BtnLogin.TabIndex = 25;
+            this.BtnLogin.TabIndex = 2;
             this.BtnLogin.UseVisualStyleBackColor = false;
             // 
             // FormLogin

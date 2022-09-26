@@ -18,18 +18,38 @@ public class ServerUsuarios {
 
     static async void Save(string topicoResposta, string dados) {
         try {
-            var d = JsonSerializer.Deserialize<UsuariosModel>(dados);
-            if (d.id == null) {
-                InserirRegistro(d!);
+            var usuario = JsonSerializer.Deserialize<UsuariosModel>(dados);
+            if (usuario!.id == null) {
+                usuario!.id = InserirRegistro(usuario!);
             } else {
-                UpdateRegistro(d!);
+                UpdateRegistro(usuario!);
             }
             //retorna os dados
             Console.WriteLine("enviando a resposta");
             var bpr = new BasePacketResposta();
             bpr.codigo = 200;
-            bpr.mensagem = "sucesso";
-            bpr.dados = d;
+            bpr.mensagem = $"Sucesso {DateTime.Now.ToString()}";
+            bpr.dados = JsonSerializer.Serialize(usuario);
+            await PublicarRespostaAsync(topicoResposta, bpr);
+        } catch (Exception ex) {
+            Console.WriteLine(ex.Message);
+            Console.WriteLine("enviando a resposta");
+            var bpr = new BasePacketResposta();
+            bpr.codigo = 500;
+            bpr.mensagem = "Erro: " + ex.Message;
+            await PublicarRespostaAsync(topicoResposta, bpr);
+        }
+    }
+
+    static async void BuscarRegistros(string topicoResposta, string dados) {
+        try {
+            string nome = JsonSerializer.Deserialize<PessoasModel>(dados)!.nome!;
+            var pessoasList = QueryLivre<PessoasModel>($"SELECT * FROM pessoas WHERE nome LIKE '%{nome}%' ORDER BY id DESC");
+            Console.WriteLine("enviando a resposta");
+            var bpr = new BasePacketResposta();
+            bpr.codigo = 200;
+            bpr.mensagem = "Sucesso";
+            bpr.dados = JsonSerializer.Serialize(pessoasList);
             await PublicarRespostaAsync(topicoResposta, bpr);
         } catch (Exception ex) {
             Console.WriteLine(ex.Message);
