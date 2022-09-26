@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPesquisaObjetos));
             this.DgvPesquisaObjetos = new System.Windows.Forms.DataGridView();
-            this.txbDescricao = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbCategorias = new System.Windows.Forms.ComboBox();
             this.idPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriaO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txbDescricao = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbCategorias = new System.Windows.Forms.ComboBox();
             this.BtnPesquisarObjetos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPesquisaObjetos)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,36 @@
             this.DgvPesquisaObjetos.RowTemplate.Height = 25;
             this.DgvPesquisaObjetos.Size = new System.Drawing.Size(776, 365);
             this.DgvPesquisaObjetos.TabIndex = 11;
+            // 
+            // idPessoa
+            // 
+            this.idPessoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idPessoa.HeaderText = "idP";
+            this.idPessoa.Name = "idPessoa";
+            this.idPessoa.ReadOnly = true;
+            this.idPessoa.Visible = false;
+            // 
+            // categoriaO
+            // 
+            this.categoriaO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.categoriaO.FillWeight = 50F;
+            this.categoriaO.HeaderText = "Categoria";
+            this.categoriaO.Name = "categoriaO";
+            this.categoriaO.ReadOnly = true;
+            // 
+            // Descrição
+            // 
+            this.Descrição.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descrição.HeaderText = "Descrição";
+            this.Descrição.Name = "Descrição";
+            this.Descrição.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.FillWeight = 25F;
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
             // 
             // txbDescricao
             // 
@@ -115,36 +145,6 @@
             this.cbCategorias.Size = new System.Drawing.Size(313, 23);
             this.cbCategorias.TabIndex = 20;
             // 
-            // idPessoa
-            // 
-            this.idPessoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idPessoa.HeaderText = "idP";
-            this.idPessoa.Name = "idPessoa";
-            this.idPessoa.ReadOnly = true;
-            this.idPessoa.Visible = false;
-            // 
-            // categoriaO
-            // 
-            this.categoriaO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.categoriaO.FillWeight = 50F;
-            this.categoriaO.HeaderText = "Categoria";
-            this.categoriaO.Name = "categoriaO";
-            this.categoriaO.ReadOnly = true;
-            // 
-            // Descrição
-            // 
-            this.Descrição.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descrição.HeaderText = "Descrição";
-            this.Descrição.Name = "Descrição";
-            this.Descrição.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.FillWeight = 25F;
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
             // BtnPesquisarObjetos
             // 
             this.BtnPesquisarObjetos.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -155,6 +155,7 @@
             this.BtnPesquisarObjetos.Size = new System.Drawing.Size(33, 33);
             this.BtnPesquisarObjetos.TabIndex = 22;
             this.BtnPesquisarObjetos.UseVisualStyleBackColor = false;
+            this.BtnPesquisarObjetos.Click += new System.EventHandler(this.BtnPesquisarObjetos_Click);
             // 
             // FormPesquisaObjetos
             // 

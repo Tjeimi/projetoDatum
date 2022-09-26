@@ -50,11 +50,12 @@ public class ServerUsuarios {
     static async void Login(string topicoResposta, string dados) {
         try {
             var usuario = JsonSerializer.Deserialize<UsuariosModel>(dados);
-            var usuariosList = QueryLivre<UsuariosModel>($"SELECT * FROM usuarios WHERE username = '{usuario!.username}' AND password = '{usuario!.password}' LIMIT 1");
+            var usuariosList = QueryLivre<UsuariosLoginModel>($"SELECT u.id, u.idong, u.nome AS usuarionome, o.nome AS ongnome FROM usuarios u LEFT JOIN ongs o ON u.idong = o.id WHERE u.username = '{usuario.username}' AND u.password = '{usuario.password}' LIMIT 1");
             if (usuariosList.Count > 0) {
                 var bpr = new BasePacketResposta();
                 bpr.codigo = 200;
                 bpr.mensagem = "Sucesso";
+                bpr.dados = JsonSerializer.Serialize(usuariosList);
                 await PublicarRespostaAsync(topicoResposta, bpr);
             } else {
                 Console.WriteLine("enviando a resposta");

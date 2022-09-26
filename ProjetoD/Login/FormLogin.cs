@@ -32,7 +32,10 @@ namespace Login {
             MethodInvoker methodInvokerDelegate = delegate () {
                 var resposta = JsonSerializer.Deserialize<BasePacketResposta>(r);
                 if (resposta!.codigo == 200) {
-                    
+                    var r = JsonSerializer.Deserialize<List<UsuariosLoginModel>>(resposta.dados!);
+                    Environment.SetEnvironmentVariable("idong", r[0].idong.ToString());
+                    Environment.SetEnvironmentVariable("ongnome", r[0].ongnome);
+                    Environment.SetEnvironmentVariable("usuarionome", r[0].usuarionome);
                     this.Hide();
                     FormPrincipal form = new();
                     form.Closed += (s, args) => this.Close();

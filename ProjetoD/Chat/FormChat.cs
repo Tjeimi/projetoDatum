@@ -18,12 +18,13 @@ namespace Chat {
         #region METODOS
 
         void PrintToChat(string mensagem) {
-            var publicacao = JsonSerializer.Deserialize<ChatModel>(mensagem);
+            Debug.WriteLine(mensagem);
+            var resposta = JsonSerializer.Deserialize<ChatModel>(mensagem);
             //Fica em outra thread esperando mensagens, então quando chega, tem que "invocar" a thread com a UI 
             //para que não de erro na hora de imprimir para o campo de chat
             MethodInvoker methodInvokerDelegate = delegate () {
                 //aqui dentro lida diretamente com a UI de forma segura
-                tbChat.AppendText($"{publicacao!.usuario}: {publicacao!.mensagem}\r\n");
+                tbChat.AppendText($"{resposta!.usuario}: {resposta!.mensagem}\r\n");
             };
 
             //boilerplate para invocar a thread da UI e não dar problemas
@@ -39,10 +40,9 @@ namespace Chat {
 
         private async void btEnviar_ClickAsync(object sender, EventArgs e) {
             var msg = new ChatModel();
-            msg.usuario = "Raynê";
+            msg.usuario = Environment.GetEnvironmentVariable("usuarionome");
             msg.mensagem = tbMensagemEnvio.Text;
-            var publicacao = JsonSerializer.Serialize(msg);
-            await datumMQTT.Utils.PublicarRespostaAsync("datum/chatTopic", publicacao);
+            await datumMQTT.Utils.PublicarRespostaAsync("datum/chatTopic", msg);
             tbMensagemEnvio.Text = "";
             tbMensagemEnvio.Focus();
         }
@@ -50,6 +50,7 @@ namespace Chat {
         private void tbMensagemEnvio_KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyData == Keys.Enter) {
                 btEnviar.PerformClick();
+                e.SuppressKeyPress = true;
             }
         }
 

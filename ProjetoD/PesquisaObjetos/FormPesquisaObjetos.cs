@@ -6,5 +6,9 @@ namespace PesquisaObjetos
         {
             InitializeComponent();
         }
+
+        private void BtnPesquisarObjetos_Click(object sender, EventArgs e) {
+
+        }
     }
 }

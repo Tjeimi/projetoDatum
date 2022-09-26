@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNomeOng = new System.Windows.Forms.Label();
             this.BtnOng = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnPessoas = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnObjetos = new System.Windows.Forms.Button();
+            this.btnDoacoes = new System.Windows.Forms.Button();
+            this.btnChat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lblNomeOng
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(231, 92);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "[NOME ONG]";
+            this.lblNomeOng.AutoSize = true;
+            this.lblNomeOng.BackColor = System.Drawing.Color.Transparent;
+            this.lblNomeOng.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNomeOng.Location = new System.Drawing.Point(231, 92);
+            this.lblNomeOng.Name = "lblNomeOng";
+            this.lblNomeOng.Size = new System.Drawing.Size(126, 24);
+            this.lblNomeOng.TabIndex = 0;
+            this.lblNomeOng.Text = "[NOME ONG]";
             // 
             // BtnOng
             // 
@@ -60,81 +60,83 @@
             this.BtnOng.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.BtnOng.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnPessoas
             // 
-            this.button2.Image = global::Main.Properties.Resources.icons8_people_50px;
-            this.button2.Location = new System.Drawing.Point(242, 263);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 90);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "PESSOAS";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPessoas.Image = global::Main.Properties.Resources.icons8_people_50px;
+            this.btnPessoas.Location = new System.Drawing.Point(242, 263);
+            this.btnPessoas.Name = "btnPessoas";
+            this.btnPessoas.Size = new System.Drawing.Size(90, 90);
+            this.btnPessoas.TabIndex = 1;
+            this.btnPessoas.Text = "PESSOAS";
+            this.btnPessoas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnPessoas.UseVisualStyleBackColor = true;
+            this.btnPessoas.Click += new System.EventHandler(this.btnPessoas_Click);
             // 
-            // button3
+            // btnUsuarios
             // 
-            this.button3.Image = global::Main.Properties.Resources.icons8_male_user_50px;
-            this.button3.Location = new System.Drawing.Point(125, 263);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 90);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "USUÁRIOS";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Image = global::Main.Properties.Resources.icons8_male_user_50px;
+            this.btnUsuarios.Location = new System.Drawing.Point(125, 263);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(90, 90);
+            this.btnUsuarios.TabIndex = 1;
+            this.btnUsuarios.Text = "USUÁRIOS";
+            this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
-            // button4
+            // btnObjetos
             // 
-            this.button4.Image = global::Main.Properties.Resources.icons8_worldwide_delivery_50px;
-            this.button4.Location = new System.Drawing.Point(242, 147);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 90);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "OBJETOS";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnObjetos.Image = global::Main.Properties.Resources.icons8_worldwide_delivery_50px;
+            this.btnObjetos.Location = new System.Drawing.Point(242, 147);
+            this.btnObjetos.Name = "btnObjetos";
+            this.btnObjetos.Size = new System.Drawing.Size(90, 90);
+            this.btnObjetos.TabIndex = 1;
+            this.btnObjetos.Text = "OBJETOS";
+            this.btnObjetos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnObjetos.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnDoacoes
             // 
-            this.button5.Enabled = false;
-            this.button5.Image = global::Main.Properties.Resources.icons8_documents_50px;
-            this.button5.Location = new System.Drawing.Point(360, 263);
-            this.button5.Name = "button5";
-            this.button5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button5.Size = new System.Drawing.Size(90, 90);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "RELATÓRIOS";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnDoacoes.Image = global::Main.Properties.Resources.icons8_trust_50px;
+            this.btnDoacoes.Location = new System.Drawing.Point(360, 147);
+            this.btnDoacoes.Name = "btnDoacoes";
+            this.btnDoacoes.Size = new System.Drawing.Size(90, 90);
+            this.btnDoacoes.TabIndex = 1;
+            this.btnDoacoes.Text = "DOAÇÕES";
+            this.btnDoacoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDoacoes.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnChat
             // 
-            this.button6.Image = global::Main.Properties.Resources.icons8_trust_50px;
-            this.button6.Location = new System.Drawing.Point(360, 147);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(90, 90);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "DOAÇÕES";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnChat.Image = global::Main.Properties.Resources.icons8_bate_papo_cheio_50;
+            this.btnChat.Location = new System.Drawing.Point(360, 263);
+            this.btnChat.Name = "btnChat";
+            this.btnChat.Size = new System.Drawing.Size(90, 90);
+            this.btnChat.TabIndex = 1;
+            this.btnChat.Text = "CHAT";
+            this.btnChat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnChat.UseVisualStyleBackColor = true;
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
-            // Form1
+            // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Main.Properties.Resources._2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDoacoes);
+            this.Controls.Add(this.btnObjetos);
+            this.Controls.Add(this.btnUsuarios);
+            this.Controls.Add(this.btnChat);
+            this.Controls.Add(this.btnPessoas);
             this.Controls.Add(this.BtnOng);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNomeOng);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "FormPrincipal";
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,12 +144,12 @@
 
         #endregion
 
-        private Label label1;
+        private Label lblNomeOng;
         private Button BtnOng;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button btnPessoas;
+        private Button btnUsuarios;
+        private Button btnObjetos;
+        private Button btnDoacoes;
+        private Button btnChat;
     }
 }

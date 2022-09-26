@@ -42,12 +42,19 @@ namespace Models {
     public class UsuariosModel {
         public string tablename { get; set; } = "usuarios";
         public long? id { get; set; }
+        public long? idong { get; set; }
         public bool? ativo { get; set; }
         public string? nome { get; set; }
         public string? username { get; set; }
         public string? password { get; set; }
         public string? fone { get; set; }
+    }
+
+    public class UsuariosLoginModel {
+        public long? id { get; set; }
         public long? idong { get; set; }
+        public string? usuarionome { get; set; }
+        public string? ongnome { get; set; }
     }
 
     public class BasePacket {
