@@ -42,10 +42,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Source Code Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(231, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 24);
+            this.label1.Size = new System.Drawing.Size(126, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "[NOME ONG]";
             // 
@@ -95,6 +95,7 @@
             // 
             // button5
             // 
+            this.button5.Enabled = false;
             this.button5.Image = global::Main.Properties.Resources.icons8_documents_50px;
             this.button5.Location = new System.Drawing.Point(360, 263);
             this.button5.Name = "button5";
@@ -112,7 +113,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(90, 90);
             this.button6.TabIndex = 1;
-            this.button6.Text = "Doações";
+            this.button6.Text = "DOAÇÕES";
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button6.UseVisualStyleBackColor = true;
             // 

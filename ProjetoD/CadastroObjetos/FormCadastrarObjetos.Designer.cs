@@ -43,16 +43,6 @@
             this.tbIdObjeto = new System.Windows.Forms.TextBox();
             this.pbImagem = new System.Windows.Forms.PictureBox();
             this.dgvObjHistorico = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.objeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.necessidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.tbResultado = new System.Windows.Forms.TextBox();
             this.tbIdOng = new System.Windows.Forms.TextBox();
@@ -61,6 +51,17 @@
             this.rbNecessidade = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btNovo = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.objeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.necessidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjHistorico)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -225,6 +226,7 @@
             this.idPessoa,
             this.idOng,
             this.objeto,
+            this.Tipo,
             this.categoria,
             this.descricao,
             this.doado,
@@ -240,75 +242,6 @@
             this.dgvObjHistorico.Size = new System.Drawing.Size(240, 159);
             this.dgvObjHistorico.TabIndex = 35;
             this.dgvObjHistorico.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjHistorico_CellDoubleClick);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // idPessoa
-            // 
-            this.idPessoa.HeaderText = "idPessoa";
-            this.idPessoa.Name = "idPessoa";
-            this.idPessoa.ReadOnly = true;
-            this.idPessoa.Visible = false;
-            // 
-            // idOng
-            // 
-            this.idOng.HeaderText = "idOng";
-            this.idOng.Name = "idOng";
-            this.idOng.ReadOnly = true;
-            this.idOng.Visible = false;
-            // 
-            // objeto
-            // 
-            this.objeto.HeaderText = "objeto";
-            this.objeto.Name = "objeto";
-            this.objeto.ReadOnly = true;
-            // 
-            // categoria
-            // 
-            this.categoria.HeaderText = "categoria";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            this.categoria.Visible = false;
-            // 
-            // descricao
-            // 
-            this.descricao.HeaderText = "descricao";
-            this.descricao.Name = "descricao";
-            this.descricao.ReadOnly = true;
-            this.descricao.Visible = false;
-            // 
-            // doado
-            // 
-            this.doado.HeaderText = "doado";
-            this.doado.Name = "doado";
-            this.doado.ReadOnly = true;
-            this.doado.Visible = false;
-            // 
-            // doacao
-            // 
-            this.doacao.HeaderText = "doacao";
-            this.doacao.Name = "doacao";
-            this.doacao.ReadOnly = true;
-            this.doacao.Visible = false;
-            // 
-            // necessidade
-            // 
-            this.necessidade.HeaderText = "necessidade";
-            this.necessidade.Name = "necessidade";
-            this.necessidade.ReadOnly = true;
-            this.necessidade.Visible = false;
-            // 
-            // imagem
-            // 
-            this.imagem.HeaderText = "imagem";
-            this.imagem.Name = "imagem";
-            this.imagem.ReadOnly = true;
-            this.imagem.Visible = false;
             // 
             // label5
             // 
@@ -396,6 +329,81 @@
             this.btNovo.UseVisualStyleBackColor = false;
             this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // idPessoa
+            // 
+            this.idPessoa.HeaderText = "idPessoa";
+            this.idPessoa.Name = "idPessoa";
+            this.idPessoa.ReadOnly = true;
+            this.idPessoa.Visible = false;
+            // 
+            // idOng
+            // 
+            this.idOng.HeaderText = "idOng";
+            this.idOng.Name = "idOng";
+            this.idOng.ReadOnly = true;
+            this.idOng.Visible = false;
+            // 
+            // objeto
+            // 
+            this.objeto.HeaderText = "objeto";
+            this.objeto.Name = "objeto";
+            this.objeto.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // categoria
+            // 
+            this.categoria.HeaderText = "categoria";
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
+            this.categoria.Visible = false;
+            // 
+            // descricao
+            // 
+            this.descricao.HeaderText = "descricao";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
+            this.descricao.Visible = false;
+            // 
+            // doado
+            // 
+            this.doado.HeaderText = "doado";
+            this.doado.Name = "doado";
+            this.doado.ReadOnly = true;
+            this.doado.Visible = false;
+            // 
+            // doacao
+            // 
+            this.doacao.HeaderText = "doacao";
+            this.doacao.Name = "doacao";
+            this.doacao.ReadOnly = true;
+            this.doacao.Visible = false;
+            // 
+            // necessidade
+            // 
+            this.necessidade.HeaderText = "necessidade";
+            this.necessidade.Name = "necessidade";
+            this.necessidade.ReadOnly = true;
+            this.necessidade.Visible = false;
+            // 
+            // imagem
+            // 
+            this.imagem.HeaderText = "imagem";
+            this.imagem.Name = "imagem";
+            this.imagem.ReadOnly = true;
+            this.imagem.Visible = false;
+            // 
             // FormCadastrarObjetos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -456,19 +464,20 @@
         private TextBox tbResultado;
         private TextBox tbIdOng;
         private CheckBox chbDoado;
-        private DataGridViewTextBoxColumn objeto;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn doado;
-        private DataGridViewTextBoxColumn descricao;
-        private DataGridViewTextBoxColumn doacao;
-        private DataGridViewTextBoxColumn necessidade;
-        private DataGridViewTextBoxColumn categoria;
-        private DataGridViewTextBoxColumn imagem;
         private RadioButton rbDoacao;
         private RadioButton rbNecessidade;
         private GroupBox groupBox1;
+        private Button btNovo;
+        private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn idPessoa;
         private DataGridViewTextBoxColumn idOng;
-        private Button btNovo;
+        private DataGridViewTextBoxColumn objeto;
+        private DataGridViewTextBoxColumn Tipo;
+        private DataGridViewTextBoxColumn categoria;
+        private DataGridViewTextBoxColumn descricao;
+        private DataGridViewTextBoxColumn doado;
+        private DataGridViewTextBoxColumn doacao;
+        private DataGridViewTextBoxColumn necessidade;
+        private DataGridViewTextBoxColumn imagem;
     }
 }

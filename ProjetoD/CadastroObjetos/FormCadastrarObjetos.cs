@@ -14,6 +14,7 @@ namespace CadastroObjetos {
             idPessoaTemp = idPessoaExt;
         }
 
+        #region EVENTOS
         private async void BtnGravarObjeto_Click(object sender, EventArgs e) {
             var objeto = new ObjetosModel();
             if (tbIdObjeto.Text != "")
@@ -54,12 +55,50 @@ namespace CadastroObjetos {
         }
 
         private void BtnApagarImagem_Click(object sender, EventArgs e) {
-            pbImagem.Image.Dispose();
+            pbImagem.Image = null;
         }
 
+        private void FormCadastrarObjetos_Load(object sender, EventArgs e) {
+            tbIdPessoa.Text = idPessoaTemp.ToString();
+            CarregarObjetos();
+        }
+
+        private void btNovo_Click(object sender, EventArgs e) {
+            chbDoado.Checked = false;
+            tbIdObjeto.Text = "";
+            tbIdOng.Text = "";
+            tbObjeto.Text = "";
+            cbCategorias.Text = "";
+            tbDescricao.Text = "";
+            pbImagem.Image = null;
+        }
+
+        private void dgvObjHistorico_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex < 0)
+                return;
+            var row = dgvObjHistorico.Rows[e.RowIndex].Cells;
+            tbIdObjeto.Text = row["id"].Value.ToString();
+            tbIdOng.Text = (row["idOng"].Value ?? "").ToString();
+            tbObjeto.Text = (row["objeto"].Value ?? "").ToString();
+            cbCategorias.Text = (row["categoria"].Value ?? "").ToString();
+            tbDescricao.Text = (row["descricao"].Value ?? "").ToString();
+            tbDescricao.Text = (row["descricao"].Value ?? "").ToString();
+            rbDoacao.Checked = Convert.ToBoolean(row["doacao"].Value);
+            rbNecessidade.Checked = Convert.ToBoolean(row["necessidade"].Value);
+            chbDoado.Checked = Convert.ToBoolean(row["doado"].Value);
+            if (row["imagem"].Value != null) {
+                pbImagem.Image = ByteArrayToImage((byte[])row["imagem"].Value);
+            } else {
+                pbImagem.Image = null;
+            }
+        }
+
+        #endregion
+
+        #region METODOS
         public byte[] ImageToByteArray(Image imageIn) {
             using (var ms = new MemoryStream()) {
-                imageIn.Save(ms, imageIn.RawFormat);
+                new Bitmap(imageIn).Save(ms, imageIn.RawFormat);
                 return ms.ToArray();
             }
         }
@@ -97,11 +136,6 @@ namespace CadastroObjetos {
 
         }
 
-        private void FormCadastrarObjetos_Load(object sender, EventArgs e) {
-            tbIdPessoa.Text = idPessoaTemp.ToString();
-            CarregarObjetos();
-        }
-
         async void CarregarObjetos() {
             ObjetosModel objeto = new();
             objeto.idpessoa = Convert.ToInt64(tbIdPessoa.Text);
@@ -132,6 +166,11 @@ namespace CadastroObjetos {
                         row["idPessoa"].Value = o.idpessoa;
                         row["idOng"].Value = o.idong;
                         row["objeto"].Value = o.objeto;
+                        if (o.doacao == true) {
+                            row["tipo"].Value = "Doação";
+                        } else {
+                            row["tipo"].Value = "Necessidade";
+                        }
                         row["categoria"].Value = o.categoria;
                         row["descricao"].Value = o.descricao;
                         row["doado"].Value = o.doado;
@@ -153,27 +192,7 @@ namespace CadastroObjetos {
 
         }
 
-        private void btNovo_Click(object sender, EventArgs e) {
-            chbDoado.Checked = false;
-            tbIdObjeto.Text = "";
-            tbIdOng.Text = "";
-            tbObjeto.Text = "";
-            cbCategorias.Text = "";
-            tbDescricao.Text = "";
-            pbImagem.Image.Dispose();
-        }
+        #endregion
 
-        private void dgvObjHistorico_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            if (e.RowIndex < 0)
-                return;
-            var row = dgvObjHistorico.Rows[e.RowIndex].Cells;
-            tbIdPessoa.Text = row["idPessoa"].Value.ToString();
-            tbIdObjeto.Text = row["id"].Value.ToString();
-            if (row["imagem"].Value != null) {
-                pbImagem.Image = ByteArrayToImage((byte[])row["imagem"].Value);
-                //ByteArrayToImage
-            }
-
-        }
     }
 }
