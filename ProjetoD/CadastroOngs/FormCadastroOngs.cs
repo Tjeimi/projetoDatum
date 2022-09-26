@@ -25,9 +25,11 @@ namespace CadastroOngs
             ong.estado = cbEstado.Text;
             ong.email = tbEmail.Text;
 
+            Console.WriteLine("BOTÃO SALVAR!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
             BasePacket pacote = new();
             pacote.dados = ong;
-            pacote.serverName = "ServerPessoa";
+            pacote.serverName = "ServerOng";
             pacote.action = "Save";
 
             string topicoResposta = await PublicarAsync("datum/server", pacote);
@@ -35,7 +37,7 @@ namespace CadastroOngs
 
         }
 
-        private void BtnEditarOng_Click(object sender, EventArgs e)
+        /*private void BtnEditarOng_Click(object sender, EventArgs e)
         {
             var ong = new Models.DadosONGModel();
             ong.id = int.Parse(idOng.Text);
@@ -45,9 +47,9 @@ namespace CadastroOngs
             ong.cidade = cbCidade.Text;
             ong.estado = cbEstado.Text;
             ong.email = tbEmail.Text;
-        }
+        }*/
 
-        private void BtnApagarParceira_Click(object sender, EventArgs e)
+        /*private void BtnApagarParceira_Click(object sender, EventArgs e)
         {
             var ong = new Models.DadosONGModel();
             ong.id = int.Parse(idOng.Text);
@@ -58,7 +60,7 @@ namespace CadastroOngs
             var ong = new Models.ParceriasONGModel();
             ong.id = int.Parse(idOng.Text);
             ong.idcidadeparceria = int.Parse(cbCidadesParceiras.Text);
-        }
+        }*/
 
         void RetornarDados(string r)
         {
@@ -67,12 +69,13 @@ namespace CadastroOngs
                 var resposta = JsonSerializer.Deserialize<BasePacketResposta>(r);
                 if (resposta!.codigo == 200)
                 {
-                    var ong = (DadosONGModel)resposta.dados!;
+                    DadosONGModel ong = JsonSerializer.Deserialize<DadosONGModel>(resposta.dados!)!;
                     //só para dar um feedback se deu certo
                     tbResultado.BackColor = Color.DarkGreen;
                     tbResultado.Text = resposta.mensagem;
                     //joga o id na tela
                     idOng.Text = ong!.id.ToString();
+                    
                 }
                 else
                 {
@@ -87,5 +90,7 @@ namespace CadastroOngs
             else
                 methodInvokerDelegate();
         }
+
+
     }
 }
