@@ -377,6 +377,7 @@ InteropTests/NativeTests/out
 *.received.*
 
 # server
+/ProjetoD/ServerBin/ServerBase/*
 /ProjetoD/ServerBin/PostgreSQL/14/data/*
 /ProjetoD/ServerBin/PostgreSQL/14/logfile
 !/ProjetoD/ServerBin/PostgreSQL/14/pgAdmin 4/**
