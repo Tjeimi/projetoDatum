@@ -57,6 +57,18 @@ namespace Models {
         public string? ongnome { get; set; }
     }
 
+    public class PesquisaObjetoReqModel {
+        public string? descricao { get; set; }
+        public string? categoria { get; set; }
+    }
+
+    public class PesquisaObjetoRetModel {
+        public long? idpessoa { get; set; }
+        public string? categoria { get; set; }
+        public string? descricao { get; set; }
+        public string? tipo { get; set; }
+    }
+
     public class BasePacket {
         public string? serverName { get; set; }
         public string? action { get; set; }

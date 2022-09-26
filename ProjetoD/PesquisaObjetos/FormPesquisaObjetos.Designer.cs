@@ -32,13 +32,14 @@
             this.DgvPesquisaObjetos = new System.Windows.Forms.DataGridView();
             this.idPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriaO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txbDescricao = new System.Windows.Forms.TextBox();
+            this.descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbDescricao = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCategorias = new System.Windows.Forms.ComboBox();
             this.BtnPesquisarObjetos = new System.Windows.Forms.Button();
+            this.tbResultado = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPesquisaObjetos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,25 +47,25 @@
             // 
             this.DgvPesquisaObjetos.AllowUserToAddRows = false;
             this.DgvPesquisaObjetos.AllowUserToDeleteRows = false;
-            this.DgvPesquisaObjetos.AllowUserToOrderColumns = true;
             this.DgvPesquisaObjetos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvPesquisaObjetos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idPessoa,
             this.categoriaO,
-            this.Descrição,
-            this.Tipo});
+            this.descricao,
+            this.tipo});
             this.DgvPesquisaObjetos.Location = new System.Drawing.Point(12, 73);
             this.DgvPesquisaObjetos.Name = "DgvPesquisaObjetos";
             this.DgvPesquisaObjetos.ReadOnly = true;
             this.DgvPesquisaObjetos.RowHeadersVisible = false;
             this.DgvPesquisaObjetos.RowTemplate.Height = 25;
-            this.DgvPesquisaObjetos.Size = new System.Drawing.Size(776, 365);
+            this.DgvPesquisaObjetos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvPesquisaObjetos.Size = new System.Drawing.Size(776, 343);
             this.DgvPesquisaObjetos.TabIndex = 11;
             // 
             // idPessoa
             // 
             this.idPessoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idPessoa.HeaderText = "idP";
+            this.idPessoa.HeaderText = "idPessoa";
             this.idPessoa.Name = "idPessoa";
             this.idPessoa.ReadOnly = true;
             this.idPessoa.Visible = false;
@@ -77,26 +78,26 @@
             this.categoriaO.Name = "categoriaO";
             this.categoriaO.ReadOnly = true;
             // 
-            // Descrição
+            // descricao
             // 
-            this.Descrição.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descrição.HeaderText = "Descrição";
-            this.Descrição.Name = "Descrição";
-            this.Descrição.ReadOnly = true;
+            this.descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descricao.HeaderText = "Descrição";
+            this.descricao.Name = "descricao";
+            this.descricao.ReadOnly = true;
             // 
-            // Tipo
+            // tipo
             // 
-            this.Tipo.FillWeight = 25F;
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
+            this.tipo.FillWeight = 25F;
+            this.tipo.HeaderText = "Tipo";
+            this.tipo.Name = "tipo";
+            this.tipo.ReadOnly = true;
             // 
-            // txbDescricao
+            // tbDescricao
             // 
-            this.txbDescricao.Location = new System.Drawing.Point(12, 44);
-            this.txbDescricao.Name = "txbDescricao";
-            this.txbDescricao.Size = new System.Drawing.Size(418, 23);
-            this.txbDescricao.TabIndex = 12;
+            this.tbDescricao.Location = new System.Drawing.Point(12, 44);
+            this.tbDescricao.Name = "tbDescricao";
+            this.tbDescricao.Size = new System.Drawing.Size(418, 23);
+            this.tbDescricao.TabIndex = 12;
             // 
             // label1
             // 
@@ -157,17 +158,27 @@
             this.BtnPesquisarObjetos.UseVisualStyleBackColor = false;
             this.BtnPesquisarObjetos.Click += new System.EventHandler(this.BtnPesquisarObjetos_Click);
             // 
+            // tbResultado
+            // 
+            this.tbResultado.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tbResultado.ForeColor = System.Drawing.Color.White;
+            this.tbResultado.Location = new System.Drawing.Point(0, 427);
+            this.tbResultado.Name = "tbResultado";
+            this.tbResultado.Size = new System.Drawing.Size(800, 23);
+            this.tbResultado.TabIndex = 32;
+            // 
             // FormPesquisaObjetos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbResultado);
             this.Controls.Add(this.BtnPesquisarObjetos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cbCategorias);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txbDescricao);
+            this.Controls.Add(this.tbDescricao);
             this.Controls.Add(this.DgvPesquisaObjetos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPesquisaObjetos";
@@ -181,14 +192,15 @@
         #endregion
 
         private DataGridView DgvPesquisaObjetos;
-        private TextBox txbDescricao;
+        private TextBox tbDescricao;
         private Label label1;
         private Label label2;
         private ComboBox cbCategorias;
+        private Button BtnPesquisarObjetos;
         private DataGridViewTextBoxColumn idPessoa;
         private DataGridViewTextBoxColumn categoriaO;
-        private DataGridViewTextBoxColumn Descrição;
-        private DataGridViewTextBoxColumn Tipo;
-        private Button BtnPesquisarObjetos;
+        private DataGridViewTextBoxColumn descricao;
+        private DataGridViewTextBoxColumn tipo;
+        private TextBox tbResultado;
     }
 }
