@@ -10,6 +10,12 @@ public class ServerUsuarios {
             case "Save":
                 Save(args[1], Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
                 break;
+            case "Login":
+                Login(args[1], Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
+                break;
+            case "BuscarRegistros":
+                BuscarRegistros(args[1], Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
+                break;
             case "Delete":
                 Delete(Encoding.UTF8.GetString(Convert.FromBase64String(args[2])));
                 break;
@@ -41,15 +47,41 @@ public class ServerUsuarios {
         }
     }
 
+    static async void Login(string topicoResposta, string dados) {
+        try {
+            var usuario = JsonSerializer.Deserialize<UsuariosModel>(dados);
+            var usuariosList = QueryLivre<UsuariosModel>($"SELECT * FROM usuarios WHERE username = '{usuario!.username}' AND password = '{usuario!.password}' LIMIT 1");
+            if (usuariosList.Count > 0) {
+                var bpr = new BasePacketResposta();
+                bpr.codigo = 200;
+                bpr.mensagem = "Sucesso";
+                await PublicarRespostaAsync(topicoResposta, bpr);
+            } else {
+                Console.WriteLine("enviando a resposta");
+                var bpr = new BasePacketResposta();
+                bpr.codigo = 401;
+                bpr.mensagem = "Não autorizado";
+                await PublicarRespostaAsync(topicoResposta, bpr);
+            }
+        } catch (Exception ex) {
+            Console.WriteLine(ex.Message);
+            Console.WriteLine("enviando a resposta");
+            var bpr = new BasePacketResposta();
+            bpr.codigo = 500;
+            bpr.mensagem = "Erro: " + ex.Message;
+            await PublicarRespostaAsync(topicoResposta, bpr);
+        }
+    }
+
     static async void BuscarRegistros(string topicoResposta, string dados) {
         try {
-            string nome = JsonSerializer.Deserialize<PessoasModel>(dados)!.nome!;
-            var pessoasList = QueryLivre<PessoasModel>($"SELECT * FROM pessoas WHERE nome LIKE '%{nome}%' ORDER BY id DESC");
+            string nome = JsonSerializer.Deserialize<UsuariosModel>(dados)!.nome!;
+            var usuariosList = QueryLivre<UsuariosModel>($"SELECT * FROM usuarios WHERE nome LIKE '%{nome}%' ORDER BY id DESC");
             Console.WriteLine("enviando a resposta");
             var bpr = new BasePacketResposta();
             bpr.codigo = 200;
             bpr.mensagem = "Sucesso";
-            bpr.dados = JsonSerializer.Serialize(pessoasList);
+            bpr.dados = JsonSerializer.Serialize(usuariosList);
             await PublicarRespostaAsync(topicoResposta, bpr);
         } catch (Exception ex) {
             Console.WriteLine(ex.Message);

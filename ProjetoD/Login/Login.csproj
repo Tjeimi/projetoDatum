@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DatumMQTT\DatumMQTT.csproj" />
+    <ProjectReference Include="..\Main\Main.csproj" />
     <ProjectReference Include="..\ServerUtils\ServerUtils.csproj" />
   </ItemGroup>
 

@@ -1,6 +1,6 @@
 ﻿namespace Main
 {
-    partial class Form1
+    partial class FormPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.label1 = new System.Windows.Forms.Label();
             this.BtnOng = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();

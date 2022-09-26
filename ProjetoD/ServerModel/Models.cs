@@ -47,6 +47,7 @@ namespace Models {
         public string? username { get; set; }
         public string? password { get; set; }
         public string? fone { get; set; }
+        public long? idong { get; set; }
     }
 
     public class BasePacket {

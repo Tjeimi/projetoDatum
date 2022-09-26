@@ -53,7 +53,6 @@ namespace CadastroUsuarios {
         private void BtnEditarUsuario_Click(object sender, EventArgs e) {
             var usuario = new Models.UsuariosModel();
             usuario.id = int.Parse(tbIdUsuario.Text);
-            usuario.idong = int.Parse(tbIdOng.Text);
             usuario.nome = tbNomeUsuario.Text;
             usuario.username = tbUsername.Text;
             usuario.password = tbSenha.Text;
@@ -63,6 +62,17 @@ namespace CadastroUsuarios {
 
         private void BtnInativarUsuario_Click(object sender, EventArgs e) {
             //quando clica no botão para desativar o usuario deve desabilitar a edição dos campos e setar no banco "0"
+        }
+
+        private void dgvUsuarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            if (e.RowIndex < 0)
+                return;
+            var row = dgvUsuarios.Rows[e.RowIndex].Cells;
+            tbIdUsuario.Text = row["idUsuario"].Value.ToString();
+            tbNomeUsuario.Text = (row["nome"].Value ?? "").ToString();
+            tbContatoUsuario.Text = (row["contato"].Value ?? "").ToString();
+            tbUsername.Text = (row["username"].Value ?? "").ToString();
+            chbAtivo.Checked = Convert.ToBoolean(row["ativo"].Value ?? false);
         }
 
         #endregion
@@ -102,15 +112,15 @@ namespace CadastroUsuarios {
                     tbResultado.BackColor = Color.DarkGreen;
                     tbResultado.Text = resposta.mensagem;
                     //joga os resultados na tela
-                    DgvUsuarios.Rows.Clear();
+                    dgvUsuarios.Rows.Clear();
                     foreach (var p in usuarios) {
-                        var index = DgvUsuarios.Rows.Add();
-                        var row = DgvUsuarios.Rows[index].Cells;
-                        row["idPessoa"].Value = p.id;
-                        //row["idOng"].Value;
+                        var index = dgvUsuarios.Rows.Add();
+                        var row = dgvUsuarios.Rows[index].Cells;
+                        row["idUsuario"].Value = p.id;
                         row["nome"].Value = p.nome;
                         row["contato"].Value = p.fone;
                         row["ativo"].Value = p.ativo;
+                        row["username"].Value = p.username;
                     }
                 } else {
                     //só para dar um feedback se deu certo
@@ -126,5 +136,6 @@ namespace CadastroUsuarios {
         }
 
         #endregion
+
     }
 }

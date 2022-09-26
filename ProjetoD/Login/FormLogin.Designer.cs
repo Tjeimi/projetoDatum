@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tbSenha = new System.Windows.Forms.TextBox();
-            this.BtnLogin = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbUsuario
@@ -74,16 +74,17 @@
             this.tbSenha.Size = new System.Drawing.Size(242, 23);
             this.tbSenha.TabIndex = 1;
             // 
-            // BtnLogin
+            // btnLogin
             // 
-            this.BtnLogin.BackColor = System.Drawing.Color.Transparent;
-            this.BtnLogin.Image = global::Login.Properties.Resources.icons8_login_20px;
-            this.BtnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLogin.Location = new System.Drawing.Point(241, 142);
-            this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(33, 33);
-            this.BtnLogin.TabIndex = 2;
-            this.BtnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.Image = global::Login.Properties.Resources.icons8_login_20px;
+            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogin.Location = new System.Drawing.Point(241, 142);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(33, 33);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // FormLogin
             // 
@@ -92,7 +93,7 @@
             this.BackgroundImage = global::Login.Properties.Resources._2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(424, 233);
-            this.Controls.Add(this.BtnLogin);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbSenha);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbUsuario);
@@ -112,6 +113,6 @@
         private Label label1;
         private Label label2;
         private TextBox tbSenha;
-        private Button BtnLogin;
+        private Button btnLogin;
     }
 }

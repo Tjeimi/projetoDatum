@@ -29,18 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroUsuarios));
-            this.DgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.idPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnGravarUsuario = new System.Windows.Forms.Button();
             this.tbContatoUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbNomeUsuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.BtnInativarUsuario = new System.Windows.Forms.Button();
             this.BtnPesquisarUsuario = new System.Windows.Forms.Button();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,36 +48,36 @@
             this.tbIdOng = new System.Windows.Forms.TextBox();
             this.tbIdUsuario = new System.Windows.Forms.TextBox();
             this.tbResultado = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvUsuarios
+            // dgvUsuarios
             // 
-            this.DgvUsuarios.AllowUserToAddRows = false;
-            this.DgvUsuarios.AllowUserToDeleteRows = false;
-            this.DgvUsuarios.AllowUserToOrderColumns = true;
-            this.DgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idPessoa,
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idUsuario,
             this.nome,
             this.contato,
-            this.endereco,
             this.ativo});
-            this.DgvUsuarios.Location = new System.Drawing.Point(385, 46);
-            this.DgvUsuarios.Name = "DgvUsuarios";
-            this.DgvUsuarios.ReadOnly = true;
-            this.DgvUsuarios.RowHeadersVisible = false;
-            this.DgvUsuarios.RowTemplate.Height = 25;
-            this.DgvUsuarios.Size = new System.Drawing.Size(379, 155);
-            this.DgvUsuarios.TabIndex = 22;
+            this.dgvUsuarios.Location = new System.Drawing.Point(385, 46);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
+            this.dgvUsuarios.RowHeadersVisible = false;
+            this.dgvUsuarios.RowTemplate.Height = 25;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuarios.Size = new System.Drawing.Size(379, 155);
+            this.dgvUsuarios.TabIndex = 10;
+            this.dgvUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellDoubleClick);
             // 
-            // idPessoa
+            // idUsuario
             // 
-            this.idPessoa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idPessoa.HeaderText = "idPessoa";
-            this.idPessoa.Name = "idPessoa";
-            this.idPessoa.ReadOnly = true;
-            this.idPessoa.Visible = false;
+            this.idUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idUsuario.HeaderText = "idUsuario";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.ReadOnly = true;
+            this.idUsuario.Visible = false;
             // 
             // nome
             // 
@@ -96,13 +94,6 @@
             this.contato.Name = "contato";
             this.contato.ReadOnly = true;
             // 
-            // endereco
-            // 
-            this.endereco.HeaderText = "endereco";
-            this.endereco.Name = "endereco";
-            this.endereco.ReadOnly = true;
-            this.endereco.Visible = false;
-            // 
             // ativo
             // 
             this.ativo.HeaderText = "ativo";
@@ -116,10 +107,10 @@
             this.BtnGravarUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnGravarUsuario.Image = global::CadastroUsuarios.Properties.Resources.icons8_save_all_20px;
             this.BtnGravarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGravarUsuario.Location = new System.Drawing.Point(247, 168);
+            this.BtnGravarUsuario.Location = new System.Drawing.Point(286, 168);
             this.BtnGravarUsuario.Name = "BtnGravarUsuario";
             this.BtnGravarUsuario.Size = new System.Drawing.Size(33, 33);
-            this.BtnGravarUsuario.TabIndex = 20;
+            this.BtnGravarUsuario.TabIndex = 8;
             this.BtnGravarUsuario.UseVisualStyleBackColor = false;
             this.BtnGravarUsuario.Click += new System.EventHandler(this.BtnGravarUsuario_Click);
             // 
@@ -128,7 +119,7 @@
             this.tbContatoUsuario.Location = new System.Drawing.Point(27, 92);
             this.tbContatoUsuario.Name = "tbContatoUsuario";
             this.tbContatoUsuario.Size = new System.Drawing.Size(292, 23);
-            this.tbContatoUsuario.TabIndex = 17;
+            this.tbContatoUsuario.TabIndex = 4;
             // 
             // label4
             // 
@@ -146,7 +137,7 @@
             this.tbNomeUsuario.Location = new System.Drawing.Point(27, 46);
             this.tbNomeUsuario.Name = "tbNomeUsuario";
             this.tbNomeUsuario.Size = new System.Drawing.Size(292, 23);
-            this.tbNomeUsuario.TabIndex = 13;
+            this.tbNomeUsuario.TabIndex = 2;
             // 
             // label1
             // 
@@ -159,18 +150,6 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Nome";
             // 
-            // BtnInativarUsuario
-            // 
-            this.BtnInativarUsuario.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.BtnInativarUsuario.Image = global::CadastroUsuarios.Properties.Resources.icons8_denied_20px;
-            this.BtnInativarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnInativarUsuario.Location = new System.Drawing.Point(286, 168);
-            this.BtnInativarUsuario.Name = "BtnInativarUsuario";
-            this.BtnInativarUsuario.Size = new System.Drawing.Size(33, 33);
-            this.BtnInativarUsuario.TabIndex = 20;
-            this.BtnInativarUsuario.UseVisualStyleBackColor = false;
-            this.BtnInativarUsuario.Click += new System.EventHandler(this.BtnInativarUsuario_Click);
-            // 
             // BtnPesquisarUsuario
             // 
             this.BtnPesquisarUsuario.BackColor = System.Drawing.Color.Transparent;
@@ -178,7 +157,7 @@
             this.BtnPesquisarUsuario.Location = new System.Drawing.Point(321, 46);
             this.BtnPesquisarUsuario.Name = "BtnPesquisarUsuario";
             this.BtnPesquisarUsuario.Size = new System.Drawing.Size(27, 25);
-            this.BtnPesquisarUsuario.TabIndex = 23;
+            this.BtnPesquisarUsuario.TabIndex = 3;
             this.BtnPesquisarUsuario.UseVisualStyleBackColor = false;
             this.BtnPesquisarUsuario.Click += new System.EventHandler(this.BtnPesquisar_Click);
             // 
@@ -187,7 +166,7 @@
             this.tbUsername.Location = new System.Drawing.Point(27, 139);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(158, 23);
-            this.tbUsername.TabIndex = 25;
+            this.tbUsername.TabIndex = 5;
             // 
             // label2
             // 
@@ -216,7 +195,7 @@
             this.tbSenha.Location = new System.Drawing.Point(191, 139);
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(128, 23);
-            this.tbSenha.TabIndex = 25;
+            this.tbSenha.TabIndex = 6;
             // 
             // chbAtivo
             // 
@@ -224,7 +203,7 @@
             this.chbAtivo.Location = new System.Drawing.Point(27, 168);
             this.chbAtivo.Name = "chbAtivo";
             this.chbAtivo.Size = new System.Drawing.Size(54, 19);
-            this.chbAtivo.TabIndex = 26;
+            this.chbAtivo.TabIndex = 7;
             this.chbAtivo.Text = "Ativo";
             this.chbAtivo.UseVisualStyleBackColor = true;
             // 
@@ -233,14 +212,14 @@
             this.tbIdOng.Location = new System.Drawing.Point(273, 16);
             this.tbIdOng.Name = "tbIdOng";
             this.tbIdOng.Size = new System.Drawing.Size(42, 23);
-            this.tbIdOng.TabIndex = 27;
+            this.tbIdOng.TabIndex = 1;
             // 
             // tbIdUsuario
             // 
             this.tbIdUsuario.Location = new System.Drawing.Point(225, 16);
             this.tbIdUsuario.Name = "tbIdUsuario";
             this.tbIdUsuario.Size = new System.Drawing.Size(42, 23);
-            this.tbIdUsuario.TabIndex = 27;
+            this.tbIdUsuario.TabIndex = 0;
             // 
             // tbResultado
             // 
@@ -267,8 +246,7 @@
             this.Controls.Add(this.tbUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnPesquisarUsuario);
-            this.Controls.Add(this.DgvUsuarios);
-            this.Controls.Add(this.BtnInativarUsuario);
+            this.Controls.Add(this.dgvUsuarios);
             this.Controls.Add(this.BtnGravarUsuario);
             this.Controls.Add(this.tbContatoUsuario);
             this.Controls.Add(this.label4);
@@ -277,20 +255,19 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadastroUsuarios";
             this.Text = "Cadastro de Usuários";
-            ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DataGridView DgvUsuarios;
+        private DataGridView dgvUsuarios;
         private Button BtnGravarUsuario;
         private TextBox tbContatoUsuario;
         private Label label4;
         private TextBox tbNomeUsuario;
         private Label label1;
-        private Button BtnInativarUsuario;
         private Button BtnPesquisarUsuario;
         private TextBox tbUsername;
         private Label label2;
@@ -300,10 +277,9 @@
         private TextBox tbIdOng;
         private TextBox tbIdUsuario;
         private TextBox tbResultado;
-        private DataGridViewTextBoxColumn idPessoa;
+        private DataGridViewTextBoxColumn idUsuario;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn contato;
-        private DataGridViewTextBoxColumn endereco;
         private DataGridViewTextBoxColumn ativo;
     }
 }
