@@ -25,6 +25,11 @@ namespace Models {
         public bool? doacao { get; set; }
         public bool? necessidade { get; set; }
     }
+    public class ObjetosMatchModel {
+        public string tablename { get; set; } = "objetos";
+        public long? id { get; set; }
+        public bool? doado { get; set; }
+    }
 
     public class DadosONGModel {
         public string tablename { get; set; } = "ongs";
@@ -68,6 +73,17 @@ namespace Models {
         public string? categoria { get; set; }
         public bool? doacao { get; set; }
         public bool? necessidade { get; set; }
+    }
+
+    public class MatchObjetoModel {
+        public long? idobjdoando { get; set; }
+        public long? idobjnecessidade { get; set; }
+        public string? objnecessidade { get; set; }
+        public string? nomenecessidade { get; set; }
+        public string? nomedoando { get; set; }
+        public string? objdoando { get; set; }
+        public string? categoria { get; set; }
+
     }
 
     public class BasePacket {

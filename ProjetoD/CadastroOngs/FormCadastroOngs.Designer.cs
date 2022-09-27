@@ -660,6 +660,7 @@
             this.idOng.Name = "idOng";
             this.idOng.Size = new System.Drawing.Size(44, 23);
             this.idOng.TabIndex = 27;
+            this.idOng.Visible = false;
             // 
             // tbEmail
             // 

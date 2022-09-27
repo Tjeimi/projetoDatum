@@ -770,6 +770,7 @@
             this.tbIdOng.Name = "tbIdOng";
             this.tbIdOng.Size = new System.Drawing.Size(42, 23);
             this.tbIdOng.TabIndex = 28;
+            this.tbIdOng.Visible = false;
             // 
             // chbAtivo
             // 
@@ -788,6 +789,7 @@
             this.tbIdPessoa.Name = "tbIdPessoa";
             this.tbIdPessoa.Size = new System.Drawing.Size(42, 23);
             this.tbIdPessoa.TabIndex = 30;
+            this.tbIdPessoa.Visible = false;
             this.tbIdPessoa.TextChanged += new System.EventHandler(this.tbIdPessoa_TextChanged);
             // 
             // tbResultado

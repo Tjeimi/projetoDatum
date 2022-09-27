@@ -43,14 +43,6 @@
             this.tbIdObjeto = new System.Windows.Forms.TextBox();
             this.pbImagem = new System.Windows.Forms.PictureBox();
             this.dgvObjHistorico = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbResultado = new System.Windows.Forms.TextBox();
-            this.tbIdOng = new System.Windows.Forms.TextBox();
-            this.chbDoado = new System.Windows.Forms.CheckBox();
-            this.rbDoacao = new System.Windows.Forms.RadioButton();
-            this.rbNecessidade = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btNovo = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPessoa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idOng = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +54,14 @@
             this.doacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.necessidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbResultado = new System.Windows.Forms.TextBox();
+            this.tbIdOng = new System.Windows.Forms.TextBox();
+            this.chbDoado = new System.Windows.Forms.CheckBox();
+            this.rbDoacao = new System.Windows.Forms.RadioButton();
+            this.rbNecessidade = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btNovo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvObjHistorico)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -198,6 +198,7 @@
             this.tbIdPessoa.Name = "tbIdPessoa";
             this.tbIdPessoa.Size = new System.Drawing.Size(42, 23);
             this.tbIdPessoa.TabIndex = 27;
+            this.tbIdPessoa.Visible = false;
             // 
             // tbIdObjeto
             // 
@@ -206,6 +207,7 @@
             this.tbIdObjeto.Name = "tbIdObjeto";
             this.tbIdObjeto.Size = new System.Drawing.Size(42, 23);
             this.tbIdObjeto.TabIndex = 32;
+            this.tbIdObjeto.Visible = false;
             // 
             // pbImagem
             // 
@@ -242,92 +244,6 @@
             this.dgvObjHistorico.Size = new System.Drawing.Size(240, 159);
             this.dgvObjHistorico.TabIndex = 35;
             this.dgvObjHistorico.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvObjHistorico_CellDoubleClick);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(345, 24);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 17);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Carregar imagem";
-            // 
-            // tbResultado
-            // 
-            this.tbResultado.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tbResultado.ForeColor = System.Drawing.Color.White;
-            this.tbResultado.Location = new System.Drawing.Point(0, 427);
-            this.tbResultado.Name = "tbResultado";
-            this.tbResultado.Size = new System.Drawing.Size(785, 23);
-            this.tbResultado.TabIndex = 37;
-            // 
-            // tbIdOng
-            // 
-            this.tbIdOng.Enabled = false;
-            this.tbIdOng.Location = new System.Drawing.Point(201, 15);
-            this.tbIdOng.Name = "tbIdOng";
-            this.tbIdOng.Size = new System.Drawing.Size(42, 23);
-            this.tbIdOng.TabIndex = 32;
-            // 
-            // chbDoado
-            // 
-            this.chbDoado.AutoSize = true;
-            this.chbDoado.BackColor = System.Drawing.Color.Transparent;
-            this.chbDoado.Location = new System.Drawing.Point(26, 2);
-            this.chbDoado.Name = "chbDoado";
-            this.chbDoado.Size = new System.Drawing.Size(61, 19);
-            this.chbDoado.TabIndex = 30;
-            this.chbDoado.Text = "Doado";
-            this.chbDoado.UseVisualStyleBackColor = false;
-            // 
-            // rbDoacao
-            // 
-            this.rbDoacao.AutoSize = true;
-            this.rbDoacao.Location = new System.Drawing.Point(6, 14);
-            this.rbDoacao.Name = "rbDoacao";
-            this.rbDoacao.Size = new System.Drawing.Size(65, 19);
-            this.rbDoacao.TabIndex = 38;
-            this.rbDoacao.TabStop = true;
-            this.rbDoacao.Text = "Doação";
-            this.rbDoacao.UseVisualStyleBackColor = true;
-            // 
-            // rbNecessidade
-            // 
-            this.rbNecessidade.AutoSize = true;
-            this.rbNecessidade.Location = new System.Drawing.Point(77, 14);
-            this.rbNecessidade.Name = "rbNecessidade";
-            this.rbNecessidade.Size = new System.Drawing.Size(91, 19);
-            this.rbNecessidade.TabIndex = 38;
-            this.rbNecessidade.TabStop = true;
-            this.rbNecessidade.Text = "Necessidade";
-            this.rbNecessidade.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.rbDoacao);
-            this.groupBox1.Controls.Add(this.rbNecessidade);
-            this.groupBox1.Location = new System.Drawing.Point(26, 232);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(169, 40);
-            this.groupBox1.TabIndex = 39;
-            this.groupBox1.TabStop = false;
-            // 
-            // btNovo
-            // 
-            this.btNovo.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btNovo.Image = global::CadastroObjetos.Properties.Resources.icons8_arquivo_20;
-            this.btNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btNovo.Location = new System.Drawing.Point(272, 239);
-            this.btNovo.Name = "btNovo";
-            this.btNovo.Size = new System.Drawing.Size(67, 33);
-            this.btNovo.TabIndex = 40;
-            this.btNovo.Text = "Novo";
-            this.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btNovo.UseVisualStyleBackColor = false;
-            this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
             // id
             // 
@@ -403,6 +319,93 @@
             this.imagem.Name = "imagem";
             this.imagem.ReadOnly = true;
             this.imagem.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(345, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 17);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Carregar imagem";
+            // 
+            // tbResultado
+            // 
+            this.tbResultado.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tbResultado.ForeColor = System.Drawing.Color.White;
+            this.tbResultado.Location = new System.Drawing.Point(0, 427);
+            this.tbResultado.Name = "tbResultado";
+            this.tbResultado.Size = new System.Drawing.Size(785, 23);
+            this.tbResultado.TabIndex = 37;
+            // 
+            // tbIdOng
+            // 
+            this.tbIdOng.Enabled = false;
+            this.tbIdOng.Location = new System.Drawing.Point(201, 15);
+            this.tbIdOng.Name = "tbIdOng";
+            this.tbIdOng.Size = new System.Drawing.Size(42, 23);
+            this.tbIdOng.TabIndex = 32;
+            this.tbIdOng.Visible = false;
+            // 
+            // chbDoado
+            // 
+            this.chbDoado.AutoSize = true;
+            this.chbDoado.BackColor = System.Drawing.Color.Transparent;
+            this.chbDoado.Location = new System.Drawing.Point(26, 2);
+            this.chbDoado.Name = "chbDoado";
+            this.chbDoado.Size = new System.Drawing.Size(61, 19);
+            this.chbDoado.TabIndex = 30;
+            this.chbDoado.Text = "Doado";
+            this.chbDoado.UseVisualStyleBackColor = false;
+            // 
+            // rbDoacao
+            // 
+            this.rbDoacao.AutoSize = true;
+            this.rbDoacao.Location = new System.Drawing.Point(6, 14);
+            this.rbDoacao.Name = "rbDoacao";
+            this.rbDoacao.Size = new System.Drawing.Size(65, 19);
+            this.rbDoacao.TabIndex = 38;
+            this.rbDoacao.TabStop = true;
+            this.rbDoacao.Text = "Doação";
+            this.rbDoacao.UseVisualStyleBackColor = true;
+            // 
+            // rbNecessidade
+            // 
+            this.rbNecessidade.AutoSize = true;
+            this.rbNecessidade.Location = new System.Drawing.Point(77, 14);
+            this.rbNecessidade.Name = "rbNecessidade";
+            this.rbNecessidade.Size = new System.Drawing.Size(91, 19);
+            this.rbNecessidade.TabIndex = 38;
+            this.rbNecessidade.TabStop = true;
+            this.rbNecessidade.Text = "Necessidade";
+            this.rbNecessidade.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.rbDoacao);
+            this.groupBox1.Controls.Add(this.rbNecessidade);
+            this.groupBox1.Location = new System.Drawing.Point(26, 232);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(169, 40);
+            this.groupBox1.TabIndex = 39;
+            this.groupBox1.TabStop = false;
+            // 
+            // btNovo
+            // 
+            this.btNovo.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btNovo.Image = global::CadastroObjetos.Properties.Resources.icons8_arquivo_20;
+            this.btNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btNovo.Location = new System.Drawing.Point(272, 239);
+            this.btNovo.Name = "btNovo";
+            this.btNovo.Size = new System.Drawing.Size(67, 33);
+            this.btNovo.TabIndex = 40;
+            this.btNovo.Text = "Novo";
+            this.btNovo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btNovo.UseVisualStyleBackColor = false;
+            this.btNovo.Click += new System.EventHandler(this.btNovo_Click);
             // 
             // FormCadastrarObjetos
             // 

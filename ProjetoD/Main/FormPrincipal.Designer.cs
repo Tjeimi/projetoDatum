@@ -107,6 +107,7 @@
             this.btnDoacoes.Text = "DOAÇÕES";
             this.btnDoacoes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDoacoes.UseVisualStyleBackColor = true;
+            this.btnDoacoes.Click += new System.EventHandler(this.btnDoacoes_Click);
             // 
             // btnChat
             // 

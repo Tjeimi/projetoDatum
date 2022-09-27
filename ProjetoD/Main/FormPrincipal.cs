@@ -2,6 +2,7 @@ using CadastroOngs;
 using CadastroPessoas;
 using CadastroUsuarios;
 using Chat;
+using Doacoes;
 using PesquisaObjetos;
 
 namespace Main {
@@ -37,6 +38,11 @@ namespace Main {
 
         private void btnObjetos_Click(object sender, EventArgs e) {
             FormPesquisaObjetos form = new();
+            form.Show();
+        }
+
+        private void btnDoacoes_Click(object sender, EventArgs e) {
+            FormDoacoes form = new();
             form.Show();
         }
     }

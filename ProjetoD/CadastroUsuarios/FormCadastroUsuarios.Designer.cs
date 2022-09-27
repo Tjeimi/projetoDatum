@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroUsuarios));
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnGravarUsuario = new System.Windows.Forms.Button();
             this.tbContatoUsuario = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,11 +49,6 @@
             this.tbIdOng = new System.Windows.Forms.TextBox();
             this.tbIdUsuario = new System.Windows.Forms.TextBox();
             this.tbResultado = new System.Windows.Forms.TextBox();
-            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contato = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,6 +72,43 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(379, 155);
             this.dgvUsuarios.TabIndex = 10;
             this.dgvUsuarios.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellDoubleClick);
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idUsuario.HeaderText = "idUsuario";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.ReadOnly = true;
+            this.idUsuario.Visible = false;
+            // 
+            // nome
+            // 
+            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nome.FillWeight = 150F;
+            this.nome.HeaderText = "Nome";
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            // 
+            // contato
+            // 
+            this.contato.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.contato.HeaderText = "Contato";
+            this.contato.Name = "contato";
+            this.contato.ReadOnly = true;
+            // 
+            // ativo
+            // 
+            this.ativo.HeaderText = "ativo";
+            this.ativo.Name = "ativo";
+            this.ativo.ReadOnly = true;
+            this.ativo.Visible = false;
+            // 
+            // username
+            // 
+            this.username.HeaderText = "username";
+            this.username.Name = "username";
+            this.username.ReadOnly = true;
+            this.username.Visible = false;
             // 
             // BtnGravarUsuario
             // 
@@ -186,6 +223,7 @@
             this.tbIdOng.Name = "tbIdOng";
             this.tbIdOng.Size = new System.Drawing.Size(42, 23);
             this.tbIdOng.TabIndex = 1;
+            this.tbIdOng.Visible = false;
             // 
             // tbIdUsuario
             // 
@@ -194,6 +232,7 @@
             this.tbIdUsuario.Name = "tbIdUsuario";
             this.tbIdUsuario.Size = new System.Drawing.Size(42, 23);
             this.tbIdUsuario.TabIndex = 0;
+            this.tbIdUsuario.Visible = false;
             // 
             // tbResultado
             // 
@@ -203,43 +242,6 @@
             this.tbResultado.Name = "tbResultado";
             this.tbResultado.Size = new System.Drawing.Size(800, 23);
             this.tbResultado.TabIndex = 32;
-            // 
-            // idUsuario
-            // 
-            this.idUsuario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idUsuario.HeaderText = "idUsuario";
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.ReadOnly = true;
-            this.idUsuario.Visible = false;
-            // 
-            // nome
-            // 
-            this.nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nome.FillWeight = 150F;
-            this.nome.HeaderText = "Nome";
-            this.nome.Name = "nome";
-            this.nome.ReadOnly = true;
-            // 
-            // contato
-            // 
-            this.contato.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.contato.HeaderText = "Contato";
-            this.contato.Name = "contato";
-            this.contato.ReadOnly = true;
-            // 
-            // ativo
-            // 
-            this.ativo.HeaderText = "ativo";
-            this.ativo.Name = "ativo";
-            this.ativo.ReadOnly = true;
-            this.ativo.Visible = false;
-            // 
-            // username
-            // 
-            this.username.HeaderText = "username";
-            this.username.Name = "username";
-            this.username.ReadOnly = true;
-            this.username.Visible = false;
             // 
             // FormCadastroUsuarios
             // 

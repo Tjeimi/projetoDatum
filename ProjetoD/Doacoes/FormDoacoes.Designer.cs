@@ -29,37 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoacoes));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbObjNecessidade = new System.Windows.Forms.TextBox();
+            this.tbObjDoar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.DgvDoacao = new System.Windows.Forms.DataGridView();
             this.Doador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Necessitado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDoador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idNecessitado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Objeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doando = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.necessitado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.necessidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idObjDoando = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idObjNecessidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BtnConfirmarDoacao = new System.Windows.Forms.Button();
+            this.tbIdObjDoar = new System.Windows.Forms.TextBox();
+            this.tbIdObjNecessario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDoacao)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbObjNecessidade
             // 
-            this.textBox1.Location = new System.Drawing.Point(414, 52);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(340, 110);
-            this.textBox1.TabIndex = 0;
+            this.tbObjNecessidade.Location = new System.Drawing.Point(414, 52);
+            this.tbObjNecessidade.Name = "tbObjNecessidade";
+            this.tbObjNecessidade.Size = new System.Drawing.Size(340, 23);
+            this.tbObjNecessidade.TabIndex = 0;
             // 
-            // textBox2
+            // tbObjDoar
             // 
-            this.textBox2.Location = new System.Drawing.Point(43, 52);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(340, 110);
-            this.textBox2.TabIndex = 0;
+            this.tbObjDoar.Location = new System.Drawing.Point(43, 52);
+            this.tbObjDoar.Name = "tbObjDoar";
+            this.tbObjDoar.Size = new System.Drawing.Size(340, 23);
+            this.tbObjDoar.TabIndex = 0;
             // 
             // label2
             // 
@@ -99,22 +100,25 @@
             // 
             this.DgvDoacao.AllowUserToAddRows = false;
             this.DgvDoacao.AllowUserToDeleteRows = false;
-            this.DgvDoacao.AllowUserToOrderColumns = true;
             this.DgvDoacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvDoacao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Doador,
-            this.Necessitado,
-            this.idDoador,
-            this.idNecessitado,
-            this.Objeto,
-            this.Cidade});
-            this.DgvDoacao.Location = new System.Drawing.Point(43, 204);
+            this.doando,
+            this.necessitado,
+            this.necessidade,
+            this.categoria,
+            this.idObjDoando,
+            this.idObjNecessidade});
+            this.DgvDoacao.Location = new System.Drawing.Point(43, 117);
+            this.DgvDoacao.MultiSelect = false;
             this.DgvDoacao.Name = "DgvDoacao";
             this.DgvDoacao.ReadOnly = true;
             this.DgvDoacao.RowHeadersVisible = false;
             this.DgvDoacao.RowTemplate.Height = 25;
-            this.DgvDoacao.Size = new System.Drawing.Size(711, 234);
+            this.DgvDoacao.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvDoacao.Size = new System.Drawing.Size(711, 321);
             this.DgvDoacao.TabIndex = 25;
+            this.DgvDoacao.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDoacao_CellDoubleClick);
             // 
             // Doador
             // 
@@ -123,69 +127,94 @@
             this.Doador.Name = "Doador";
             this.Doador.ReadOnly = true;
             // 
-            // Necessitado
+            // doando
             // 
-            this.Necessitado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Necessitado.HeaderText = "Necessitado";
-            this.Necessitado.Name = "Necessitado";
-            this.Necessitado.ReadOnly = true;
+            this.doando.HeaderText = "Doando";
+            this.doando.Name = "doando";
+            this.doando.ReadOnly = true;
             // 
-            // idDoador
+            // necessitado
             // 
-            this.idDoador.HeaderText = "idDoador";
-            this.idDoador.Name = "idDoador";
-            this.idDoador.ReadOnly = true;
-            this.idDoador.Visible = false;
+            this.necessitado.HeaderText = "Necessitado";
+            this.necessitado.Name = "necessitado";
+            this.necessitado.ReadOnly = true;
             // 
-            // idNecessitado
+            // necessidade
             // 
-            this.idNecessitado.HeaderText = "idNecessitado";
-            this.idNecessitado.Name = "idNecessitado";
-            this.idNecessitado.ReadOnly = true;
-            this.idNecessitado.Visible = false;
+            this.necessidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.necessidade.HeaderText = "Precisando de";
+            this.necessidade.Name = "necessidade";
+            this.necessidade.ReadOnly = true;
             // 
-            // Objeto
+            // categoria
             // 
-            this.Objeto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Objeto.HeaderText = "Objeto";
-            this.Objeto.Name = "Objeto";
-            this.Objeto.ReadOnly = true;
+            this.categoria.HeaderText = "Categoria";
+            this.categoria.Name = "categoria";
+            this.categoria.ReadOnly = true;
             // 
-            // Cidade
+            // idObjDoando
             // 
-            this.Cidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cidade.FillWeight = 50F;
-            this.Cidade.HeaderText = "Cidade";
-            this.Cidade.Name = "Cidade";
-            this.Cidade.ReadOnly = true;
+            this.idObjDoando.HeaderText = "idObjDoando";
+            this.idObjDoando.Name = "idObjDoando";
+            this.idObjDoando.ReadOnly = true;
+            this.idObjDoando.Visible = false;
+            // 
+            // idObjNecessidade
+            // 
+            this.idObjNecessidade.HeaderText = "idObjNecessidade";
+            this.idObjNecessidade.Name = "idObjNecessidade";
+            this.idObjNecessidade.ReadOnly = true;
+            this.idObjNecessidade.Visible = false;
             // 
             // BtnConfirmarDoacao
             // 
             this.BtnConfirmarDoacao.Image = global::Doacoes.Properties.Resources.icons8_trust_20px;
             this.BtnConfirmarDoacao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnConfirmarDoacao.Location = new System.Drawing.Point(336, 168);
+            this.BtnConfirmarDoacao.Location = new System.Drawing.Point(333, 81);
             this.BtnConfirmarDoacao.Name = "BtnConfirmarDoacao";
             this.BtnConfirmarDoacao.Size = new System.Drawing.Size(125, 30);
             this.BtnConfirmarDoacao.TabIndex = 26;
             this.BtnConfirmarDoacao.Text = "Doação realizada";
             this.BtnConfirmarDoacao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnConfirmarDoacao.UseVisualStyleBackColor = true;
+            this.BtnConfirmarDoacao.Click += new System.EventHandler(this.BtnConfirmarDoacao_Click);
+            // 
+            // tbIdObjDoar
+            // 
+            this.tbIdObjDoar.Enabled = false;
+            this.tbIdObjDoar.Location = new System.Drawing.Point(348, 26);
+            this.tbIdObjDoar.Name = "tbIdObjDoar";
+            this.tbIdObjDoar.Size = new System.Drawing.Size(35, 23);
+            this.tbIdObjDoar.TabIndex = 27;
+            this.tbIdObjDoar.Visible = false;
+            // 
+            // tbIdObjNecessario
+            // 
+            this.tbIdObjNecessario.Enabled = false;
+            this.tbIdObjNecessario.Location = new System.Drawing.Point(719, 26);
+            this.tbIdObjNecessario.Name = "tbIdObjNecessario";
+            this.tbIdObjNecessario.Size = new System.Drawing.Size(35, 23);
+            this.tbIdObjNecessario.TabIndex = 27;
+            this.tbIdObjNecessario.Visible = false;
             // 
             // FormDoacoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbIdObjNecessario);
+            this.Controls.Add(this.tbIdObjDoar);
             this.Controls.Add(this.BtnConfirmarDoacao);
             this.Controls.Add(this.DgvDoacao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbObjDoar);
+            this.Controls.Add(this.tbObjNecessidade);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDoacoes";
             this.Text = "DOAR";
+            this.Load += new System.EventHandler(this.FormDoacoes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDoacao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,18 +223,22 @@
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbObjNecessidade;
+        private TextBox tbObjDoar;
         private Label label2;
         private Label label1;
         private Label label3;
         private DataGridView DgvDoacao;
         private Button BtnConfirmarDoacao;
         private DataGridViewTextBoxColumn Doador;
-        private DataGridViewTextBoxColumn Necessitado;
-        private DataGridViewTextBoxColumn idDoador;
-        private DataGridViewTextBoxColumn idNecessitado;
-        private DataGridViewTextBoxColumn Objeto;
-        private DataGridViewTextBoxColumn Cidade;
+        private DataGridViewTextBoxColumn doando;
+        private DataGridViewTextBoxColumn necessitado;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn categoria;
+        private DataGridViewTextBoxColumn idObjDoando;
+        private DataGridViewTextBoxColumn idObjNecessidade;
+        private DataGridViewTextBoxColumn necessidade;
+        private TextBox tbIdObjDoar;
+        private TextBox tbIdObjNecessario;
     }
 }
